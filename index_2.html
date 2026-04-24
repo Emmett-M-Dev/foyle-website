@@ -1,0 +1,1754 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foyle International — Learn English in Derry, Northern Ireland</title>
+  <meta name="description"
+    content="Northern Ireland's longest-established English language school. Erasmus+ programmes, Junior Summer Schools and English courses in the city of Derry since 1990.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Inter+Tight:wght@400;500;600&family=Instrument+Sans:wght@400;500;600&family=Caveat:wght@500;600&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --foyle-green: #3FA535;
+      --foyle-green-dark: #2d7a25;
+      --foyle-green-deep: #1a4f18;
+      --foyle-green-pale: #f0f9ee;
+      --foyle-green-mid: #d9eed4;
+      --black: #0a0a0a;
+      --cream: #faf8f3;
+      --paper: #f5f2ea;
+      --ink: #1a1a18;
+      --ink-soft: #545450;
+      --rule: #e2ddd0;
+      --accent: #c89a3e;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter Tight', system-ui, sans-serif;
+      color: var(--ink);
+      background: var(--cream);
+      overflow-x: hidden;
+      line-height: 1.5;
+    }
+
+    .label {
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--ink-soft);
+    }
+
+    .handwritten {
+      font-family: 'Caveat', cursive;
+      font-weight: 600;
+    }
+
+    nav.site-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .nav-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-logo img {
+      height: 48px;
+      width: auto;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0.2rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--ink);
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 0.87rem;
+      font-weight: 500;
+      padding: 0.5rem 0.9rem;
+      border-radius: 4px;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--foyle-green-dark);
+    }
+
+    .nav-cta {
+      margin-left: 0.75rem;
+      background: var(--foyle-green) !important;
+      color: black !important;
+      padding: 0.55rem 1.2rem !important;
+      border-radius: 100px !important;
+      font-weight: 600 !important;
+    }
+
+    .nav-cta:hover {
+      background: var(--black) !important;
+      color: white !important;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 6px;
+    }
+
+    .hamburger span {
+      width: 22px;
+      height: 2px;
+      background: var(--ink);
+      border-radius: 2px;
+    }
+
+    .hero {
+      min-height: 100vh;
+      background: var(--cream);
+      color: var(--ink);
+      padding: 9rem 2rem 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-bg-glow {
+      position: absolute;
+      top: -200px;
+      right: -200px;
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(63, 165, 53, 0.15) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .hero-bg-glow.left {
+      top: auto;
+      bottom: -300px;
+      right: auto;
+      left: -200px;
+      background: radial-gradient(circle, rgba(63, 165, 53, 0.10) 0%, transparent 60%);
+    }
+
+    .hero-grid-bg {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(26, 26, 24, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(26, 26, 24, 0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+      mask-image: radial-gradient(ellipse at center, black 40%, transparent 75%);
+    }
+
+    .hero-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-top-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 5rem;
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 0.75rem;
+      color: var(--ink-soft);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .hero-top-meta .dot {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      background: var(--foyle-green);
+      border-radius: 50%;
+      margin-right: 0.5rem;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.4;
+      }
+    }
+
+    .hero-main {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 4rem;
+      align-items: end;
+    }
+
+    h1.hero-title {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(3rem, 7vw, 6.5rem);
+      font-weight: 400;
+      line-height: 0.98;
+      letter-spacing: -0.03em;
+      color: var(--ink);
+    }
+
+    h1.hero-title em {
+      font-style: italic;
+      color: var(--foyle-green-dark);
+      font-weight: 500;
+    }
+
+    h1.hero-title .huge {
+      display: block;
+      font-size: 1.15em;
+    }
+
+    .hero-meta-right .label {
+      color: var(--ink-soft);
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .hero-meta-right p {
+      font-family: 'Newsreader', serif;
+      font-size: 1.15rem;
+      line-height: 1.55;
+      color: var(--ink);
+      max-width: 380px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      margin-top: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 500;
+      padding: 0.9rem 1.8rem;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--black);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--foyle-green);
+      color: black;
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--ink);
+      border: 1px solid var(--rule);
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--ink);
+      background: white;
+    }
+
+    .btn-dark {
+      background: var(--black);
+      color: white;
+    }
+
+    .btn-dark:hover {
+      background: white;
+      color: var(--black);
+    }
+
+    .stats-strip {
+      background: var(--foyle-green);
+      color: black;
+      padding: 2rem;
+    }
+
+    .stats-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+    }
+
+    .stat-num {
+      font-family: 'Fraunces', serif;
+      font-size: 2.8rem;
+      font-weight: 500;
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+
+    .stat-label {
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: rgba(0, 0, 0, 0.65);
+    }
+
+    section {
+      padding: 8rem 2rem;
+      position: relative;
+    }
+
+    .section-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 4rem;
+      margin-bottom: 5rem;
+      align-items: end;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .section-num {
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 0.85rem;
+      color: var(--foyle-green-dark);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      font-weight: 600;
+    }
+
+    h2.section-title {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(2.2rem, 4vw, 3.8rem);
+      font-weight: 400;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+    }
+
+    h2.section-title em {
+      font-style: italic;
+      color: var(--foyle-green-dark);
+      font-weight: 500;
+    }
+
+    .section-lead {
+      font-family: 'Newsreader', serif;
+      font-size: 1.15rem;
+      line-height: 1.65;
+      color: var(--ink-soft);
+      max-width: 560px;
+    }
+
+    .about {
+      background: var(--cream);
+    }
+
+    .about-body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .about-text p {
+      font-family: 'Newsreader', serif;
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: var(--ink);
+      margin-bottom: 1.5rem;
+    }
+
+    .about-text p:first-child::first-letter {
+      font-family: 'Fraunces', serif;
+      font-size: 4.5rem;
+      float: left;
+      line-height: 0.9;
+      padding: 0.3rem 0.8rem 0 0;
+      color: var(--foyle-green-dark);
+      font-weight: 500;
+    }
+
+    .about-signature {
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--rule);
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .about-signature .handwritten {
+      font-size: 2rem;
+      color: var(--foyle-green-dark);
+      line-height: 1;
+    }
+
+    .about-visual {
+      position: sticky;
+      top: 100px;
+    }
+
+    .about-img-main {
+      background: linear-gradient(135deg, var(--foyle-green-deep), var(--foyle-green-dark));
+      aspect-ratio: 3/4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .img-placeholder {
+      text-align: center;
+      color: rgba(255, 255, 255, 0.6);
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 0.8rem;
+      padding: 2rem;
+    }
+
+    .img-placeholder strong {
+      display: block;
+      font-family: 'Fraunces', serif;
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      color: rgba(255, 255, 255, 0.85);
+      font-weight: 500;
+    }
+
+    .about-img-overlay {
+      position: absolute;
+      bottom: -2rem;
+      left: -2rem;
+      background: var(--black);
+      color: white;
+      padding: 1.5rem 2rem;
+      max-width: 240px;
+    }
+
+    .about-img-overlay .mono {
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 0.72rem;
+      color: var(--foyle-green);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 0.4rem;
+    }
+
+    .about-img-overlay .serif {
+      font-family: 'Fraunces', serif;
+      font-size: 1.15rem;
+      line-height: 1.3;
+      font-weight: 500;
+    }
+
+    .courses {
+      background: var(--black);
+      color: white;
+    }
+
+    .courses h2.section-title {
+      color: white;
+    }
+
+    .courses h2.section-title em {
+      color: var(--foyle-green);
+    }
+
+    .courses .section-lead {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .courses .section-num {
+      color: var(--foyle-green);
+    }
+
+    .courses .section-header {
+      border-bottom-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .courses-list {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .course-row {
+      display: grid;
+      grid-template-columns: 80px 1fr 2fr 180px auto;
+      gap: 3rem;
+      padding: 2.5rem 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      align-items: start;
+      transition: background 0.25s;
+      position: relative;
+    }
+
+    .course-row:last-child {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .course-row::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      height: 2px;
+      background: var(--foyle-green);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+
+    .course-row:hover::before {
+      transform: scaleX(1);
+    }
+
+    .course-row:hover {
+      background: rgba(63, 165, 53, 0.04);
+    }
+
+    .course-num {
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 0.85rem;
+      color: var(--foyle-green);
+      letter-spacing: 0.12em;
+    }
+
+    .course-row h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.75rem;
+      font-weight: 400;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      color: white;
+    }
+
+    .course-row p {
+      font-family: 'Newsreader', serif;
+      font-size: 1.02rem;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+    .course-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .course-tag {
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 500;
+      padding: 0.3rem 0.7rem;
+      border-radius: 100px;
+      background: rgba(255, 255, 255, 0.08);
+      color: rgba(255, 255, 255, 0.85);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .course-tag.featured {
+      background: var(--foyle-green);
+      color: black;
+    }
+
+    .course-arrow {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-decoration: none;
+      transition: all 0.25s;
+    }
+
+    .course-row:hover .course-arrow {
+      background: var(--foyle-green);
+      color: black;
+      border-color: var(--foyle-green);
+    }
+
+    .derry {
+      background: var(--paper);
+    }
+
+    .derry-quote {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      font-weight: 400;
+      line-height: 1.15;
+      font-style: italic;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      max-width: 1000px;
+      margin: 0 0 5rem;
+    }
+
+    .derry-quote strong {
+      font-weight: 500;
+      color: var(--foyle-green-dark);
+      font-style: normal;
+    }
+
+    .derry-body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+    }
+
+    .derry-intro p {
+      font-family: 'Newsreader', serif;
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: var(--ink);
+      margin-bottom: 1.5rem;
+    }
+
+    .derry-features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
+
+    .feature {
+      padding: 2rem 1.5rem;
+      border-top: 1px solid var(--rule);
+      border-right: 1px solid var(--rule);
+    }
+
+    .feature:nth-child(2n) {
+      border-right: none;
+    }
+
+    .feature:nth-last-child(-n+2) {
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .feature-icon {
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+
+    .feature h4 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.15rem;
+      font-weight: 500;
+      margin-bottom: 0.4rem;
+      line-height: 1.2;
+    }
+
+    .feature p {
+      font-family: 'Newsreader', serif;
+      font-size: 0.95rem;
+      line-height: 1.55;
+      color: var(--ink-soft);
+    }
+
+    .testimonials {
+      background: var(--cream);
+    }
+
+    .test-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.5rem;
+    }
+
+    .test-card {
+      padding: 2.5rem;
+      background: white;
+      border: 1px solid var(--rule);
+      position: relative;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+
+    .test-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 50px rgba(26, 79, 24, 0.08);
+    }
+
+    .test-quote-mark {
+      font-family: 'Fraunces', serif;
+      font-size: 5rem;
+      line-height: 0.5;
+      color: var(--foyle-green);
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      opacity: 0.3;
+    }
+
+    .test-card blockquote {
+      font-family: 'Newsreader', serif;
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: var(--ink);
+      font-style: italic;
+      margin-bottom: 2rem;
+    }
+
+    .test-author {
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--rule);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .test-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--foyle-green);
+      color: black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Fraunces', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      flex-shrink: 0;
+    }
+
+    .test-name {
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+
+    .test-origin {
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 0.8rem;
+      color: var(--ink-soft);
+    }
+
+    .host-band {
+      background: var(--foyle-green);
+      color: black;
+      padding: 5rem 2rem;
+    }
+
+    .host-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .host-band h3 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 400;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+
+    .host-band h3 em {
+      font-style: italic;
+      font-weight: 500;
+    }
+
+    .host-band p {
+      font-family: 'Newsreader', serif;
+      font-size: 1.15rem;
+      line-height: 1.55;
+      max-width: 540px;
+    }
+
+    .host-cta {
+      text-align: right;
+    }
+
+    .contact {
+      background: var(--cream);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .contact-info h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.5rem;
+      font-weight: 500;
+      margin-bottom: 2rem;
+    }
+
+    .contact-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.25rem;
+      padding: 1.25rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .contact-row:first-of-type {
+      border-top: 1px solid var(--rule);
+    }
+
+    .contact-row-icon {
+      width: 36px;
+      flex-shrink: 0;
+      font-family: 'Fraunces', serif;
+      font-size: 1.1rem;
+      color: var(--foyle-green-dark);
+      padding-top: 0.15rem;
+    }
+
+    .contact-row-label {
+      margin-bottom: 0.3rem;
+    }
+
+    .contact-row-value {
+      font-family: 'Newsreader', serif;
+      font-size: 1.05rem;
+      line-height: 1.4;
+      font-weight: 500;
+    }
+
+    .contact-row-value a {
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .contact-row-value a:hover {
+      color: var(--foyle-green-dark);
+    }
+
+    .locations-strip {
+      margin-top: 2.5rem;
+    }
+
+    .locations-strip .label {
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .loc-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .loc-chip {
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 500;
+      padding: 0.4rem 0.95rem;
+      background: var(--foyle-green-pale);
+      color: var(--foyle-green-deep);
+      border: 1px solid var(--foyle-green-mid);
+      border-radius: 100px;
+    }
+
+    .contact-form-wrap {
+      background: white;
+      border: 1px solid var(--rule);
+      padding: 3rem;
+    }
+
+    .contact-form-wrap h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.5rem;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-form-wrap .sub {
+      font-family: 'Newsreader', serif;
+      color: var(--ink-soft);
+      font-size: 0.98rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.5rem;
+      color: var(--ink);
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.85rem 0;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--rule);
+      font-family: 'Newsreader', serif;
+      font-size: 1.05rem;
+      color: var(--ink);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-bottom-color: var(--foyle-green);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 90px;
+      padding-top: 0.5rem;
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: #aaa;
+      font-style: italic;
+    }
+
+    .btn-submit {
+      margin-top: 1rem;
+      background: var(--black);
+      color: white;
+      padding: 1rem 2.2rem;
+      border-radius: 100px;
+      border: none;
+      cursor: pointer;
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      transition: background 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .btn-submit:hover {
+      background: var(--foyle-green-dark);
+    }
+
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 2rem 0;
+    }
+
+    .form-success .check {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--foyle-green);
+      color: black;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .form-success h4 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.5rem;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+
+    .form-success p {
+      font-family: 'Newsreader', serif;
+      color: var(--ink-soft);
+      font-size: 1rem;
+    }
+
+    footer {
+      background: var(--black);
+      color: white;
+      padding: 5rem 2rem 2rem;
+    }
+
+    .footer-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem;
+      padding-bottom: 4rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .footer-logo img {
+      height: 56px;
+      width: auto;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-brand-text {
+      font-family: 'Newsreader', serif;
+      font-size: 0.95rem;
+      line-height: 1.65;
+      color: rgba(255, 255, 255, 0.55);
+      max-width: 320px;
+    }
+
+    .footer-col h5 {
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--foyle-green);
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col li {
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-col a {
+      color: rgba(255, 255, 255, 0.65);
+      text-decoration: none;
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 0.92rem;
+      transition: color 0.2s;
+    }
+
+    .footer-col a:hover {
+      color: white;
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 2rem;
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.4);
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .hero-title,
+    .hero-meta-right,
+    .hero-actions {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeUp 1s ease forwards;
+    }
+
+    .hero-title {
+      animation-delay: 0.1s;
+    }
+
+    .hero-meta-right {
+      animation-delay: 0.3s;
+    }
+
+    .hero-actions {
+      animation-delay: 0.5s;
+    }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 49;
+      background: var(--black);
+      flex-direction: column;
+      padding: 6rem 2rem 2rem;
+      gap: 0.5rem;
+    }
+
+    .mobile-menu.open {
+      display: flex;
+    }
+
+    .mobile-menu a {
+      color: white;
+      text-decoration: none;
+      font-family: 'Fraunces', serif;
+      font-size: 1.8rem;
+      font-weight: 400;
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    @media (max-width: 960px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .hero-main {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .hero-top-meta {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+        margin-bottom: 3rem;
+      }
+
+      .stats-inner {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+      }
+
+      .section-header {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+      }
+
+      .about-body {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .about-visual {
+        position: static;
+      }
+
+      .course-row {
+        grid-template-columns: 40px 1fr;
+        gap: 1rem;
+        padding: 2rem 0;
+      }
+
+      .course-row>*:nth-child(3),
+      .course-row>*:nth-child(4),
+      .course-row>*:nth-child(5) {
+        grid-column: 1 / -1;
+      }
+
+      .derry-body {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .test-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .host-inner {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .host-cta {
+        text-align: left;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .contact-form-wrap {
+        padding: 2rem;
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+      }
+
+      section {
+        padding: 5rem 2rem;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="#home" class="nav-logo">
+        <img src="images/foyle-logo.png" alt="Foyle International">
+      </a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#courses">Courses</a>
+        <a href="#derry">Derry</a>
+        <a href="#host">Host a Student</a>
+        <a href="#contact" class="nav-cta">Enquire →</a>
+      </div>
+      <div class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#about" onclick="closeMenu()">About</a>
+    <a href="#courses" onclick="closeMenu()">Courses</a>
+    <a href="#derry" onclick="closeMenu()">Derry</a>
+    <a href="#host" onclick="closeMenu()">Host a Student</a>
+    <a href="#contact" onclick="closeMenu()">Enquire</a>
+  </div>
+
+  <section class="hero" id="home">
+    <div class="hero-grid-bg"></div>
+    <div class="hero-bg-glow"></div>
+    <div class="hero-bg-glow left"></div>
+
+    <div class="hero-inner">
+      <div class="hero-top-meta">
+        <span><span class="dot"></span>British Council Accredited · Est. 1990</span>
+        <span>Derry · Dublin · Donegal · Sligo</span>
+      </div>
+
+      <div class="hero-main">
+        <h1 class="hero-title">
+          Learn English <em>in the</em> <span class="huge">walled city.</span>
+        </h1>
+        <div class="hero-meta-right">
+          <span class="label">A welcome from Derry</span>
+          <p>Northern Ireland's longest-established English language school — offering quality courses, cultural
+            immersion and a warm Irish welcome for over thirty-five years.</p>
+        </div>
+      </div>
+
+      <div class="hero-actions">
+        <a href="#courses" class="btn btn-primary">Explore Courses →</a>
+        <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="stats-strip">
+    <div class="stats-inner">
+      <div class="stat">
+        <span class="stat-num">35+</span>
+        <span class="stat-label">Years of excellence</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">1st</span>
+        <span class="stat-label">British Council school in NI</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">4</span>
+        <span class="stat-label">Locations across Ireland</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">1000s</span>
+        <span class="stat-label">Students welcomed</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="about" id="about">
+    <div class="section-inner">
+      <div class="section-header">
+        <div>
+          <div class="section-num">01 — Our story</div>
+          <h2 class="section-title">A family-run school in the <em>heart of Ireland.</em></h2>
+        </div>
+        <p class="section-lead">Founded in 1990 by Director Paul Murray, Foyle International has spent more than three
+          decades helping students from around the world improve their English and broaden their horizons.</p>
+      </div>
+
+      <div class="about-body reveal">
+        <div class="about-text">
+          <p>Foyle International is a private English language school specialising in educational tourism. We deliver a
+            complete experience — language classes, local accommodation, cultural activities and weekend excursions, all
+            wrapped in the famously warm Irish welcome that brings students back year after year.</p>
+          <p>As the longest-established language school in Northern Ireland, and the first ever to receive the
+            prestigious British Council Accreditation, we hold ourselves to the highest standards in everything we do.
+            Our friendly staff and experienced teachers make sure every student's time in Derry is time well spent.</p>
+          <p>We attract students from all over the world — and it's no accident that so many come back. Derry has a way
+            of staying with you.</p>
+
+          <div class="about-signature">
+            <span class="handwritten">Paul Murray</span>
+            <span class="label">Director & Founder · Est. 1990</span>
+          </div>
+        </div>
+
+        <div class="about-visual">
+          <div class="about-img-main">
+            <div class="img-placeholder">
+              <strong>📸 Photo of the school</strong>
+              Add an image of 72 Great<br>James Street or a classroom
+            </div>
+          </div>
+          <div class="about-img-overlay">
+            <div class="mono">Accreditations</div>
+            <div class="serif">British Council · Erasmus+ Partner</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="courses" id="courses">
+    <div class="section-inner">
+      <div class="section-header">
+        <div>
+          <div class="section-num">02 — Our courses</div>
+          <h2 class="section-title">Programmes for <em>every goal.</em></h2>
+        </div>
+        <p class="section-lead">From EU-funded Erasmus+ placements to summer schools, vocational training and
+          professional English testing — there's a programme here for you.</p>
+      </div>
+
+      <div class="courses-list reveal">
+        <div class="course-row">
+          <span class="course-num">01 —</span>
+          <h3>Erasmus+<br>Programmes</h3>
+          <p>We facilitate Staff Mobilities (Job Shadowing) and Student Mobilities (Internships) in Derry, Dublin and
+            Donegal. An official Erasmus+ partner with years of experience placing students and professionals from
+            across Europe.</p>
+          <div class="course-tags">
+            <span class="course-tag featured">EU Funded</span>
+            <span class="course-tag">Internships</span>
+            <span class="course-tag">Mobility</span>
+          </div>
+          <a href="#contact" class="course-arrow">→</a>
+        </div>
+
+        <div class="course-row">
+          <span class="course-num">02 —</span>
+          <h3>Junior Summer<br>Schools</h3>
+          <p>English courses for groups and individuals aged 13–17. A full programme of language learning, excursions,
+            sport and social activities in a safe and welcoming environment.</p>
+          <div class="course-tags">
+            <span class="course-tag featured">Ages 13–17</span>
+            <span class="course-tag">Summer</span>
+            <span class="course-tag">Groups & Individuals</span>
+          </div>
+          <a href="#contact" class="course-arrow">→</a>
+        </div>
+
+        <div class="course-row">
+          <span class="course-num">03 —</span>
+          <h3>Vocational &<br>Educational Training</h3>
+          <p>Structured VET programmes combining English language learning with practical vocational skills. Designed
+            for students and organisations across Europe looking to build sector-specific expertise.</p>
+          <div class="course-tags">
+            <span class="course-tag">Professional</span>
+            <span class="course-tag">Sector-specific</span>
+            <span class="course-tag">European Framework</span>
+          </div>
+          <a href="#contact" class="course-arrow">→</a>
+        </div>
+
+        <div class="course-row">
+          <span class="course-num">04 —</span>
+          <h3>General English<br>& Exam Prep</h3>
+          <p>All levels welcome — from beginner to advanced. Small, friendly classes with experienced teachers, plus
+            dedicated preparation for major English exams.</p>
+          <div class="course-tags">
+            <span class="course-tag">All Levels</span>
+            <span class="course-tag">Small Classes</span>
+            <span class="course-tag">Exam Preparation</span>
+          </div>
+          <a href="#contact" class="course-arrow">→</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="derry" id="derry">
+    <div class="section-inner">
+      <div class="section-header">
+        <div>
+          <div class="section-num">03 — Your home in Ireland</div>
+          <h2 class="section-title">About <em>Derry.</em></h2>
+        </div>
+        <p class="section-lead">Set on the banks of the River Foyle, Derry/Londonderry is one of the most welcoming
+          cities in Ireland — and one of the best places in the world to learn English.</p>
+      </div>
+
+      <div class="derry-quote reveal">
+        "Many of our former students return <strong>year after year</strong> because they know they're guaranteed the
+        highest quality education, a warm Irish welcome, and a unique cultural experience they'll never forget."
+      </div>
+
+      <div class="derry-body reveal">
+        <div class="derry-intro">
+          <p>Derry is Ireland's only completely intact walled city — safe, walkable, and alive with culture, history and
+            music. It's the perfect place to practise English outside the classroom, make friends from across Europe,
+            and discover a part of Ireland that most tourists miss.</p>
+          <p>Our students improve their English through real-life immersion: cafés, city walks, local events, and the
+            kind of conversations you can only have in a small, friendly city.</p>
+        </div>
+
+        <div class="derry-features">
+          <div class="feature">
+            <span class="feature-icon">🏰</span>
+            <h4>Historic walls</h4>
+            <p>Walk the last fully intact city walls in Europe, right in your front garden.</p>
+          </div>
+          <div class="feature">
+            <span class="feature-icon">🎵</span>
+            <h4>Culture & music</h4>
+            <p>A city of festivals, arts and traditional Irish music woven into everyday life.</p>
+          </div>
+          <div class="feature">
+            <span class="feature-icon">🛡️</span>
+            <h4>Safe & small</h4>
+            <p>A close-knit community famous for its warmth — everything a short walk away.</p>
+          </div>
+          <div class="feature">
+            <span class="feature-icon">✈️</span>
+            <h4>Easy to reach</h4>
+            <p>Direct flights to City of Derry Airport and easy connections via Belfast & Dublin.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials" id="testimonials">
+    <div class="section-inner">
+      <div class="section-header">
+        <div>
+          <div class="section-num">04 — Student voices</div>
+          <h2 class="section-title">From <em>Italy, Spain,</em><br>Poland and beyond.</h2>
+        </div>
+        <p class="section-lead">A small selection of feedback from students who've studied with us over the years.</p>
+      </div>
+
+      <div class="test-grid reveal">
+        <div class="test-card">
+          <span class="test-quote-mark">"</span>
+          <blockquote>Derry is an amazing place to learn English. The teachers are brilliant and the people are so
+            friendly. I've already booked to come back next summer.</blockquote>
+          <div class="test-author">
+            <div class="test-avatar">M</div>
+            <div>
+              <div class="test-name">María González</div>
+              <div class="test-origin">Spain · General English</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="test-card">
+          <span class="test-quote-mark">"</span>
+          <blockquote>The Erasmus+ placement was perfectly organised. I improved my English and my professional skills
+            at the same time — Foyle International looked after us perfectly.</blockquote>
+          <div class="test-author">
+            <div class="test-avatar">L</div>
+            <div>
+              <div class="test-name">Luca Ferretti</div>
+              <div class="test-origin">Italy · Erasmus+ Internship</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="test-card">
+          <span class="test-quote-mark">"</span>
+          <blockquote>My son loved the Junior Summer School. He came home speaking English with so much more confidence
+            — and made friends from six different countries!</blockquote>
+          <div class="test-author">
+            <div class="test-avatar">A</div>
+            <div>
+              <div class="test-name">Ana Kowalski</div>
+              <div class="test-origin">Poland · Parent · Junior Summer School</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="host-band" id="host">
+    <div class="host-inner">
+      <div>
+        <h3>Open your home, <em>open your world.</em></h3>
+        <p>We're always looking for friendly families across Derry to host our international students. Hosting is
+          flexible, rewarding, and suits all kinds of households — not just traditional nuclear families.</p>
+      </div>
+      <div class="host-cta">
+        <a href="#contact" class="btn btn-dark">Become a Host →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="section-inner">
+      <div class="section-header">
+        <div>
+          <div class="section-num">05 — Get in touch</div>
+          <h2 class="section-title">We'd love to <em>hear from you.</em></h2>
+        </div>
+        <p class="section-lead">Tell us about your goals and we'll help you find the right course. No pressure — just a
+          friendly conversation.</p>
+      </div>
+
+      <div class="contact-grid reveal">
+        <div class="contact-info">
+          <h3>Visit, call or write.</h3>
+
+          <div class="contact-row">
+            <div class="contact-row-icon">◎</div>
+            <div>
+              <div class="label contact-row-label">Address</div>
+              <div class="contact-row-value">72 Great James Street<br>Derry, BT48 7DE<br>Northern Ireland</div>
+            </div>
+          </div>
+          <div class="contact-row">
+            <div class="contact-row-icon">☏</div>
+            <div>
+              <div class="label contact-row-label">Phone</div>
+              <div class="contact-row-value"><a href="tel:+442871371535">+44 28 71 371 535</a></div>
+            </div>
+          </div>
+          <div class="contact-row">
+            <div class="contact-row-icon">✎</div>
+            <div>
+              <div class="label contact-row-label">Email</div>
+              <div class="contact-row-value"><a href="mailto:info@foyle.eu">info@foyle.eu</a></div>
+            </div>
+          </div>
+
+          <div class="locations-strip">
+            <span class="label">We operate across</span>
+            <div class="loc-list">
+              <span class="loc-chip">Derry/Londonderry</span>
+              <span class="loc-chip">Dublin</span>
+              <span class="loc-chip">Donegal</span>
+              <span class="loc-chip">Sligo</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-wrap">
+          <h3>Send us an enquiry</h3>
+          <p class="sub">We'll reply within one working day.</p>
+
+          <form id="enquiry-form" onsubmit="handleSubmit(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fname">First name *</label>
+                <input type="text" id="fname" required placeholder="María">
+              </div>
+              <div class="form-group">
+                <label for="lname">Last name *</label>
+                <input type="text" id="lname" required placeholder="González">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input type="email" id="email" required placeholder="you@example.com">
+            </div>
+            <div class="form-group">
+              <label for="country">Country</label>
+              <input type="text" id="country" placeholder="Spain">
+            </div>
+            <div class="form-group">
+              <label for="course">Area of interest</label>
+              <select id="course">
+                <option value="">Please select...</option>
+                <option>Erasmus+ / Internship</option>
+                <option>Junior Summer School</option>
+                <option>Vocational & Educational Training</option>
+                <option>General English</option>
+                <option>Homestay / Accommodation</option>
+                <option>Become a Host</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" placeholder="Tell us about yourself and what you're looking for..."></textarea>
+            </div>
+            <button type="submit" class="btn-submit">Send enquiry →</button>
+          </form>
+
+          <div class="form-success" id="form-success">
+            <div class="check">✓</div>
+            <h4>Thank you!</h4>
+            <p>We'll reply to <strong id="confirm-email"></strong> within one working day.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-logo">
+          <img src="images/foyle-logo.png" alt="Foyle International">
+          <p class="footer-brand-text">Northern Ireland's longest-established English language school. Quality courses,
+            warm Irish hospitality, and an unforgettable experience — since 1990.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Courses</h5>
+          <ul>
+            <li><a href="#courses">Erasmus+</a></li>
+            <li><a href="#courses">Junior Summer School</a></li>
+            <li><a href="#courses">Vocational Training</a></li>
+            <li><a href="#courses">General English</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#derry">About Derry</a></li>
+            <li><a href="#host">Become a Host</a></li>
+            <li><a href="#contact">Work for Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <ul>
+            <li><a href="mailto:info@foyle.eu">info@foyle.eu</a></li>
+            <li><a href="tel:+442871371535">+44 28 71 371 535</a></li>
+            <li>72 Great James Street,<br>Derry BT48 7DE</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Foyle International · All rights reserved</span>
+        <span>Made with care in Derry, Northern Ireland</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+    function closeMenu() { mobileMenu.classList.remove('open'); }
+
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 60);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+
+    function handleSubmit(e) {
+      e.preventDefault();
+      const email = document.getElementById('email').value;
+      document.getElementById('confirm-email').textContent = email;
+      document.getElementById('enquiry-form').style.display = 'none';
+      document.getElementById('form-success').style.display = 'block';
+    }
+  </script>
+</body>
+
+</html>

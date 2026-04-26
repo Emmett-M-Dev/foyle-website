@@ -264,45 +264,6 @@
       max-width: 380px;
     }
 
-    .hero-link-cards {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-      margin-top: 2.5rem;
-    }
-
-    .hero-link-card {
-      display: flex;
-      flex-direction: column;
-      gap: 0.35rem;
-      padding: 1.1rem 1.25rem;
-      border: 1px solid var(--rule);
-      border-radius: 10px;
-      text-decoration: none;
-      background: white;
-      transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
-    }
-
-    .hero-link-card:hover {
-      border-color: var(--foyle-green-mid);
-      box-shadow: 0 8px 24px rgba(26, 79, 24, 0.08);
-      transform: translateY(-2px);
-    }
-
-    .hero-link-card-title {
-      font-family: 'Instrument Sans', sans-serif;
-      font-size: 0.88rem;
-      font-weight: 600;
-      color: var(--ink);
-    }
-
-    .hero-link-card-sub {
-      font-family: 'Newsreader', serif;
-      font-size: 0.85rem;
-      color: var(--ink-soft);
-      line-height: 1.4;
-    }
-
     .hero-actions {
       display: flex;
       gap: 1rem;
@@ -344,6 +305,55 @@
     .btn-ghost:hover {
       border-color: var(--ink);
       background: white;
+    }
+
+    .btn-green {
+      background: var(--foyle-green);
+      color: black;
+      border: 1px solid transparent;
+    }
+
+    .btn-green:hover {
+      background: var(--foyle-green-dark);
+      color: white;
+    }
+
+    .hero-countries {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--rule);
+    }
+
+    .hero-countries-label {
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--ink-soft);
+      opacity: 0.6;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-countries-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+    }
+
+    .country-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 500;
+      color: var(--ink-soft);
+      opacity: 0.55;
+      padding: 0.3rem 0.75rem;
+      border: 1px solid var(--rule);
+      border-radius: 100px;
+      letter-spacing: 0.02em;
     }
 
     .btn-dark {
@@ -1232,9 +1242,6 @@
         gap: 2rem;
       }
 
-      .hero-link-cards {
-        grid-template-columns: 1fr;
-      }
 
       .hero-top-meta {
         flex-direction: column;
@@ -1368,20 +1375,22 @@
         </div>
       </div>
 
-      <div class="hero-link-cards">
-        <a href="#about" class="hero-link-card">
-          <span class="hero-link-card-title">Discover what Derry offers</span>
-          <span class="hero-link-card-sub">36 years of cultural stays, courses and Irish experiences →</span>
-        </a>
-        <a href="#host" class="hero-link-card">
-          <span class="hero-link-card-title">Host a Student</span>
-          <span class="hero-link-card-sub">Share your Derry with the world →</span>
-        </a>
-      </div>
-
       <div class="hero-actions">
         <a href="#courses" class="btn btn-primary">Explore Courses →</a>
-        <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+        <a href="#host" class="btn btn-green">Host a Student →</a>
+      </div>
+
+      <div class="hero-countries">
+        <p class="hero-countries-label">Students arrive from</p>
+        <div class="hero-countries-pills">
+          <span class="country-pill">🇪🇸 Spain</span>
+          <span class="country-pill">🇮🇹 Italy</span>
+          <span class="country-pill">🇨🇿 Czech Republic</span>
+          <span class="country-pill">🇩🇪 Germany</span>
+          <span class="country-pill">🇫🇷 France</span>
+          <span class="country-pill">🇳🇱 Netherlands</span>
+          <span class="country-pill">🇵🇹 Portugal</span>
+        </div>
       </div>
     </div>
   </section>

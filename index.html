@@ -250,6 +250,25 @@
       font-size: 1.15em;
     }
 
+    #hero-typing-wrap {
+      transition: opacity 0.5s ease;
+    }
+
+    .typing-cursor {
+      display: inline-block;
+      width: 3px;
+      height: 0.82em;
+      background: currentColor;
+      vertical-align: text-bottom;
+      margin-left: 3px;
+      animation: blink 0.75s step-end infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
     .hero-meta-right .label {
       color: var(--ink-soft);
       margin-bottom: 1rem;
@@ -1366,7 +1385,7 @@
 
       <div class="hero-main">
         <h1 class="hero-title">
-          Learn English. <span class="huge"><em>Live Irish.</em></span>
+          Learn English. <span class="huge"><em id="hero-typing-wrap"><span id="hero-typed"></span><span class="typing-cursor"></span></em></span>
         </h1>
         <div class="hero-meta-right">
           <span class="label">A welcome from Derry</span>
@@ -1803,6 +1822,38 @@
       });
     }, { threshold: 0.1 });
     reveals.forEach(el => observer.observe(el));
+
+    (function () {
+      const phrases = ['Live Irish.', 'Love Derry.'];
+      let phraseIdx = 0;
+      let charIdx = 0;
+      const typedEl = document.getElementById('hero-typed');
+      const wrapEl = document.getElementById('hero-typing-wrap');
+
+      function type() {
+        const phrase = phrases[phraseIdx];
+        typedEl.textContent = phrase.slice(0, charIdx + 1);
+        charIdx++;
+        if (charIdx < phrase.length) {
+          setTimeout(type, 85);
+        } else {
+          setTimeout(fadeOut, 2600);
+        }
+      }
+
+      function fadeOut() {
+        wrapEl.style.opacity = '0';
+        setTimeout(() => {
+          typedEl.textContent = '';
+          charIdx = 0;
+          phraseIdx = (phraseIdx + 1) % phrases.length;
+          wrapEl.style.opacity = '1';
+          setTimeout(type, 350);
+        }, 500);
+      }
+
+      setTimeout(type, 1600);
+    })();
 
     function handleSubmit(e) {
       e.preventDefault();

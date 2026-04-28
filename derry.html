@@ -236,41 +236,16 @@
       margin-bottom: 3.5rem;
     }
 
-    /* ── Hero band (dark) ── */
+    /* ── Hero band (photo + gradient overlay) ── */
 
     .hero {
-      background: var(--black);
+      background:
+        linear-gradient(to right, var(--foyle-green-deep) 28%, rgba(26, 79, 24, 0.82) 46%, rgba(26, 79, 24, 0.1) 68%, transparent 80%),
+        linear-gradient(to top, var(--foyle-green-deep) 0%, rgba(26, 79, 24, 0.4) 18%, transparent 38%),
+        url(images/DerryCityDronePhoto.jpg) center / cover no-repeat;
       padding: 9rem 2rem 6rem;
       overflow: hidden;
-    }
-
-    .hero-bg-glow {
-      position: absolute;
-      top: -200px;
-      right: -200px;
-      width: 700px;
-      height: 700px;
-      background: radial-gradient(circle, rgba(63, 165, 53, 0.22) 0%, transparent 60%);
-      pointer-events: none;
-    }
-
-    .hero-bg-glow.left {
-      top: auto;
-      bottom: -200px;
-      right: auto;
-      left: -200px;
-      background: radial-gradient(circle, rgba(63, 165, 53, 0.15) 0%, transparent 60%);
-    }
-
-    .hero-grid-bg {
-      position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-      background-size: 60px 60px;
-      pointer-events: none;
-      mask-image: radial-gradient(ellipse at center, black 40%, transparent 75%);
+      min-height: 85vh;
     }
 
     .hero-inner {
@@ -772,10 +747,6 @@
 
   <!-- 1. Dark hero band -->
   <section class="hero">
-    <div class="hero-grid-bg"></div>
-    <div class="hero-bg-glow"></div>
-    <div class="hero-bg-glow left"></div>
-
     <div class="hero-inner">
       <div class="hero-breadcrumb">
         <a href="index.html">← Foyle International</a>

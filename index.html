@@ -224,10 +224,7 @@
     }
 
     .hero-main {
-      display: grid;
-      grid-template-columns: 1.4fr 1fr;
-      gap: 4rem;
-      align-items: start;
+      max-width: 780px;
     }
 
     h1.hero-title {
@@ -276,64 +273,6 @@
       color: var(--ink-soft);
       max-width: 460px;
       margin-top: 1.5rem;
-    }
-
-    .hero-polaroids {
-      position: relative;
-      min-height: 400px;
-    }
-
-    .polaroid-wrap {
-      position: absolute;
-      z-index: var(--z, 1);
-      animation: floatBob var(--dur, 4.5s) ease-in-out var(--delay, 0s) infinite;
-    }
-
-    .polaroid-wrap:hover {
-      z-index: 10;
-      animation-play-state: paused;
-    }
-
-    @keyframes floatBob {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
-
-    .polaroid {
-      background: white;
-      padding: 12px 12px 44px;
-      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.10), 0 1px 6px rgba(0, 0, 0, 0.06);
-      width: 176px;
-      transform: rotate(var(--rot, 0deg));
-      transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.35s ease;
-      cursor: default;
-    }
-
-    .polaroid:hover {
-      transform: rotate(var(--rot, 0deg)) scale(1.07) translateY(-10px);
-      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18), 0 4px 12px rgba(0, 0, 0, 0.08);
-    }
-
-    .polaroid-img {
-      width: 100%;
-      aspect-ratio: 1;
-      background: var(--paper);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-      opacity: 0.45;
-    }
-
-    .polaroid-caption {
-      display: block;
-      margin-top: 8px;
-      font-family: 'Caveat', cursive;
-      font-size: 1rem;
-      font-weight: 500;
-      color: var(--ink-soft);
-      text-align: center;
-      line-height: 1.2;
     }
 
     .hero-actions {
@@ -1314,11 +1253,6 @@
         gap: 2rem;
       }
 
-      .hero-polaroids {
-        display: none;
-      }
-
-
       .hero-top-meta {
         flex-direction: column;
         gap: 1rem;
@@ -1448,37 +1382,6 @@
           <p class="hero-tagline">Northern Ireland's longest-established English language school — offering quality courses, cultural immersion and a warm Irish welcome for over thirty-five years.</p>
         </div>
 
-        <div class="hero-polaroids" aria-hidden="true">
-
-          <div class="polaroid-wrap" style="top:10px;left:0;--rot:-4deg;--z:2;--delay:0s;--dur:5s">
-            <div class="polaroid">
-              <div class="polaroid-img">📷</div>
-              <span class="polaroid-caption">Derry Walls</span>
-            </div>
-          </div>
-
-          <div class="polaroid-wrap" style="top:0;right:20px;--rot:3deg;--z:3;--delay:1.2s;--dur:4.5s">
-            <div class="polaroid">
-              <div class="polaroid-img">📷</div>
-              <span class="polaroid-caption">Summer 2024</span>
-            </div>
-          </div>
-
-          <div class="polaroid-wrap" style="top:195px;left:55px;--rot:-1.5deg;--z:4;--delay:0.6s;--dur:5.5s">
-            <div class="polaroid">
-              <div class="polaroid-img">📷</div>
-              <span class="polaroid-caption">City of Culture</span>
-            </div>
-          </div>
-
-          <div class="polaroid-wrap" style="top:210px;right:0;--rot:5deg;--z:1;--delay:1.8s;--dur:4.2s">
-            <div class="polaroid">
-              <div class="polaroid-img">📷</div>
-              <span class="polaroid-caption">The Peace Bridge</span>
-            </div>
-          </div>
-
-        </div>
       </div>
 
       <div class="hero-actions">
@@ -1746,7 +1649,7 @@
           flexible, rewarding, and suits all kinds of households — not just traditional nuclear families.</p>
       </div>
       <div class="host-cta">
-        <a href="#contact" class="btn btn-dark">Become a Host →</a>
+        <a href="host.html" class="btn btn-dark">Become a Host →</a>
       </div>
     </div>
   </section>
@@ -1788,15 +1691,6 @@
             </div>
           </div>
 
-          <div class="locations-strip">
-            <span class="label">We operate across</span>
-            <div class="loc-list">
-              <span class="loc-chip">Derry/Londonderry</span>
-              <span class="loc-chip">Dublin</span>
-              <span class="loc-chip">Donegal</span>
-              <span class="loc-chip">Sligo</span>
-            </div>
-          </div>
         </div>
 
         <div class="contact-form-wrap">

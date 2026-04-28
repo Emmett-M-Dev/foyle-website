@@ -367,6 +367,27 @@
       letter-spacing: 0.02em;
     }
 
+    .hero-discover-link {
+      display: inline-block;
+      margin-top: 1.25rem;
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 400;
+      color: var(--ink-soft);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: var(--rule);
+      transition: color 0.2s, text-decoration-color 0.2s;
+      letter-spacing: 0.02em;
+      opacity: 0;
+      animation: fadeUp 1s ease 0.7s forwards;
+    }
+
+    .hero-discover-link:hover {
+      color: var(--foyle-green-dark);
+      text-decoration-color: var(--foyle-green-dark);
+    }
+
     .btn-dark {
       background: var(--black);
       color: white;
@@ -691,6 +712,24 @@
       background: var(--foyle-green);
       color: black;
       border-color: var(--foyle-green);
+    }
+
+    .derry-cta-link {
+      display: inline-block;
+      margin-top: 2rem;
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--foyle-green-dark);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: var(--foyle-green-mid);
+      transition: color 0.2s, text-decoration-color 0.2s;
+    }
+
+    .derry-cta-link:hover {
+      color: var(--foyle-green-deep);
+      text-decoration-color: var(--foyle-green-dark);
     }
 
     .derry {
@@ -1345,7 +1384,7 @@
       <div class="nav-links">
         <a href="#about">About</a>
         <a href="#courses">Courses</a>
-        <a href="#derry">Derry</a>
+        <a href="derry.html">Derry</a>
         <a href="host.html">Host a Student</a>
         <a href="#contact" class="nav-cta">Enquire →</a>
       </div>
@@ -1358,7 +1397,7 @@
   <div class="mobile-menu" id="mobile-menu">
     <a href="#about" onclick="closeMenu()">About</a>
     <a href="#courses" onclick="closeMenu()">Courses</a>
-    <a href="#derry" onclick="closeMenu()">Derry</a>
+    <a href="derry.html" onclick="closeMenu()">Derry</a>
     <a href="host.html" onclick="closeMenu()">Host a Student</a>
     <a href="#contact" onclick="closeMenu()">Enquire</a>
   </div>
@@ -1388,6 +1427,7 @@
         <a href="#courses" class="btn btn-primary">Explore Courses →</a>
         <a href="host.html" class="btn btn-green">Host a Student →</a>
       </div>
+      <a href="derry.html" class="hero-discover-link">Discover Derry →</a>
 
       <div class="hero-countries">
         <p class="hero-countries-label">Students arrive from</p>
@@ -1560,6 +1600,7 @@
             and discover a part of Ireland that most tourists miss.</p>
           <p>Our students improve their English through real-life immersion: cafés, city walks, local events, and the
             kind of conversations you can only have in a small, friendly city.</p>
+          <a href="derry.html" class="derry-cta-link">Discover Derry →</a>
         </div>
 
         <div class="derry-features">
@@ -1766,7 +1807,7 @@
           <h5>Company</h5>
           <ul>
             <li><a href="#about">About</a></li>
-            <li><a href="#derry">About Derry</a></li>
+            <li><a href="derry.html">About Derry</a></li>
             <li><a href="host.html">Become a Host</a></li>
             <li><a href="#contact">Work for Us</a></li>
           </ul>

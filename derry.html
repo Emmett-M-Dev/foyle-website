@@ -4,9 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Accommodation — Foyle International, Derry</title>
+  <title>Derry — Foyle International</title>
   <meta name="description"
-    content="Homestay and self-catering accommodation in Derry for international students at Foyle International English language school.">
+    content="Discover Derry/Londonderry — Ireland's only walled city and one of the best places in the world to learn English. Foyle International's home since 1990.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -46,15 +46,6 @@
       background: var(--cream);
       overflow-x: hidden;
       line-height: 1.5;
-    }
-
-    .label {
-      font-family: 'Instrument Sans', sans-serif;
-      font-size: 0.72rem;
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: var(--ink-soft);
     }
 
     /* ── Nav ── */
@@ -184,24 +175,15 @@
       border: none;
     }
 
-    .btn-primary {
-      background: var(--black);
-      color: white;
+    .btn-white {
+      background: white;
+      color: var(--foyle-green-dark);
+      font-weight: 600;
     }
 
-    .btn-primary:hover {
-      background: var(--foyle-green);
-      color: black;
-    }
-
-    .btn-green {
-      background: var(--foyle-green);
-      color: black;
-    }
-
-    .btn-green:hover {
-      background: var(--foyle-green-dark);
-      color: white;
+    .btn-white:hover {
+      background: var(--foyle-green-pale);
+      color: var(--foyle-green-deep);
     }
 
     /* ── Shared section ── */
@@ -216,10 +198,48 @@
       margin: 0 auto;
     }
 
-    /* ── Hero band ── */
+    /* ── Section typography ── */
+
+    .section-label {
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--foyle-green-dark);
+      display: block;
+      margin-bottom: 1.25rem;
+    }
+
+    h2.section-title {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(2.2rem, 4vw, 3.6rem);
+      font-weight: 400;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      margin-bottom: 1.25rem;
+    }
+
+    h2.section-title em {
+      font-style: italic;
+      color: var(--foyle-green-dark);
+      font-weight: 500;
+    }
+
+    .section-lead {
+      font-family: 'Newsreader', serif;
+      font-size: 1.12rem;
+      line-height: 1.7;
+      color: var(--ink-soft);
+      max-width: 680px;
+      margin-bottom: 3.5rem;
+    }
+
+    /* ── Hero band (dark) ── */
 
     .hero {
-      background: var(--cream);
+      background: var(--black);
       padding: 9rem 2rem 6rem;
       overflow: hidden;
     }
@@ -230,7 +250,7 @@
       right: -200px;
       width: 700px;
       height: 700px;
-      background: radial-gradient(circle, rgba(63, 165, 53, 0.12) 0%, transparent 60%);
+      background: radial-gradient(circle, rgba(63, 165, 53, 0.22) 0%, transparent 60%);
       pointer-events: none;
     }
 
@@ -239,15 +259,15 @@
       bottom: -200px;
       right: auto;
       left: -200px;
-      background: radial-gradient(circle, rgba(63, 165, 53, 0.08) 0%, transparent 60%);
+      background: radial-gradient(circle, rgba(63, 165, 53, 0.15) 0%, transparent 60%);
     }
 
     .hero-grid-bg {
       position: absolute;
       inset: 0;
       background-image:
-        linear-gradient(rgba(26, 26, 24, 0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(26, 26, 24, 0.04) 1px, transparent 1px);
+        linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
       background-size: 60px 60px;
       pointer-events: none;
       mask-image: radial-gradient(ellipse at center, black 40%, transparent 75%);
@@ -261,25 +281,22 @@
     }
 
     .hero-breadcrumb {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
       margin-bottom: 4rem;
       font-family: 'Instrument Sans', sans-serif;
       font-size: 0.75rem;
-      color: var(--ink-soft);
+      color: rgba(255, 255, 255, 0.4);
       letter-spacing: 0.15em;
       text-transform: uppercase;
     }
 
     .hero-breadcrumb a {
-      color: var(--ink-soft);
+      color: rgba(255, 255, 255, 0.4);
       text-decoration: none;
       transition: color 0.2s;
     }
 
     .hero-breadcrumb a:hover {
-      color: var(--foyle-green-dark);
+      color: var(--foyle-green);
     }
 
     h1.hero-title {
@@ -288,7 +305,7 @@
       font-weight: 400;
       line-height: 0.98;
       letter-spacing: -0.03em;
-      color: var(--ink);
+      color: white;
       max-width: 820px;
       margin-bottom: 2rem;
       opacity: 0;
@@ -298,7 +315,7 @@
 
     h1.hero-title em {
       font-style: italic;
-      color: var(--foyle-green-dark);
+      color: var(--foyle-green);
       font-weight: 500;
     }
 
@@ -306,8 +323,8 @@
       font-family: 'Newsreader', serif;
       font-size: 1.2rem;
       line-height: 1.65;
-      color: var(--ink-soft);
-      max-width: 580px;
+      color: rgba(255, 255, 255, 0.58);
+      max-width: 560px;
       opacity: 0;
       transform: translateY(30px);
       animation: fadeUp 1s ease 0.3s forwards;
@@ -320,79 +337,131 @@
       }
     }
 
-    /* ── Tab section ── */
+    /* ── Video section ── */
 
-    .tab-section {
-      background: var(--cream);
+    .video-section {
+      background: white;
       border-top: 1px solid var(--rule);
     }
 
-    .tab-bar {
+    .video-placeholder {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: var(--black);
+      border-radius: 16px;
       display: flex;
-      gap: 0;
-      border-bottom: 1px solid var(--rule);
-      margin-bottom: 3.5rem;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1.25rem;
+      overflow: hidden;
     }
 
-    .tab-btn {
+    .video-play-icon {
+      width: 68px;
+      height: 68px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1.5px solid rgba(255, 255, 255, 0.16);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      color: rgba(255, 255, 255, 0.45);
+      margin-bottom: 0.25rem;
+    }
+
+    .video-text-label {
       font-family: 'Instrument Sans', sans-serif;
-      font-size: 0.92rem;
-      font-weight: 500;
-      padding: 0.85rem 1.75rem;
-      border: none;
-      background: transparent;
-      color: var(--ink-soft);
-      cursor: pointer;
-      border-bottom: 2px solid transparent;
-      margin-bottom: -1px;
-      transition: color 0.2s, border-color 0.2s;
-      letter-spacing: 0.02em;
-    }
-
-    .tab-btn:hover {
-      color: var(--ink);
-    }
-
-    .tab-btn.active {
-      color: var(--ink);
-      border-bottom-color: var(--foyle-green);
-    }
-
-    .tab-panel {
-      display: none;
-    }
-
-    .tab-panel.active {
-      display: block;
-    }
-
-    .tab-section-label {
-      font-family: 'Instrument Sans', sans-serif;
-      font-size: 0.8rem;
+      font-size: 0.68rem;
       font-weight: 600;
-      color: var(--foyle-green-dark);
-      letter-spacing: 0.18em;
       text-transform: uppercase;
-      display: block;
-      margin-bottom: 1rem;
+      letter-spacing: 0.22em;
+      color: rgba(255, 255, 255, 0.28);
     }
 
-    .tab-intro {
+    .video-text-desc {
       font-family: 'Newsreader', serif;
-      font-size: 1.12rem;
-      line-height: 1.7;
-      color: var(--ink-soft);
-      max-width: 700px;
-      margin-bottom: 3rem;
+      font-size: 0.92rem;
+      font-style: italic;
+      color: rgba(255, 255, 255, 0.18);
+      max-width: 500px;
+      text-align: center;
+      line-height: 1.6;
+      padding: 0 2rem;
     }
 
-    /* ── Photo placeholders ── */
+    .large-quote {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 400;
+      line-height: 1.18;
+      font-style: italic;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      max-width: 900px;
+      margin: 4rem auto 0;
+      text-align: center;
+    }
+
+    /* ── Features strip ── */
+
+    .features-section {
+      background: var(--paper);
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .feature-card {
+      background: white;
+      border: 1px solid var(--rule);
+      border-radius: 8px;
+      padding: 2.5rem;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.06);
+    }
+
+    .feature-icon {
+      font-size: 2rem;
+      display: block;
+      margin-bottom: 1.25rem;
+      line-height: 1;
+    }
+
+    .feature-card h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.4rem;
+      font-weight: 500;
+      line-height: 1.2;
+      margin-bottom: 0.75rem;
+      color: var(--ink);
+    }
+
+    .feature-card p {
+      font-family: 'Newsreader', serif;
+      font-size: 1rem;
+      line-height: 1.65;
+      color: var(--ink-soft);
+    }
+
+    /* ── Student life section ── */
+
+    .student-section {
+      background: var(--cream);
+    }
 
     .photo-row {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 1.25rem;
-      margin-bottom: 3.5rem;
     }
 
     .photo-placeholder {
@@ -408,134 +477,130 @@
       color: var(--ink-soft);
     }
 
-    .photo-placeholder .photo-icon {
+    .photo-icon {
       font-size: 1.6rem;
       line-height: 1;
     }
 
-    .photo-placeholder .photo-label {
+    .photo-label {
       font-family: 'Instrument Sans', sans-serif;
       font-size: 0.72rem;
       font-weight: 500;
       text-transform: uppercase;
       letter-spacing: 0.14em;
       opacity: 0.55;
+      text-align: center;
+      padding: 0 1rem;
     }
 
-    /* ── Checklist ── */
+    /* ── Testimonials ── */
 
-    .checklist-wrap {
-      margin-bottom: 3rem;
+    .testimonials-section {
+      background: var(--paper);
     }
 
-    .checklist-title {
-      font-family: 'Instrument Sans', sans-serif;
-      font-size: 0.8rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: var(--ink-soft);
-      margin-bottom: 1.25rem;
-    }
-
-    .checklist {
+    .test-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.75rem 3rem;
-      list-style: none;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.5rem;
     }
 
-    .checklist li {
+    .test-card {
+      padding: 2.5rem;
+      background: white;
+      border: 1px solid var(--rule);
+      position: relative;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+
+    .test-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 50px rgba(26, 79, 24, 0.08);
+    }
+
+    .test-quote-mark {
+      font-family: 'Fraunces', serif;
+      font-size: 5rem;
+      line-height: 0.5;
+      color: var(--foyle-green);
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      opacity: 0.3;
+    }
+
+    .test-card blockquote {
       font-family: 'Newsreader', serif;
-      font-size: 1rem;
+      font-size: 1.05rem;
+      line-height: 1.7;
       color: var(--ink);
+      font-style: italic;
+      margin-bottom: 2rem;
+    }
+
+    .test-author {
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--rule);
       display: flex;
       align-items: center;
-      gap: 0.65rem;
-      padding: 0.5rem 0;
-      border-bottom: 1px solid var(--rule);
+      gap: 1rem;
     }
 
-    .checklist li::before {
-      content: '✓';
-      color: var(--foyle-green);
-      font-family: 'Instrument Sans', sans-serif;
-      font-size: 0.8rem;
-      font-weight: 700;
+    .test-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--foyle-green);
+      color: black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Fraunces', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
       flex-shrink: 0;
     }
 
-    /* ── Pull quote ── */
-
-    .pull-quote {
-      background: var(--foyle-green-pale);
-      border-left: 3px solid var(--foyle-green);
-      padding: 1.75rem 2rem;
-      border-radius: 0 10px 10px 0;
-      max-width: 700px;
-    }
-
-    .pull-quote p {
-      font-family: 'Newsreader', serif;
-      font-size: 1.15rem;
-      font-style: italic;
-      line-height: 1.65;
-      color: var(--ink);
-      margin-bottom: 1rem;
-    }
-
-    .pull-quote cite {
+    .test-name {
       font-family: 'Instrument Sans', sans-serif;
-      font-size: 0.75rem;
-      font-style: normal;
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+
+    .test-origin {
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 0.8rem;
       color: var(--ink-soft);
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
     }
 
-    /* ── Recruitment panel ── */
+    /* ── CTA band ── */
 
-    .recruit {
-      background: var(--black);
+    .cta-band {
+      background: var(--foyle-green-dark);
       text-align: center;
+      padding: 7rem 2rem;
     }
 
-    .recruit-inner {
+    .cta-inner {
       max-width: 660px;
       margin: 0 auto;
     }
 
-    .recruit-label {
-      font-family: 'Instrument Sans', sans-serif;
-      font-size: 0.75rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      color: var(--foyle-green);
-      margin-bottom: 1.5rem;
-      display: block;
-    }
-
-    .recruit h2 {
+    .cta-band h2 {
       font-family: 'Fraunces', serif;
-      font-size: clamp(2.2rem, 4vw, 3.5rem);
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
       font-weight: 400;
-      line-height: 1.05;
+      line-height: 1.1;
       letter-spacing: -0.02em;
       color: white;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.25rem;
     }
 
-    .recruit h2 em {
-      font-style: italic;
-      color: var(--foyle-green);
-    }
-
-    .recruit p {
+    .cta-band p {
       font-family: 'Newsreader', serif;
       font-size: 1.1rem;
-      line-height: 1.7;
-      color: rgba(255, 255, 255, 0.65);
+      line-height: 1.65;
+      color: rgba(255, 255, 255, 0.7);
       margin-bottom: 2.5rem;
     }
 
@@ -650,18 +715,23 @@
       }
 
       .hero-breadcrumb {
-        flex-direction: column;
-        gap: 0.5rem;
-        align-items: flex-start;
         margin-bottom: 2.5rem;
+      }
+
+      .feature-grid {
+        grid-template-columns: 1fr;
       }
 
       .photo-row {
         grid-template-columns: 1fr;
       }
 
-      .checklist {
+      .test-grid {
         grid-template-columns: 1fr;
+      }
+
+      .cta-band {
+        padding: 5rem 2rem;
       }
 
       .footer-top {
@@ -682,8 +752,8 @@
       <div class="nav-links">
         <a href="index.html#about">About</a>
         <a href="index.html#courses">Courses</a>
-        <a href="derry.html">Derry</a>
-        <a href="host.html" class="active">Host a Student</a>
+        <a href="derry.html" class="active">Derry</a>
+        <a href="host.html">Host a Student</a>
         <a href="index.html#contact" class="nav-cta">Enquire →</a>
       </div>
       <div class="hamburger" id="hamburger" aria-label="Menu">
@@ -700,7 +770,7 @@
     <a href="index.html#contact" onclick="closeMenu()">Enquire</a>
   </div>
 
-  <!-- Hero band -->
+  <!-- 1. Dark hero band -->
   <section class="hero">
     <div class="hero-grid-bg"></div>
     <div class="hero-bg-glow"></div>
@@ -709,114 +779,132 @@
     <div class="hero-inner">
       <div class="hero-breadcrumb">
         <a href="index.html">← Foyle International</a>
-        <span>Accommodation</span>
       </div>
 
-      <h1 class="hero-title">Your home <em>in Derry.</em></h1>
-      <p class="hero-sub">We match every student with comfortable, welcoming accommodation — so their time here feels like home from day one.</p>
+      <h1 class="hero-title">A city that <em>stays with you.</em></h1>
+      <p class="hero-sub">Derry isn't just somewhere students study. It's somewhere they fall in love with.</p>
     </div>
   </section>
 
-  <!-- Tab switcher -->
-  <section class="tab-section">
+  <!-- 2. Video section -->
+  <section class="video-section">
     <div class="section-inner">
+      <span class="section-label reveal">01 — The city</span>
+      <h2 class="section-title reveal">See Derry <em>for yourself.</em></h2>
 
-      <div class="tab-bar" role="tablist">
-        <button class="tab-btn active" role="tab" aria-selected="true" data-tab="homestay">Homestay</button>
-        <button class="tab-btn" role="tab" aria-selected="false" data-tab="selfcatering">Self-Catering</button>
+      <div class="video-placeholder reveal">
+        <div class="video-play-icon">▶</div>
+        <span class="video-text-label">[Placeholder video]</span>
+        <p class="video-text-desc">Ideal: a 60–90 second highlights reel of Derry — the walls, the Peace Bridge, students out in the city, locals. Landscape format.</p>
       </div>
 
-      <!-- Homestay panel -->
-      <div class="tab-panel active" id="panel-homestay" role="tabpanel">
-
-        <span class="tab-section-label reveal">What is homestay?</span>
-        <p class="tab-intro reveal">You live with a local Derry family — sharing meals, conversation and daily life. It's the fastest way to improve your English and the warmest introduction to Irish culture you'll find.</p>
-
-        <div class="photo-row reveal">
-          <div class="photo-placeholder">
-            <span class="photo-icon">📸</span>
-            <span class="photo-label">Photo coming soon</span>
-          </div>
-          <div class="photo-placeholder">
-            <span class="photo-icon">📸</span>
-            <span class="photo-label">Photo coming soon</span>
-          </div>
-          <div class="photo-placeholder">
-            <span class="photo-icon">📸</span>
-            <span class="photo-label">Photo coming soon</span>
-          </div>
-        </div>
-
-        <div class="checklist-wrap reveal">
-          <p class="checklist-title">What's included</p>
-          <ul class="checklist">
-            <li>Breakfast &amp; evening meal</li>
-            <li>Private bedroom</li>
-            <li>WiFi included</li>
-            <li>Close to city centre</li>
-            <li>Vetted &amp; approved families</li>
-            <li>24/7 Foyle support</li>
-          </ul>
-        </div>
-
-        <blockquote class="pull-quote reveal">
-          <p>"My host family made me feel at home from the first night. We still keep in touch — they felt like a second family."</p>
-          <cite>María, Spain · Summer 2023</cite>
-        </blockquote>
-
-      </div>
-
-      <!-- Self-catering panel -->
-      <div class="tab-panel" id="panel-selfcatering" role="tabpanel">
-
-        <span class="tab-section-label reveal">What is self-catering?</span>
-        <p class="tab-intro reveal">Our self-catering houses and flats give you independence and flexibility — ideal for older students and groups who want their own space in the city.</p>
-
-        <div class="photo-row reveal">
-          <div class="photo-placeholder">
-            <span class="photo-icon">📸</span>
-            <span class="photo-label">Photo coming soon</span>
-          </div>
-          <div class="photo-placeholder">
-            <span class="photo-icon">📸</span>
-            <span class="photo-label">Photo coming soon</span>
-          </div>
-          <div class="photo-placeholder">
-            <span class="photo-icon">📸</span>
-            <span class="photo-label">Photo coming soon</span>
-          </div>
-        </div>
-
-        <div class="checklist-wrap reveal">
-          <p class="checklist-title">What's included</p>
-          <ul class="checklist">
-            <li>Fully equipped kitchen</li>
-            <li>Private or shared bedrooms</li>
-            <li>WiFi included</li>
-            <li>Weekly cleaning</li>
-            <li>Close to city centre</li>
-            <li>Bills included</li>
-          </ul>
-        </div>
-
-        <blockquote class="pull-quote reveal">
-          <p>"Having our own flat gave us real freedom. We cooked together, explored the city and really felt like we lived here."</p>
-          <cite>Luca, Italy · Summer 2024</cite>
-        </blockquote>
-
-      </div>
-
+      <p class="large-quote reveal">"Derry has a way of staying with you."</p>
     </div>
   </section>
 
-  <!-- Host family recruitment panel -->
-  <section class="recruit">
-    <div class="recruit-inner">
-      <span class="recruit-label reveal">Become a host</span>
-      <h2 class="reveal">Share your home. <em>Share your city.</em></h2>
-      <p class="reveal">Hosting with Foyle is straightforward and rewarding. We handle the matching, provide full support, and make sure both you and your student have a great experience.</p>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfx-cLu9oUM_86Jpkf8bUSFp6CaOhsm8kLah8rhHS8ist9hjw/viewform"
-        class="btn btn-green reveal" target="_blank" rel="noopener">Become a Host Family →</a>
+  <!-- 3. Feature strip -->
+  <section class="features-section">
+    <div class="section-inner">
+      <span class="section-label reveal">02 — Why Derry</span>
+      <h2 class="section-title reveal">Not a tourist town. <em>A real one.</em></h2>
+      <p class="section-lead reveal">Derry is intimate, walkable and genuinely warm — exactly what makes it the best place in the world to learn English.</p>
+
+      <div class="feature-grid">
+        <div class="feature-card reveal">
+          <span class="feature-icon">🏰</span>
+          <h3>Ireland's only walled city</h3>
+          <p>Walk the last fully intact city walls in Europe. History isn't in a museum here — it's your front garden.</p>
+        </div>
+        <div class="feature-card reveal">
+          <span class="feature-icon">🎵</span>
+          <h3>A city of culture</h3>
+          <p>Festivals, trad sessions, street art and story around every corner. Culture isn't performed for tourists — it's just life here.</p>
+        </div>
+        <div class="feature-card reveal">
+          <span class="feature-icon">🤝</span>
+          <h3>The friendliest city in Ireland</h3>
+          <p>Derry people are famous for it. Students don't just practise English in class — they get drawn into real conversations everywhere they go.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Student experience -->
+  <section class="student-section">
+    <div class="section-inner">
+      <span class="section-label reveal">03 — Student life</span>
+      <h2 class="section-title reveal">English <em>beyond the classroom.</em></h2>
+      <p class="section-lead reveal">Real immersion means real conversations — in cafés, on city walks, at local events. Our students don't just study Derry. They live it.</p>
+
+      <div class="photo-row">
+        <div class="photo-placeholder reveal">
+          <span class="photo-icon">📸</span>
+          <span class="photo-label">Photo: students on the city walls</span>
+        </div>
+        <div class="photo-placeholder reveal">
+          <span class="photo-icon">📸</span>
+          <span class="photo-label">Photo: students at a local café or market</span>
+        </div>
+        <div class="photo-placeholder reveal">
+          <span class="photo-icon">📸</span>
+          <span class="photo-label">Photo: Peace Bridge or riverside</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Testimonials strip -->
+  <section class="testimonials-section">
+    <div class="section-inner">
+      <span class="section-label reveal">04 — Student voices</span>
+      <h2 class="section-title reveal">From <em>Spain, Italy,</em> Poland and beyond.</h2>
+
+      <div class="test-grid">
+        <div class="test-card reveal">
+          <span class="test-quote-mark">"</span>
+          <blockquote>I expected to learn English. I didn't expect to fall in love with a city. Derry is unlike anywhere I've ever been.</blockquote>
+          <div class="test-author">
+            <div class="test-avatar">S</div>
+            <div>
+              <div class="test-name">Sofia R.</div>
+              <div class="test-origin">Spain · Summer 2024</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="test-card reveal">
+          <span class="test-quote-mark">"</span>
+          <blockquote>The people here are unbelievable. Within two days I felt like I'd lived here forever.</blockquote>
+          <div class="test-author">
+            <div class="test-avatar">M</div>
+            <div>
+              <div class="test-name">Marco B.</div>
+              <div class="test-origin">Italy · Erasmus+ 2023</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="test-card reveal">
+          <span class="test-quote-mark">"</span>
+          <blockquote>My students came back transformed — not just their English, but their confidence. Derry does something to people.</blockquote>
+          <div class="test-author">
+            <div class="test-avatar">T</div>
+            <div>
+              <div class="test-name">Teacher</div>
+              <div class="test-origin">Partner school, Germany</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. CTA band -->
+  <section class="cta-band">
+    <div class="cta-inner">
+      <h2 class="reveal">Ready to send your students to Derry?</h2>
+      <p class="reveal">Get in touch and we'll walk you through everything.</p>
+      <a href="index.html#contact" class="btn btn-white reveal">Enquire now →</a>
     </div>
   </section>
 
@@ -878,23 +966,6 @@
       });
     }, { threshold: 0.1 });
     reveals.forEach(el => observer.observe(el));
-
-    const tabs = document.querySelectorAll('.tab-btn');
-    tabs.forEach(btn => {
-      btn.addEventListener('click', () => {
-        tabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
-        btn.classList.add('active');
-        btn.setAttribute('aria-selected', 'true');
-
-        document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
-        const panel = document.getElementById('panel-' + btn.dataset.tab);
-        panel.classList.add('active');
-
-        panel.querySelectorAll('.reveal:not(.visible)').forEach((el, i) => {
-          setTimeout(() => el.classList.add('visible'), i * 80);
-        });
-      });
-    });
   </script>
 
 </body>

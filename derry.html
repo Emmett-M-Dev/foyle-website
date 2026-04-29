@@ -657,6 +657,140 @@
       gap: 1rem;
     }
 
+    /* ── Hero Badges ── */
+
+    .hero-badges {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 3.5rem;
+      flex-wrap: wrap;
+      align-items: center;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeUp 1s ease 0.5s forwards;
+    }
+
+    .hero-badge {
+      background: white;
+      border-radius: 8px;
+      padding: 1.25rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+      height: 80px;
+      max-width: 280px;
+    }
+
+    .hero-badge img {
+      max-height: 100%;
+      width: auto;
+      display: block;
+    }
+
+    .press-line {
+      margin-top: 2rem;
+      font-family: 'Newsreader', serif;
+      font-size: 1rem;
+      font-style: italic;
+      color: rgba(255, 255, 255, 0.6);
+      letter-spacing: 0.02em;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeUp 1s ease 0.7s forwards;
+    }
+
+    .stat-source {
+      color: var(--foyle-green-deep);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      transition: color 0.2s;
+    }
+
+    .stat-source:hover {
+      color: var(--foyle-green-dark);
+    }
+
+    /* ── Stats Strip Light ── */
+
+    .stats-strip-light {
+      background: var(--paper);
+      padding: 5rem 2rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .stats-inner-light {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 3rem 4rem;
+      text-align: center;
+    }
+
+    .stat-light {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .stat-light-num {
+      font-family: 'Fraunces', serif;
+      font-size: 3rem;
+      font-weight: 500;
+      color: var(--foyle-green-deep);
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+
+    .stat-light-label {
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--ink-soft);
+      line-height: 1.4;
+    }
+
+    /* ── Pull-Quote Band ── */
+
+    .pull-quote-band {
+      background: var(--black);
+      padding: 7rem 2rem;
+      text-align: center;
+    }
+
+    .pull-quote-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .pull-quote-text {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 400;
+      line-height: 1.35;
+      font-style: italic;
+      color: white;
+      margin-bottom: 2rem;
+    }
+
+    .pull-quote-text em {
+      color: var(--foyle-green);
+      font-style: italic;
+    }
+
+    .pull-quote-author {
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
     /* ── Reveal animation ── */
 
     .reveal {
@@ -694,6 +828,16 @@
 
       .hero-breadcrumb {
         margin-bottom: 2.5rem;
+      }
+
+      .hero-badges {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .stats-inner-light {
+        flex-direction: column;
+        gap: 2.5rem;
       }
 
       .feature-grid {
@@ -757,6 +901,45 @@
 
       <h1 class="hero-title">A city that <em>stays with you.</em></h1>
       <p class="hero-sub">Derry isn't just somewhere students study. It's somewhere they fall in love with.</p>
+      
+      <div class="hero-badges">
+        <div class="hero-badge">
+          <img src="images/britishcouncilbadge.png" alt="British Council Accredited English UK Member">
+        </div>
+        <div class="hero-badge">
+          <img src="images/derry-londonderry-city-of-culture-logo.webp" alt="UK City of Culture 2013 Derry~Londonderry">
+        </div>
+      </div>
+      
+      <div class="press-line">
+        "One of the top 10 cities in the world to visit" — Lonely Planet
+      </div>
+    </div>
+  </section>
+
+  <!-- Derry in Numbers -->
+  <section class="stats-strip-light">
+    <div class="stats-inner-light reveal">
+      <div class="stat-light">
+        <div class="stat-light-num">400+</div>
+        <div class="stat-light-label">Years of<br>history</div>
+      </div>
+      <div class="stat-light">
+        <div class="stat-light-num">#1</div>
+        <div class="stat-light-label">Halloween<br>destination<br><a href="#" class="stat-source">via Go Rain Travel</a></div>
+      </div>
+      <div class="stat-light">
+        <div class="stat-light-num">5km</div>
+        <div class="stat-light-label">Intact 17th-C.<br>city walls</div>
+      </div>
+      <div class="stat-light">
+        <div class="stat-light-num">36</div>
+        <div class="stat-light-label">Years welcoming<br>students</div>
+      </div>
+      <div class="stat-light">
+        <div class="stat-light-num">7</div>
+        <div class="stat-light-label">Countries in<br>every cohort</div>
+      </div>
     </div>
   </section>
 
@@ -785,21 +968,44 @@
 
       <div class="feature-grid">
         <div class="feature-card reveal">
-          <span class="feature-icon">🏰</span>
-          <h3>Ireland's only walled city</h3>
-          <p>Walk the last fully intact city walls in Europe. History isn't in a museum here — it's your front garden.</p>
+          <span class="feature-icon">🏛️</span>
+          <h3>The Ancient Walls</h3>
+          <p>Walk the full circuit of Derry's 17th-century walls — one of the best-preserved in Europe and right in the heart of the city.</p>
         </div>
         <div class="feature-card reveal">
-          <span class="feature-icon">🎵</span>
-          <h3>A city of culture</h3>
-          <p>Festivals, trad sessions, street art and story around every corner. Culture isn't performed for tourists — it's just life here.</p>
+          <span class="feature-icon">🎃</span>
+          <h3>Halloween Capital of Europe</h3>
+          <p>Every October, Derry transforms into Europe's biggest Halloween festival. If you're here in autumn, you won't forget it.</p>
         </div>
         <div class="feature-card reveal">
           <span class="feature-icon">🤝</span>
-          <h3>The friendliest city in Ireland</h3>
-          <p>Derry people are famous for it. Students don't just practise English in class — they get drawn into real conversations everywhere they go.</p>
+          <h3>A Genuinely Warm City</h3>
+          <p>Derry consistently ranks among the friendliest cities in the UK. Students don't just visit — they feel at home.</p>
+        </div>
+        <div class="feature-card reveal">
+          <span class="feature-icon">🍺</span>
+          <h3>Food, Music & Culture</h3>
+          <p>From the Walled City Brewery to live traditional music sessions, Derry has a real culture scene that surprises every visitor.</p>
+        </div>
+        <div class="feature-card reveal">
+          <span class="feature-icon">🌉</span>
+          <h3>The Peace Bridge</h3>
+          <p>An iconic landmark and symbol of the city's remarkable transformation — great for walks and one of the most photographed spots in Northern Ireland.</p>
+        </div>
+        <div class="feature-card reveal">
+          <span class="feature-icon">🏫</span>
+          <h3>Safe & Walkable</h3>
+          <p>The city centre is compact and safe. Students can walk from their host family to school, to the walls, to the river — all within minutes.</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Pull-Quote Band -->
+  <section class="pull-quote-band">
+    <div class="pull-quote-inner reveal">
+      <p class="pull-quote-text">"I didn't expect to fall in love with the city. The walls, the people, the Halloween festival — <em>Derry has a personality unlike anywhere I've visited.</em>"</p>
+      <div class="pull-quote-author">Sofia, Spain · Autumn 2023</div>
     </div>
   </section>
 

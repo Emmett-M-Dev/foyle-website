@@ -12,6 +12,8 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Inter+Tight:wght@400;500;600&family=Instrument+Sans:wght@400;500;600&family=Caveat:wght@500;600&display=swap"
     rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
   <style>
     :root {
       --foyle-green: #3FA535;
@@ -799,6 +801,77 @@
       transform: translateY(0);
     }
 
+    /* ── Derry Map ── */
+
+    .map-section {
+      background: var(--black);
+      color: white;
+    }
+
+    .map-section .section-title {
+      color: white;
+    }
+
+    .map-section .section-label {
+      color: var(--foyle-green);
+    }
+
+    .map-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .map-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .map-item {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 1.5rem;
+    }
+
+    .map-item h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin-bottom: 0.5rem;
+      color: white;
+    }
+
+    .map-item p {
+      font-family: 'Newsreader', serif;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .map-item-label {
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--foyle-green);
+      margin-bottom: 0.5rem;
+      display: inline-block;
+    }
+
+    .map-visual {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      aspect-ratio: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      color: rgba(255, 255, 255, 0.4);
+    }
+
     /* ── Responsive ── */
 
     @media (max-width: 960px) {
@@ -816,7 +889,7 @@
 
       .hero {
         padding: 7rem 2rem 4rem;
-        background: 
+        background:
           linear-gradient(rgba(10, 10, 10, 0.8), rgba(10, 10, 10, 0.5)),
           url(images/DerryCityDronePhoto.jpg) center / cover no-repeat;
       }
@@ -840,6 +913,10 @@
       }
 
       .photo-row {
+        grid-template-columns: 1fr;
+      }
+
+      .map-grid {
         grid-template-columns: 1fr;
       }
 
@@ -896,13 +973,7 @@
 
       <h1 class="hero-title">A city that <em>stays with you.</em></h1>
       <p class="hero-sub">Derry isn't just somewhere students study. It's somewhere they fall in love with.</p>
-      
-      <div class="hero-badges">
-        <div class="hero-badge">
-          <img src="images/britishcouncilbadge.png" alt="British Council Accredited English UK Member">
-        </div>
-      </div>
-      
+
       <div class="press-line">
         "One of the top 10 cities in the world to visit" — Lonely Planet
       </div>
@@ -918,7 +989,8 @@
       </div>
       <div class="stat-light">
         <div class="stat-light-num">#1</div>
-        <div class="stat-light-label">Halloween<br>destination<br><a href="#" class="stat-source">via Go Rain Travel</a></div>
+        <div class="stat-light-label">Halloween<br>destination<br><a href="#" class="stat-source">via Go Rain Travel</a>
+        </div>
       </div>
       <div class="stat-light">
         <div class="stat-light-num">5km</div>
@@ -944,7 +1016,8 @@
       <div class="video-placeholder reveal">
         <div class="video-play-icon">▶</div>
         <span class="video-text-label">[Placeholder video]</span>
-        <p class="video-text-desc">Ideal: a 60–90 second highlights reel of Derry — the walls, the Peace Bridge, students out in the city, locals. Landscape format.</p>
+        <p class="video-text-desc">Ideal: a 60–90 second highlights reel of Derry — the walls, the Peace Bridge,
+          students out in the city, locals. Landscape format.</p>
       </div>
 
       <p class="large-quote reveal">"Derry has a way of staying with you."</p>
@@ -956,38 +1029,45 @@
     <div class="section-inner">
       <span class="section-label reveal">02 — Why Derry</span>
       <h2 class="section-title reveal">Not a tourist town. <em>A real one.</em></h2>
-      <p class="section-lead reveal">Derry is intimate, walkable and genuinely warm — exactly what makes it the best place in the world to learn English.</p>
+      <p class="section-lead reveal">Derry is intimate, walkable and genuinely warm — exactly what makes it the best
+        place in the world to learn English.</p>
 
       <div class="feature-grid">
         <div class="feature-card reveal">
           <span class="feature-icon"></span>
           <h3>The Ancient Walls</h3>
-          <p>Walk the full circuit of Derry's 17th-century walls — one of the best-preserved in Europe and right in the heart of the city.</p>
+          <p>Walk the full circuit of Derry's 17th-century walls — one of the best-preserved in Europe and right in the
+            heart of the city.</p>
         </div>
         <div class="feature-card reveal">
           <span class="feature-icon"></span>
           <h3>Halloween Capital of Europe</h3>
-          <p>Every October, Derry transforms into Europe's biggest Halloween festival. If you're here in autumn, you won't forget it.</p>
+          <p>Every October, Derry transforms into Europe's biggest Halloween festival. If you're here in autumn, you
+            won't forget it.</p>
         </div>
         <div class="feature-card reveal">
           <span class="feature-icon"></span>
           <h3>A Genuinely Warm City</h3>
-          <p>Derry consistently ranks among the friendliest cities in the UK. Students don't just visit — they feel at home.</p>
+          <p>Derry consistently ranks among the friendliest cities in the UK. Students don't just visit — they feel at
+            home.</p>
         </div>
         <div class="feature-card reveal">
           <span class="feature-icon"></span>
           <h3>Food, Music & Culture</h3>
-          <p>From the Walled City Brewery to live traditional music sessions, Derry has a real culture scene that surprises every visitor.</p>
+          <p>From the Walled City Brewery to live traditional music sessions, Derry has a real culture scene that
+            surprises every visitor.</p>
         </div>
         <div class="feature-card reveal">
           <span class="feature-icon"></span>
           <h3>The Peace Bridge</h3>
-          <p>An iconic landmark and symbol of the city's remarkable transformation — great for walks and one of the most photographed spots in Northern Ireland.</p>
+          <p>An iconic landmark and symbol of the city's remarkable transformation — great for walks and one of the most
+            photographed spots in Northern Ireland.</p>
         </div>
         <div class="feature-card reveal">
           <span class="feature-icon"></span>
           <h3>Safe & Walkable</h3>
-          <p>The city centre is compact and safe. Students can walk from their host family to school, to the walls, to the river — all within minutes.</p>
+          <p>The city centre is compact and safe. Students can walk from their host family to school, to the walls, to
+            the river — all within minutes.</p>
         </div>
       </div>
     </div>
@@ -996,7 +1076,8 @@
   <!-- Pull-Quote Band -->
   <section class="pull-quote-band">
     <div class="pull-quote-inner reveal">
-      <p class="pull-quote-text">"I didn't expect to fall in love with the city. The walls, the people, the Halloween festival — <em>Derry has a personality unlike anywhere I've visited.</em>"</p>
+      <p class="pull-quote-text">"I didn't expect to fall in love with the city. The walls, the people, the Halloween
+        festival — <em>Derry has a personality unlike anywhere I've visited.</em>"</p>
       <div class="pull-quote-author">Sofia, Spain · Autumn 2023</div>
     </div>
   </section>
@@ -1006,7 +1087,8 @@
     <div class="section-inner">
       <span class="section-label reveal">03 — Student life</span>
       <h2 class="section-title reveal">English <em>beyond the classroom.</em></h2>
-      <p class="section-lead reveal">Real immersion means real conversations — in cafés, on city walks, at local events. Our students don't just study Derry. They live it.</p>
+      <p class="section-lead reveal">Real immersion means real conversations — in cafés, on city walks, at local events.
+        Our students don't just study Derry. They live it.</p>
 
       <div class="photo-row">
         <div class="photo-placeholder reveal">
@@ -1025,10 +1107,51 @@
     </div>
   </section>
 
+  <!-- Derry Map / Hotspots -->
+  <section class="map-section">
+    <div class="section-inner">
+      <div class="map-grid">
+        <div class="map-content">
+          <span class="section-label reveal">04 — Local Hotspots</span>
+          <h2 class="section-title reveal">Our favourite <em>spots.</em></h2>
+          <p class="section-lead reveal">A curated list of where our students and staff love to spend their time in
+            Derry.</p>
+
+          <div class="map-list">
+            <div class="map-item reveal">
+              <span class="map-item-label">Coffee & Study</span>
+              <h3>The Loft</h3>
+              <p>A cosy spot in Ebrington Square with fantastic flat whites and sweet treats.</p>
+            </div>
+            <div class="map-item reveal">
+              <span class="map-item-label">Traditional Music</span>
+              <h3>Peadar O'Donnell's</h3>
+              <p>The best place in town for live traditional Irish music. A vibrant atmosphere where you'll definitely
+                practice your listening skills!</p>
+            </div>
+            <div class="map-item reveal">
+              <span class="map-item-label">Culture & Arts</span>
+              <h3>The Guildhall</h3>
+              <p>Derry's most iconic building. Beautiful stained glass windows and regular exhibitions, just a short
+                walk from the school.</p>
+            </div>
+            <div class="map-item reveal" style="border-bottom: none;">
+              <span class="map-item-label">Language School</span>
+              <h3>Foyle International</h3>
+              <p>Our absolute favourite spot in the city. This is our home for everybody, and where your Derry adventure begins.</p>
+            </div>
+          </div>
+        </div>
+        <div class="map-visual reveal" id="derry-map" style="padding: 0;">
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- 5. Testimonials strip -->
   <section class="testimonials-section">
     <div class="section-inner">
-      <span class="section-label reveal">04 — Student voices</span>
+      <span class="section-label reveal">05 — Student voices</span>
       <h2 class="section-title reveal">From <em>Spain, Italy,</em> Poland and beyond.</h2>
 
       <div class="test-grid">
@@ -1122,6 +1245,8 @@
     </div>
   </footer>
 
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <script>
     const hamburger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobile-menu');
@@ -1138,6 +1263,76 @@
       });
     }, { threshold: 0.1 });
     reveals.forEach(el => observer.observe(el));
+
+    // Initialize Map when elements are visible
+    setTimeout(() => {
+      const map = L.map('derry-map', { zoomControl: false }).setView([54.997, -7.320], 15);
+
+      // Light mode tiles (Standard OpenStreetMap)
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        maxZoom: 19
+      }).addTo(map);
+
+      // Custom marker style to match brand
+      const foyleIcon = L.divIcon({
+        className: 'custom-div-icon',
+        html: "<div style='background-color:#3FA535;width:16px;height:16px;border-radius:50%;border:2px solid white;box-shadow:0 0 10px rgba(0,0,0,0.3);'></div>",
+        iconSize: [16, 16],
+        iconAnchor: [8, 8]
+      });
+
+      const spots = [
+        {
+          name: "The Loft",
+          lat: 54.998127,
+          lng: -7.312873,
+          type: "Coffee & Study",
+          address: "Ebrington Square, Derry BT47 6FA",
+          desc: "A cosy spot with fantastic flat whites and sweet treats."
+        },
+        {
+          name: "Peadar O'Donnell's",
+          lat: 54.99748,
+          lng: -7.32178,
+          type: "Traditional Music",
+          address: "63 Waterloo St, Derry BT48 6HD",
+          desc: "The best place in town for live traditional Irish music."
+        },
+        {
+          name: "The Guildhall",
+          lat: 54.997582,
+          lng: -7.3194,
+          type: "Culture & Arts",
+          address: "Guildhall Square, Derry BT48 6DQ",
+          desc: "Derry's iconic building with beautiful stained glass windows."
+        },
+        {
+          name: "Foyle International",
+          lat: 55.00043,
+          lng: -7.32771,
+          type: "Language School",
+          address: "72 Great James St, Derry BT48 7DE",
+          desc: "Our absolute favourite spot. This is our home for everybody."
+        }
+      ];
+
+      spots.forEach(spot => {
+        const popupContent = `
+              <div style="font-family:'Instrument Sans', sans-serif; padding: 0.25rem;">
+                <div style="font-size:0.7rem; text-transform:uppercase; letter-spacing:0.1em; color:#3FA535; font-weight:600; margin-bottom:0.25rem;">${spot.type}</div>
+                <div style="font-family:'Fraunces', serif; font-size:1.2rem; font-weight:500; color:#1a1a18; margin-bottom:0.25rem;">${spot.name}</div>
+                <div style="font-size:0.8rem; color:#545450; margin-bottom:0.5rem;">📍 ${spot.address}</div>
+                <div style="font-family:'Newsreader', serif; font-size:0.9rem; line-height:1.4; color:#1a1a18;">${spot.desc}</div>
+                <a href="https://www.google.com/maps/search/?api=1&query=${spot.lat},${spot.lng}" target="_blank" style="display:inline-block; margin-top:0.5rem; font-size:0.8rem; color:#3FA535; text-decoration:none; font-weight:600;">View on Google Maps →</a>
+              </div>
+            `;
+
+        L.marker([spot.lat, spot.lng], { icon: foyleIcon })
+          .addTo(map)
+          .bindPopup(popupContent, { maxWidth: 250 });
+      });
+    }, 1000);
   </script>
 
 </body>

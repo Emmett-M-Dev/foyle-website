@@ -146,7 +146,7 @@
 
     .hero {
       min-height: 100vh;
-      background: var(--cream);
+      background: var(--black);
       color: var(--ink);
       padding: 9rem 2rem 5rem;
       position: relative;
@@ -182,11 +182,62 @@
       mask-image: radial-gradient(ellipse at center, black 40%, transparent 75%);
     }
 
+    /* === Hero Full-Bleed Background === */
+    .hero-bg-track {
+      position: absolute;
+      top: -15%;
+      left: 0;
+      right: 0;
+      bottom: -15%;
+      z-index: 1;
+      will-change: transform;
+    }
+
+    .hero-bg-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 40%;
+      animation: kenBurns 26s ease-in-out infinite;
+    }
+
+    .hero-bg-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      background:
+        linear-gradient(to right, rgba(8,5,2,0.86) 0%, rgba(8,5,2,0.62) 42%, rgba(8,5,2,0.28) 100%),
+        linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, transparent 30%, transparent 65%, rgba(0,0,0,0.5) 100%);
+      pointer-events: none;
+    }
+
+    @keyframes kenBurns {
+      0%   { transform: scale(1.0) translate(0%, 0%); }
+      30%  { transform: scale(1.06) translate(-1%, 0.8%); }
+      65%  { transform: scale(1.03) translate(0.7%, -0.5%); }
+      100% { transform: scale(1.0) translate(0%, 0%); }
+    }
+
     .hero-inner {
       max-width: 1400px;
       margin: 0 auto;
       position: relative;
-      z-index: 2;
+      z-index: 3;
+    }
+
+    /* Hero text on dark background */
+    .hero .hero-top-meta { color: rgba(255,255,255,0.55); }
+    .hero h1.hero-title { color: white; }
+    .hero h1.hero-title em { color: var(--foyle-green); }
+    .hero .hero-tagline { color: rgba(255,255,255,0.72); }
+    .hero .hero-countries-label { color: rgba(255,255,255,0.38); opacity: 1; }
+    .hero .country-pill { color: rgba(255,255,255,0.5); border-color: rgba(255,255,255,0.14); }
+    .hero .hero-discover-link { color: rgba(255,255,255,0.45); text-decoration-color: rgba(255,255,255,0.2); }
+    .hero .hero-discover-link:hover { color: white; text-decoration-color: rgba(255,255,255,0.55); }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero-bg-img { animation: none; }
+      .hero-bg-track { will-change: auto; }
     }
 
     .hero-top-meta {
@@ -1287,6 +1338,10 @@
         display: flex;
       }
 
+      .hero-circle-wrap {
+        display: none;
+      }
+
       .hero-main {
         grid-template-columns: 1fr;
         gap: 2rem;
@@ -1403,9 +1458,10 @@
   </div>
 
   <section class="hero" id="home">
-    <div class="hero-grid-bg"></div>
-    <div class="hero-bg-glow"></div>
-    <div class="hero-bg-glow left"></div>
+    <div class="hero-bg-track" id="hero-bg-track">
+      <img class="hero-bg-img" src="images/derrybridge2.jpg" alt="" loading="eager" aria-hidden="true">
+    </div>
+    <div class="hero-bg-overlay"></div>
 
     <div class="hero-inner">
       <div class="hero-top-meta">
@@ -1420,7 +1476,6 @@
           </h1>
           <p class="hero-tagline">Northern Ireland's longest-established English language school — offering quality courses, cultural immersion and a warm Irish welcome for over thirty-five years.</p>
         </div>
-
       </div>
 
       <div class="hero-actions">
@@ -1447,19 +1502,19 @@
   <div class="stats-strip">
     <div class="stats-inner">
       <div class="stat">
-        <span class="stat-num">35+</span>
+        <span class="stat-num" data-target="35" data-suffix="+" data-duration="2000">35+</span>
         <span class="stat-label">Years of excellence</span>
       </div>
       <div class="stat">
-        <span class="stat-num">1st</span>
+        <span class="stat-num" data-target="1" data-suffix="st" data-duration="500">1st</span>
         <span class="stat-label">British Council school in NI</span>
       </div>
       <div class="stat">
-        <span class="stat-num">15+</span>
+        <span class="stat-num" data-target="15" data-suffix="+" data-duration="1800">15+</span>
         <span class="stat-label">Partner school countries</span>
       </div>
       <div class="stat">
-        <span class="stat-num">1000s</span>
+        <span class="stat-num" data-target="1000" data-suffix="s" data-duration="2400">1000s</span>
         <span class="stat-label">Students welcomed</span>
       </div>
     </div>
@@ -1873,6 +1928,66 @@
       }
 
       setTimeout(type, 1600);
+    })();
+
+    // Stats count-up on scroll
+    (function () {
+      var stats = document.querySelectorAll('.stat-num[data-target]');
+      if (!stats.length) return;
+
+      var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      function easeOutQuad(t) { return t * (2 - t); }
+      function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
+
+      function animateStat(el) {
+        var target   = parseInt(el.dataset.target, 10);
+        var suffix   = el.dataset.suffix || '';
+        var duration = parseInt(el.dataset.duration, 10) || 1600;
+        var ease     = target >= 500 ? easeOutCubic : easeOutQuad;
+
+        if (prefersReduced) {
+          el.textContent = target + suffix;
+          return;
+        }
+
+        var start = null;
+        function step(ts) {
+          if (!start) start = ts;
+          var progress = Math.min((ts - start) / duration, 1);
+          var current  = Math.round(ease(progress) * target);
+          el.textContent = current === 0 ? ' ' : current + suffix;
+          if (progress < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      }
+
+      var observer = new IntersectionObserver(function (entries) {
+        if (entries[0].isIntersecting) {
+          stats.forEach(animateStat);
+          observer.disconnect();
+        }
+      }, { threshold: 0.4 });
+
+      var strip = document.querySelector('.stats-strip');
+      if (strip) observer.observe(strip);
+    })();
+
+    // Hero background parallax
+    (function () {
+      var track = document.getElementById('hero-bg-track');
+      if (!track) return;
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      var raf = false;
+      window.addEventListener('scroll', function () {
+        if (!raf) {
+          raf = true;
+          requestAnimationFrame(function () {
+            track.style.transform = 'translateY(' + (window.scrollY * 0.3).toFixed(1) + 'px)';
+            raf = false;
+          });
+        }
+      }, { passive: true });
     })();
 
     function handleSubmit(e) {

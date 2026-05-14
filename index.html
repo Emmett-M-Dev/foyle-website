@@ -164,10 +164,10 @@
     }
 
     .hero {
-      min-height: 100vh;
+      min-height: 80vh;
       background: var(--black);
       color: var(--ink);
-      padding: 7.5rem 2rem 4rem;
+      padding: 6rem 2rem 3.5rem;
       position: relative;
       overflow: hidden;
     }
@@ -216,7 +216,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center 60%;
+      object-position: center 78%;
       animation: kenBurns 26s ease-in-out infinite;
     }
 
@@ -605,11 +605,6 @@
     }
 
     .about-img-main {
-      background: linear-gradient(135deg, var(--foyle-green-deep), var(--foyle-green-dark));
-      aspect-ratio: 3/4;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       position: relative;
       overflow: hidden;
     }
@@ -633,9 +628,7 @@
 
     .about-img-photo {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
+      height: auto;
       display: block;
     }
 
@@ -647,6 +640,7 @@
       color: white;
       padding: 1.5rem 2rem;
       max-width: 240px;
+      z-index: 2;
     }
 
     .about-img-overlay .mono {
@@ -663,6 +657,27 @@
       font-size: 1.15rem;
       line-height: 1.3;
       font-weight: 500;
+    }
+
+    .about-img-frame {
+      position: relative;
+      width: 65%;
+    }
+
+    .about-img-frame::after {
+      content: '';
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      width: 100%;
+      height: 100%;
+      background: var(--foyle-green);
+      z-index: 0;
+    }
+
+    .about-img-frame .about-img-main {
+      position: relative;
+      z-index: 1;
     }
 
     .courses {
@@ -1510,27 +1525,13 @@
           <h1 class="hero-title">
             Learn English. <span class="huge"><em id="hero-typing-wrap"><span id="hero-typed"></span><span class="typing-cursor"></span></em></span>
           </h1>
-          <p class="hero-tagline">Northern Ireland's longest-established English language school — offering quality courses, cultural immersion and a warm Irish welcome for over thirty-five years.</p>
+          <p class="hero-tagline">Northern Ireland's longest-established English language school — quality courses, cultural immersion, a warm Irish welcome.</p>
         </div>
       </div>
 
       <div class="hero-actions">
         <a href="#courses" class="btn btn-primary">Explore Courses →</a>
         <a href="host.html" class="btn btn-green">Host a Student →</a>
-      </div>
-      <a href="derry.html" class="hero-discover-link">Discover Derry →</a>
-
-      <div class="hero-countries">
-        <p class="hero-countries-label">Students arrive from</p>
-        <div class="hero-countries-pills">
-          <span class="country-pill">🇪🇸 Spain</span>
-          <span class="country-pill">🇮🇹 Italy</span>
-          <span class="country-pill">🇨🇿 Czech Republic</span>
-          <span class="country-pill">🇩🇪 Germany</span>
-          <span class="country-pill">🇫🇷 France</span>
-          <span class="country-pill">🇳🇱 Netherlands</span>
-          <span class="country-pill">🇵🇹 Portugal</span>
-        </div>
       </div>
     </div>
   </section>
@@ -1585,12 +1586,14 @@
         </div>
 
         <div class="about-visual">
-          <div class="about-img-main">
-            <img src="images/Paul%20Foyle.jpg" alt="Paul Murray, Director of Foyle International" class="about-img-photo">
+          <div class="about-img-frame">
+            <div class="about-img-main">
+              <img src="images/PaulFoyle.jpg" alt="Paul Murray, Director of Foyle International" class="about-img-photo">
+            </div>
           </div>
           <div class="about-img-overlay">
-            <div class="mono">Accreditations</div>
-            <div class="serif">British Council · Erasmus+ Partner</div>
+            <div class="mono">Director &amp; Founder</div>
+            <div class="serif">Paul Murray · Est. 1990</div>
           </div>
         </div>
       </div>

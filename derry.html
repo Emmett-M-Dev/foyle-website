@@ -440,6 +440,57 @@
       padding: 0 1rem;
     }
 
+    /* ── Instagram embeds ── */
+
+    .photo-row .instagram-media {
+      max-width: 100% !important;
+      min-width: 0 !important;
+      width: calc(100% - 2px) !important;
+      margin: 0 1px !important;
+      border-radius: 12px !important;
+      overflow: hidden !important;
+    }
+
+    .instagram-wrap {
+      position: relative;
+      min-height: 560px;
+      border-radius: 12px;
+      overflow: hidden;
+      background: var(--paper);
+    }
+
+    .instagram-wrap::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        90deg,
+        var(--paper) 0%,
+        var(--foyle-green-mid) 40%,
+        var(--paper) 80%
+      );
+      background-size: 200% 100%;
+      animation: shimmer 1.6s ease-in-out infinite;
+      border-radius: 12px;
+      z-index: 0;
+    }
+
+    .instagram-wrap.loaded::before {
+      display: none;
+    }
+
+    @keyframes shimmer {
+      0%   { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .instagram-wrap::before {
+        animation: none;
+        background: var(--paper);
+      }
+    }
+
     /* ── Testimonials ── */
 
     .testimonials-section {
@@ -1059,22 +1110,36 @@
   <section class="student-section">
     <div class="section-inner">
       <span class="section-label reveal">03 — Student life</span>
-      <h2 class="section-title reveal">English <em>beyond the classroom.</em></h2>
-      <p class="section-lead reveal">Real immersion means real conversations — in cafés, on city walks, at local events.
-        Our students don't just study Derry. They live it.</p>
+      <h2 class="section-title reveal">Derry, <em>through their eyes.</em></h2>
+      <p class="section-lead reveal">Don't take our word for it. These are real moments from real students — shared on Instagram as they happened. Follow <a href="https://www.instagram.com/foyleinternational/" target="_blank" rel="noopener" style="color:var(--foyle-green-dark);text-decoration:none;font-weight:500;">@foyleinternational</a> for more.</p>
 
       <div class="photo-row">
-        <div class="photo-placeholder reveal">
-          <span class="photo-icon"></span>
-          <span class="photo-label">Photo: students on the city walls</span>
+        <div class="instagram-wrap">
+          <blockquote
+            class="instagram-media"
+            data-instgrm-captioned
+            data-instgrm-permalink="https://www.instagram.com/p/DW4T_OciMeo/"
+            data-instgrm-version="14">
+            <a href="https://www.instagram.com/p/DW4T_OciMeo/" target="_blank" rel="noopener">View on Instagram</a>
+          </blockquote>
         </div>
-        <div class="photo-placeholder reveal">
-          <span class="photo-icon"></span>
-          <span class="photo-label">Photo: students at a local café or market</span>
+        <div class="instagram-wrap">
+          <blockquote
+            class="instagram-media"
+            data-instgrm-captioned
+            data-instgrm-permalink="https://www.instagram.com/p/DYb-kYYIDcJ/"
+            data-instgrm-version="14">
+            <a href="https://www.instagram.com/p/DYb-kYYIDcJ/" target="_blank" rel="noopener">View on Instagram</a>
+          </blockquote>
         </div>
-        <div class="photo-placeholder reveal">
-          <span class="photo-icon"></span>
-          <span class="photo-label">Photo: Peace Bridge or riverside</span>
+        <div class="instagram-wrap">
+          <blockquote
+            class="instagram-media"
+            data-instgrm-captioned
+            data-instgrm-permalink="https://www.instagram.com/p/DX9mq_sIgl7/"
+            data-instgrm-version="14">
+            <a href="https://www.instagram.com/p/DX9mq_sIgl7/" target="_blank" rel="noopener">View on Instagram</a>
+          </blockquote>
         </div>
       </div>
     </div>
@@ -1306,6 +1371,34 @@
           .bindPopup(popupContent, { maxWidth: 250 });
       });
     }, 1000);
+
+    // Lazy-load Instagram embed.js when student section scrolls into view
+    (function () {
+      const studentSection = document.querySelector('.student-section');
+      if (!studentSection) return;
+
+      const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            observer.disconnect();
+            var script = document.createElement('script');
+            script.src = '//www.instagram.com/embed.js';
+            script.async = true;
+            script.onload = function () {
+              if (window.instgrm) {
+                window.instgrm.Embeds.process();
+              }
+              document.querySelectorAll('.instagram-wrap').forEach(function (w) {
+                w.classList.add('loaded');
+              });
+            };
+            document.body.appendChild(script);
+          }
+        });
+      }, { rootMargin: '200px' });
+
+      observer.observe(studentSection);
+    })();
   </script>
 
 </body>

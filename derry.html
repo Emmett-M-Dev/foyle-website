@@ -417,12 +417,10 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(
-        90deg,
-        var(--paper) 0%,
-        var(--foyle-green-mid) 40%,
-        var(--paper) 80%
-      );
+      background: linear-gradient(90deg,
+          var(--paper) 0%,
+          var(--foyle-green-mid) 40%,
+          var(--paper) 80%);
       background-size: 200% 100%;
       animation: shimmer 1.6s ease-in-out infinite;
       border-radius: 12px;
@@ -434,8 +432,13 @@
     }
 
     @keyframes shimmer {
-      0%   { background-position: 200% 0; }
-      100% { background-position: -200% 0; }
+      0% {
+        background-position: 200% 0;
+      }
+
+      100% {
+        background-position: -200% 0;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -920,12 +923,10 @@
       <h2 class="section-title reveal">See Derry <em>for yourself.</em></h2>
 
       <div class="video-placeholder reveal">
-        <iframe
-          src="https://www.youtube-nocookie.com/embed/m3wpS7L7Ezg?rel=0&modestbranding=1"
+        <iframe src="https://www.youtube-nocookie.com/embed/m3wpS7L7Ezg?rel=0&modestbranding=1"
           title="Derry~Londonderry — Visit Ireland"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-          loading="lazy">
+          allowfullscreen loading="lazy">
         </iframe>
       </div>
 
@@ -938,33 +939,28 @@
     <div class="section-inner">
       <span class="section-label reveal">02 — Student life</span>
       <h2 class="section-title reveal">Derry, <em>through their eyes.</em></h2>
-      <p class="section-lead reveal">Don't take our word for it. These are real moments from real students — shared on Instagram as they happened. Follow <a href="https://www.instagram.com/foyleinternational/" target="_blank" rel="noopener" style="color:var(--foyle-green-dark);text-decoration:none;font-weight:500;">@foyleinternational</a> for more.</p>
+      <p class="section-lead reveal">Don't take our word for it. These are real moments from real students — shared on
+        Instagram as they happened. Follow <a href="https://www.instagram.com/foyleinternational/" target="_blank"
+          rel="noopener"
+          style="color:var(--foyle-green-dark);text-decoration:none;font-weight:500;">@foyleinternational</a> for more.
+      </p>
 
       <div class="photo-row">
         <div class="instagram-wrap">
-          <blockquote
-            class="instagram-media"
-            data-instgrm-captioned
-            data-instgrm-permalink="https://www.instagram.com/p/DW4T_OciMeo/"
-            data-instgrm-version="14">
+          <blockquote class="instagram-media" data-instgrm-captioned
+            data-instgrm-permalink="https://www.instagram.com/p/DW4T_OciMeo/" data-instgrm-version="14">
             <a href="https://www.instagram.com/p/DW4T_OciMeo/" target="_blank" rel="noopener">View on Instagram</a>
           </blockquote>
         </div>
         <div class="instagram-wrap">
-          <blockquote
-            class="instagram-media"
-            data-instgrm-captioned
-            data-instgrm-permalink="https://www.instagram.com/p/DYb-kYYIDcJ/"
-            data-instgrm-version="14">
+          <blockquote class="instagram-media" data-instgrm-captioned
+            data-instgrm-permalink="https://www.instagram.com/p/DYb-kYYIDcJ/" data-instgrm-version="14">
             <a href="https://www.instagram.com/p/DYb-kYYIDcJ/" target="_blank" rel="noopener">View on Instagram</a>
           </blockquote>
         </div>
         <div class="instagram-wrap">
-          <blockquote
-            class="instagram-media"
-            data-instgrm-captioned
-            data-instgrm-permalink="https://www.instagram.com/p/DX9mq_sIgl7/"
-            data-instgrm-version="14">
+          <blockquote class="instagram-media" data-instgrm-captioned
+            data-instgrm-permalink="https://www.instagram.com/p/DX9mq_sIgl7/" data-instgrm-version="14">
             <a href="https://www.instagram.com/p/DX9mq_sIgl7/" target="_blank" rel="noopener">View on Instagram</a>
           </blockquote>
         </div>
@@ -1003,7 +999,8 @@
             <div class="map-item reveal" style="border-bottom: none;">
               <span class="map-item-label">Language School</span>
               <h3>Foyle International</h3>
-              <p>Our absolute favourite spot in the city. This is our home for everybody, and where your Derry adventure begins.</p>
+              <p>Our absolute favourite spot in the city. This is our home for everybody, and where your Derry adventure
+                begins.</p>
             </div>
           </div>
         </div>
@@ -1018,7 +1015,8 @@
     <div class="section-inner">
       <span class="section-label reveal">04 — Our teachers</span>
       <h2 class="section-title reveal">The faces <em>you'll learn from.</em></h2>
-      <p class="section-lead reveal">Our teachers are qualified, experienced, and genuinely invested in every student's progress. They're also great fun — which helps.</p>
+      <p class="section-lead reveal">Our teachers and mentors are qualified, experienced, and genuinely invested in
+        every student's progress. They're also great fun!</p>
 
       <div class="staff-grid">
         <div class="staff-col">

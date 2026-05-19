@@ -353,52 +353,6 @@
 
     /* ── Features strip ── */
 
-    .features-section {
-      background: var(--paper);
-    }
-
-    .feature-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-    }
-
-    .feature-card {
-      background: white;
-      border: 1px solid var(--rule);
-      border-radius: 8px;
-      padding: 2.5rem;
-      transition: transform 0.25s, box-shadow 0.25s;
-    }
-
-    .feature-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.06);
-    }
-
-    .feature-icon {
-      font-size: 2rem;
-      display: block;
-      margin-bottom: 1.25rem;
-      line-height: 1;
-    }
-
-    .feature-card h3 {
-      font-family: 'Fraunces', serif;
-      font-size: 1.4rem;
-      font-weight: 500;
-      line-height: 1.2;
-      margin-bottom: 0.75rem;
-      color: var(--ink);
-    }
-
-    .feature-card p {
-      font-family: 'Newsreader', serif;
-      font-size: 1rem;
-      line-height: 1.65;
-      color: var(--ink-soft);
-    }
-
     /* ── Student life section ── */
 
     .student-section {
@@ -491,84 +445,54 @@
       }
     }
 
-    /* ── Testimonials ── */
+    /* ── Staff section ── */
 
-    .testimonials-section {
-      background: var(--paper);
+    .staff-section {
+      background: var(--cream);
     }
 
-    .test-grid {
+    .staff-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2.5rem;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 1.5rem;
     }
 
-    .test-card {
-      padding: 2.5rem;
-      background: white;
-      border: 1px solid var(--rule);
-      position: relative;
-      transition: transform 0.25s, box-shadow 0.25s;
-    }
-
-    .test-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 20px 50px rgba(26, 79, 24, 0.08);
-    }
-
-    .test-quote-mark {
-      font-family: 'Fraunces', serif;
-      font-size: 5rem;
-      line-height: 0.5;
-      color: var(--foyle-green);
-      position: absolute;
-      top: 2rem;
-      right: 2rem;
-      opacity: 0.3;
-    }
-
-    .test-card blockquote {
-      font-family: 'Newsreader', serif;
-      font-size: 1.05rem;
-      line-height: 1.7;
-      color: var(--ink);
-      font-style: italic;
-      margin-bottom: 2rem;
-    }
-
-    .test-author {
-      padding-top: 1.5rem;
-      border-top: 1px solid var(--rule);
+    .staff-col {
       display: flex;
-      align-items: center;
-      gap: 1rem;
+      flex-direction: column;
+      gap: 1.5rem;
     }
 
-    .test-avatar {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      background: var(--foyle-green);
-      color: black;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Fraunces', serif;
-      font-size: 1.1rem;
-      font-weight: 600;
-      flex-shrink: 0;
+    .staff-card {
+      border-radius: 12px;
+      overflow: hidden;
     }
 
-    .test-name {
-      font-family: 'Instrument Sans', sans-serif;
-      font-size: 0.92rem;
-      font-weight: 600;
+    .staff-photo--portrait {
+      aspect-ratio: 3 / 4;
     }
 
-    .test-origin {
-      font-family: 'Instrument Sans', sans-serif;
-      font-size: 0.8rem;
-      color: var(--ink-soft);
+    .staff-photo--landscape {
+      aspect-ratio: 4 / 3;
+    }
+
+    .staff-photo--portrait,
+    .staff-photo--landscape {
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .staff-photo--portrait img,
+    .staff-photo--landscape img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .staff-card:hover img {
+      transform: scale(1.03);
     }
 
     /* ── CTA band ── */
@@ -774,41 +698,6 @@
 
     /* ── Pull-Quote Band ── */
 
-    .pull-quote-band {
-      background: var(--black);
-      padding: 7rem 2rem;
-      text-align: center;
-    }
-
-    .pull-quote-inner {
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .pull-quote-text {
-      font-family: 'Fraunces', serif;
-      font-size: clamp(1.6rem, 3vw, 2.4rem);
-      font-weight: 400;
-      line-height: 1.35;
-      font-style: italic;
-      color: white;
-      margin-bottom: 2rem;
-    }
-
-    .pull-quote-text em {
-      color: var(--foyle-green);
-      font-style: italic;
-    }
-
-    .pull-quote-author {
-      font-family: 'Instrument Sans', sans-serif;
-      font-size: 0.85rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      color: rgba(255, 255, 255, 0.6);
-    }
-
     /* ── Reveal animation ── */
 
     .reveal {
@@ -929,10 +818,6 @@
         gap: 2.5rem;
       }
 
-      .feature-grid {
-        grid-template-columns: 1fr;
-      }
-
       .photo-row {
         grid-template-columns: 1fr;
       }
@@ -941,7 +826,7 @@
         grid-template-columns: 1fr;
       }
 
-      .test-grid {
+      .staff-grid {
         grid-template-columns: 1fr;
       }
 
@@ -1048,68 +933,10 @@
     </div>
   </section>
 
-  <!-- 3. Feature strip -->
-  <section class="features-section">
-    <div class="section-inner">
-      <span class="section-label reveal">02 — Why Derry</span>
-      <h2 class="section-title reveal">Not a tourist town. <em>A real one.</em></h2>
-      <p class="section-lead reveal">Derry is intimate, walkable and genuinely warm — exactly what makes it the best
-        place in the world to learn English.</p>
-
-      <div class="feature-grid">
-        <div class="feature-card reveal">
-          <span class="feature-icon"></span>
-          <h3>The Ancient Walls</h3>
-          <p>Walk the full circuit of Derry's 17th-century walls — one of the best-preserved in Europe and right in the
-            heart of the city.</p>
-        </div>
-        <div class="feature-card reveal">
-          <span class="feature-icon"></span>
-          <h3>Halloween Capital of Europe</h3>
-          <p>Every October, Derry transforms into Europe's biggest Halloween festival. If you're here in autumn, you
-            won't forget it.</p>
-        </div>
-        <div class="feature-card reveal">
-          <span class="feature-icon"></span>
-          <h3>A Genuinely Warm City</h3>
-          <p>Derry consistently ranks among the friendliest cities in the UK. Students don't just visit — they feel at
-            home.</p>
-        </div>
-        <div class="feature-card reveal">
-          <span class="feature-icon"></span>
-          <h3>Food, Music & Culture</h3>
-          <p>From the Walled City Brewery to live traditional music sessions, Derry has a real culture scene that
-            surprises every visitor.</p>
-        </div>
-        <div class="feature-card reveal">
-          <span class="feature-icon"></span>
-          <h3>The Peace Bridge</h3>
-          <p>An iconic landmark and symbol of the city's remarkable transformation — great for walks and one of the most
-            photographed spots in Northern Ireland.</p>
-        </div>
-        <div class="feature-card reveal">
-          <span class="feature-icon"></span>
-          <h3>Safe & Walkable</h3>
-          <p>The city centre is compact and safe. Students can walk from their host family to school, to the walls, to
-            the river — all within minutes.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Pull-Quote Band -->
-  <section class="pull-quote-band">
-    <div class="pull-quote-inner reveal">
-      <p class="pull-quote-text">"I didn't expect to fall in love with the city. The walls, the people, the Halloween
-        festival — <em>Derry has a personality unlike anywhere I've visited.</em>"</p>
-      <div class="pull-quote-author">Sofia, Spain · Autumn 2023</div>
-    </div>
-  </section>
-
-  <!-- 4. Student experience -->
+  <!-- 2. Student experience -->
   <section class="student-section">
     <div class="section-inner">
-      <span class="section-label reveal">03 — Student life</span>
+      <span class="section-label reveal">02 — Student life</span>
       <h2 class="section-title reveal">Derry, <em>through their eyes.</em></h2>
       <p class="section-lead reveal">Don't take our word for it. These are real moments from real students — shared on Instagram as they happened. Follow <a href="https://www.instagram.com/foyleinternational/" target="_blank" rel="noopener" style="color:var(--foyle-green-dark);text-decoration:none;font-weight:500;">@foyleinternational</a> for more.</p>
 
@@ -1150,7 +977,7 @@
     <div class="section-inner">
       <div class="map-grid">
         <div class="map-content">
-          <span class="section-label reveal">04 — Local Hotspots</span>
+          <span class="section-label reveal">03 — Local Hotspots</span>
           <h2 class="section-title reveal">Our favourite <em>spots.</em></h2>
           <p class="section-lead reveal">A curated list of where our students and staff love to spend their time in
             Derry.</p>
@@ -1186,45 +1013,36 @@
     </div>
   </section>
 
-  <!-- 5. Testimonials strip -->
-  <section class="testimonials-section">
+  <!-- 4. Meet the team -->
+  <section class="staff-section">
     <div class="section-inner">
-      <span class="section-label reveal">05 — Student voices</span>
-      <h2 class="section-title reveal">From <em>Spain, Italy,</em> Poland and beyond.</h2>
+      <span class="section-label reveal">04 — Our teachers</span>
+      <h2 class="section-title reveal">The faces <em>you'll learn from.</em></h2>
+      <p class="section-lead reveal">Our teachers are qualified, experienced, and genuinely invested in every student's progress. They're also great fun — which helps.</p>
 
-      <div class="test-grid">
-        <div class="test-card reveal">
-          <span class="test-quote-mark">"</span>
-          <blockquote>[Student testimonial one placeholder]</blockquote>
-          <div class="test-author">
-            <div class="test-avatar">S</div>
-            <div>
-              <div class="test-name">Sofia R.</div>
-              <div class="test-origin">Spain · Summer 2024</div>
+      <div class="staff-grid">
+        <div class="staff-col">
+          <div class="staff-card reveal">
+            <div class="staff-photo--portrait">
+              <img src="images/foyleStaff1.jpg" alt="Foyle International teacher" loading="lazy">
+            </div>
+          </div>
+          <div class="staff-card reveal">
+            <div class="staff-photo--portrait">
+              <img src="images/foyleStaff3.jpg" alt="Foyle International teacher" loading="lazy">
             </div>
           </div>
         </div>
 
-        <div class="test-card reveal">
-          <span class="test-quote-mark">"</span>
-          <blockquote>[Student testimonial two placeholder]</blockquote>
-          <div class="test-author">
-            <div class="test-avatar">M</div>
-            <div>
-              <div class="test-name">Marco B.</div>
-              <div class="test-origin">Italy · Erasmus+ 2023</div>
+        <div class="staff-col">
+          <div class="staff-card reveal">
+            <div class="staff-photo--landscape">
+              <img src="images/foyleStaff2.jpg" alt="Foyle International teacher" loading="lazy">
             </div>
           </div>
-        </div>
-
-        <div class="test-card reveal">
-          <span class="test-quote-mark">"</span>
-          <blockquote>[Student testimonial three placeholder]</blockquote>
-          <div class="test-author">
-            <div class="test-avatar">T</div>
-            <div>
-              <div class="test-name">Teacher</div>
-              <div class="test-origin">Partner school, Germany</div>
+          <div class="staff-card reveal">
+            <div class="staff-photo--landscape">
+              <img src="images/foyleStaff4.jpg" alt="Foyle International teacher" loading="lazy">
             </div>
           </div>
         </div>

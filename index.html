@@ -224,15 +224,26 @@
       position: absolute;
       inset: 0;
       z-index: 2;
-      background: linear-gradient(to bottom, rgba(0,0,0,0.52) 0%, rgba(0,0,0,0.28) 40%, rgba(0,0,0,0.12) 62%, rgba(0,0,0,0.48) 100%);
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.52) 0%, rgba(0, 0, 0, 0.28) 40%, rgba(0, 0, 0, 0.12) 62%, rgba(0, 0, 0, 0.48) 100%);
       pointer-events: none;
     }
 
     @keyframes kenBurns {
-      0%   { transform: scale(1.0) translate(0%, 0%); }
-      30%  { transform: scale(1.06) translate(-1%, 0.8%); }
-      65%  { transform: scale(1.03) translate(0.7%, -0.5%); }
-      100% { transform: scale(1.0) translate(0%, 0%); }
+      0% {
+        transform: scale(1.0) translate(0%, 0%);
+      }
+
+      30% {
+        transform: scale(1.06) translate(-1%, 0.8%);
+      }
+
+      65% {
+        transform: scale(1.03) translate(0.7%, -0.5%);
+      }
+
+      100% {
+        transform: scale(1.0) translate(0%, 0%);
+      }
     }
 
     .hero-inner {
@@ -244,19 +255,54 @@
     }
 
     /* Hero text on dark background */
-    .hero .hero-top-meta { color: rgba(255,255,255,0.55); }
-    .hero h1.hero-title { color: white; }
-    .hero h1.hero-title em { color: var(--foyle-green); }
-    .hero .hero-tagline { color: rgba(255,255,255,0.72); }
-    .hero .hero-countries-label { color: rgba(255,255,255,0.38); opacity: 1; }
-    .hero .country-pill { color: rgba(255,255,255,0.5); border-color: rgba(255,255,255,0.14); }
-    .hero .hero-discover-link { color: rgba(255,255,255,0.45); text-decoration-color: rgba(255,255,255,0.2); }
-    .hero .hero-discover-link:hover { color: white; text-decoration-color: rgba(255,255,255,0.55); }
-    .hero .hero-countries { border-top-color: rgba(255,255,255,0.12); }
+    .hero .hero-top-meta {
+      color: rgba(255, 255, 255, 0.55);
+    }
+
+    .hero h1.hero-title {
+      color: white;
+    }
+
+    .hero h1.hero-title em {
+      color: var(--foyle-green);
+    }
+
+    .hero .hero-tagline {
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+    .hero .hero-countries-label {
+      color: rgba(255, 255, 255, 0.38);
+      opacity: 1;
+    }
+
+    .hero .country-pill {
+      color: rgba(255, 255, 255, 0.5);
+      border-color: rgba(255, 255, 255, 0.14);
+    }
+
+    .hero .hero-discover-link {
+      color: rgba(255, 255, 255, 0.45);
+      text-decoration-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .hero .hero-discover-link:hover {
+      color: white;
+      text-decoration-color: rgba(255, 255, 255, 0.55);
+    }
+
+    .hero .hero-countries {
+      border-top-color: rgba(255, 255, 255, 0.12);
+    }
 
     @media (prefers-reduced-motion: reduce) {
-      .hero-bg-img { animation: none; }
-      .hero-bg-track { will-change: auto; }
+      .hero-bg-img {
+        animation: none;
+      }
+
+      .hero-bg-track {
+        will-change: auto;
+      }
     }
 
     .hero-top-meta {
@@ -334,8 +380,15 @@
     }
 
     @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0; }
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0;
+      }
     }
 
     .hero-tagline {
@@ -851,6 +904,73 @@
       font-style: normal;
     }
 
+    .derry-quote-row {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      margin: 0 0 5rem;
+    }
+
+    .derry-quote-row .derry-quote {
+      max-width: none;
+      margin: 0;
+    }
+
+    .derry-carousel-main {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      aspect-ratio: 4 / 3;
+      background: var(--ink);
+    }
+
+    .derry-carousel-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 0.7s ease;
+    }
+
+    .derry-carousel-img.active {
+      opacity: 1;
+    }
+
+    .derry-carousel-thumbs {
+      display: flex;
+      gap: 0.5rem;
+      justify-content: center;
+      margin-top: 0.75rem;
+    }
+
+    .derry-carousel-thumb {
+      width: 64px;
+      height: 48px;
+      border-radius: 8px;
+      overflow: hidden;
+      cursor: pointer;
+      border: 2px solid transparent;
+      padding: 0;
+      background: none;
+      opacity: 0.55;
+      transition: border-color 0.2s ease, opacity 0.2s ease;
+    }
+
+    .derry-carousel-thumb.active {
+      border-color: var(--foyle-green);
+      opacity: 1;
+    }
+
+    .derry-carousel-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
     .derry-body {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -908,6 +1028,49 @@
 
     .testimonials {
       background: var(--cream);
+      overflow: visible;
+    }
+
+    .test-hero {
+      background: url('images/Foyle students walking down causeway.jpg') center 55% / cover no-repeat;
+      position: relative;
+    }
+
+    .test-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(8, 8, 6, 0.62) 0%, rgba(8, 8, 6, 0.52) 65%, rgba(8, 8, 6, 0.38) 100%);
+      pointer-events: none;
+    }
+
+    .test-hero-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 8rem 2rem 4rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .test-hero-inner .section-num {
+      color: rgba(255, 255, 255, 0.55);
+    }
+
+    .test-hero-inner .section-title {
+      color: white;
+    }
+
+    .test-hero-inner .section-title em {
+      color: var(--foyle-green);
+    }
+
+    .test-hero-inner .section-lead {
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+    .test-cards-zone {
+      padding-top: 11rem;
+      padding-bottom: 8rem;
     }
 
     .test-grid {
@@ -982,6 +1145,57 @@
       font-family: 'Instrument Sans', sans-serif;
       font-size: 0.8rem;
       color: var(--ink-soft);
+    }
+
+    .test-polaroids {
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: flex-start;
+      margin: 0 auto -8rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .polaroid-4 {
+      transform: rotate(2.8deg) translateX(-22px);
+      z-index: 1;
+    }
+
+    .polaroid-6 {
+      transform: rotate(1.2deg) translateX(22px);
+      z-index: 2;
+    }
+
+    .polaroid {
+      background: white;
+      padding: 10px 10px 36px;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.13);
+      width: 170px;
+      flex-shrink: 0;
+      position: relative;
+    }
+
+    .polaroid img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      display: block;
+    }
+
+    .polaroid-1 {
+      transform: rotate(-3.5deg) translateX(28px);
+      z-index: 1;
+    }
+
+    .polaroid-2 {
+      transform: rotate(1.5deg);
+      z-index: 3;
+    }
+
+    .polaroid-3 {
+      transform: rotate(-1.8deg) translateX(-28px);
+      z-index: 2;
     }
 
     .host-band {
@@ -1432,6 +1646,11 @@
         grid-column: 1 / -1;
       }
 
+      .derry-quote-row {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
       .derry-body {
         grid-template-columns: 1fr;
         gap: 3rem;
@@ -1439,6 +1658,35 @@
 
       .test-grid {
         grid-template-columns: 1fr;
+      }
+
+      .test-hero-inner {
+        padding: 5rem 1.5rem 3rem;
+      }
+
+      .test-polaroids {
+        margin-bottom: -5rem;
+        overflow-x: auto;
+        justify-content: flex-start;
+        padding: 0 1.5rem;
+      }
+
+      .test-cards-zone {
+        padding-top: 8rem;
+        padding-bottom: 5rem;
+      }
+
+      .polaroid {
+        width: 120px;
+        padding: 7px 7px 26px;
+      }
+
+      .polaroid-1 {
+        transform: rotate(-3deg) translateX(16px);
+      }
+
+      .polaroid-3 {
+        transform: rotate(-1.5deg) translateX(-16px);
       }
 
       .host-inner {
@@ -1523,9 +1771,11 @@
       <div class="hero-main">
         <div class="hero-left">
           <h1 class="hero-title">
-            Learn English. <span class="huge"><em id="hero-typing-wrap"><span id="hero-typed"></span><span class="typing-cursor"></span></em></span>
+            Learn English. <span class="huge"><em id="hero-typing-wrap"><span id="hero-typed"></span><span
+                  class="typing-cursor"></span></em></span>
           </h1>
-          <p class="hero-tagline">Northern Ireland's longest-established English language school — quality courses, cultural immersion, a warm Irish welcome.</p>
+          <p class="hero-tagline">Northern Ireland's longest-established English language school — quality courses,
+            cultural immersion, a warm Irish welcome.</p>
         </div>
       </div>
 
@@ -1588,7 +1838,8 @@
         <div class="about-visual">
           <div class="about-img-frame">
             <div class="about-img-main">
-              <img src="images/PaulFoyle.jpg" alt="Paul Murray, Director of Foyle International" class="about-img-photo">
+              <img src="images/PaulFoyle.jpg" alt="Paul Murray, Director of Foyle International"
+                class="about-img-photo">
             </div>
           </div>
           <div class="about-img-overlay">
@@ -1609,7 +1860,8 @@
         </div>
         <p class="section-lead">From EU-funded Erasmus+ placements to summer schools, vocational training and
           professional English testing — there's a programme here for you.</p>
-        <img src="images/britishcouncilbadge.png" alt="British Council Accredited" class="bc-badge" style="position: absolute; top: 0; right: 0; height: 90px; filter: brightness(0) invert(1); opacity: 0.8; z-index: 1;">
+        <img src="images/britishcouncilbadge.png" alt="British Council Accredited" class="bc-badge"
+          style="position: absolute; top: 0; right: 0; height: 90px; filter: brightness(0) invert(1); opacity: 0.8; z-index: 1;">
       </div>
 
       <div class="courses-list reveal">
@@ -1680,9 +1932,30 @@
           cities in Ireland — and one of the best places in the world to learn English.</p>
       </div>
 
-      <div class="derry-quote reveal">
-        "Many of our former students return <strong>year after year</strong> because they know they're guaranteed the
-        highest quality education, a warm Irish welcome, and a unique cultural experience they'll never forget."
+      <div class="derry-quote-row reveal">
+        <div class="derry-quote">
+          "Many of our former students return <strong>year after year</strong> because they know they're guaranteed the
+          highest quality education, a warm Irish welcome, and a unique cultural experience they'll never forget."
+        </div>
+
+        <div class="derry-carousel" aria-label="Derry photo gallery">
+          <div class="derry-carousel-main">
+            <img class="derry-carousel-img active" src="images/Derrywalls.jpg" alt="Derry city walls" loading="lazy">
+            <img class="derry-carousel-img" src="images/Derrygirls.jpg" alt="Derry Girls mural" loading="lazy">
+            <img class="derry-carousel-img" src="images/derryguildhall1.jpg" alt="Derry Guildhall" loading="lazy">
+          </div>
+          <div class="derry-carousel-thumbs">
+            <button class="derry-carousel-thumb active" aria-label="Photo 1">
+              <img src="images/Derrywalls.jpg" alt="">
+            </button>
+            <button class="derry-carousel-thumb" aria-label="Photo 2">
+              <img src="images/Derrygirls.jpg" alt="">
+            </button>
+            <button class="derry-carousel-thumb" aria-label="Photo 3">
+              <img src="images/derryguildhall1.jpg" alt="">
+            </button>
+          </div>
+        </div>
       </div>
 
       <div class="derry-body reveal">
@@ -1722,15 +1995,33 @@
   </section>
 
   <section class="testimonials" id="testimonials">
-    <div class="section-inner">
-      <div class="section-header">
-        <div>
-          <div class="section-num">04 — Student voices</div>
-          <h2 class="section-title">From <em>Italy, Spain,</em><br>Poland and beyond.</h2>
-        </div>
+
+    <div class="test-hero">
+      <div class="test-hero-inner reveal">
+        <div class="section-num">04 — Student voices</div>
+        <h2 class="section-title">From <em>Italy, Spain,</em><br>Poland and beyond.</h2>
         <p class="section-lead">A small selection of feedback from students who've studied with us over the years.</p>
       </div>
+      <div class="test-polaroids reveal">
+        <div class="polaroid polaroid-1">
+          <img src="images/Studenttrip1.JPG" alt="Students on a Foyle trip" loading="lazy">
+        </div>
+        <div class="polaroid polaroid-2">
+          <img src="images/Neele and Hanna on the walls.jpeg" alt="Students on the Derry walls" loading="lazy">
+        </div>
+        <div class="polaroid polaroid-3">
+          <img src="images/esther and arnau at peace bridge.jpg" alt="Students at the Peace Bridge" loading="lazy">
+        </div>
+        <div class="polaroid polaroid-4">
+          <img src="images/Magnus and ole- Derry girls.jpg" alt="Students at the Derry Girls mural" loading="lazy">
+        </div>
+        <div class="polaroid polaroid-6">
+          <img src="images/Lucas Leichnig La Reunion Derry.jpg" alt="Lucas from La Réunion in Derry" loading="lazy">
+        </div>
+      </div>
+    </div>
 
+    <div class="section-inner test-cards-zone">
       <div class="test-grid reveal">
         <div class="test-card">
           <span class="test-quote-mark">"</span>
@@ -1791,8 +2082,7 @@
           <div class="section-num">05 — Get in touch</div>
           <h2 class="section-title">We'd love to <em>hear from you.</em></h2>
         </div>
-        <p class="section-lead">Tell us about your goals and we'll help you find the right course. No pressure — just a
-          friendly conversation.</p>
+        <p class="section-lead">Tell us about your goals and we'll help you find the right course. </p>
       </div>
 
       <div class="contact-grid reveal">
@@ -1990,10 +2280,10 @@
       function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
 
       function animateStat(el) {
-        var target   = parseInt(el.dataset.target, 10);
-        var suffix   = el.dataset.suffix || '';
+        var target = parseInt(el.dataset.target, 10);
+        var suffix = el.dataset.suffix || '';
         var duration = parseInt(el.dataset.duration, 10) || 1600;
-        var ease     = target >= 500 ? easeOutCubic : easeOutQuad;
+        var ease = target >= 500 ? easeOutCubic : easeOutQuad;
 
         if (prefersReduced) {
           el.textContent = target + suffix;
@@ -2004,7 +2294,7 @@
         function step(ts) {
           if (!start) start = ts;
           var progress = Math.min((ts - start) / duration, 1);
-          var current  = Math.round(ease(progress) * target);
+          var current = Math.round(ease(progress) * target);
           el.textContent = current === 0 ? ' ' : current + suffix;
           if (progress < 1) requestAnimationFrame(step);
         }
@@ -2037,6 +2327,39 @@
           });
         }
       }, { passive: true });
+    })();
+
+    (function () {
+      const carousel = document.querySelector('.derry-carousel');
+      if (!carousel) return;
+      const imgs = carousel.querySelectorAll('.derry-carousel-img');
+      const thumbs = carousel.querySelectorAll('.derry-carousel-thumb');
+      let current = 0;
+      let timer;
+
+      function goTo(n) {
+        imgs[current].classList.remove('active');
+        thumbs[current].classList.remove('active');
+        current = n;
+        imgs[current].classList.add('active');
+        thumbs[current].classList.add('active');
+      }
+
+      function startTimer() {
+        clearInterval(timer);
+        timer = setInterval(() => goTo((current + 1) % imgs.length), 4500);
+      }
+
+      thumbs.forEach((t, i) => t.addEventListener('click', () => {
+        goTo(i);
+        clearInterval(timer);
+        startTimer();
+      }));
+
+      carousel.addEventListener('mouseenter', () => clearInterval(timer));
+      carousel.addEventListener('mouseleave', startTimer);
+
+      startTimer();
     })();
 
     function handleSubmit(e) {

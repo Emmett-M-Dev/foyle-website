@@ -6,7 +6,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Foyle International — Learn English in Derry, Northern Ireland</title>
   <meta name="description"
-    content="Northern Ireland's longest-established English language school. Erasmus+ programmes, Junior Summer Schools and English courses in the city of Derry since 1990.">
+    content="Quality English language stays in Ireland since 1990. Foyle International offers cultural stays, linguistic stays, Erasmus+ programmes and Junior Summer Schools in Derry, Northern Ireland.">
+  <link rel="canonical" href="https://foyle.eu/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://foyle.eu/">
+  <meta property="og:title" content="Foyle International — English Language Stays in Ireland">
+  <meta property="og:description" content="Quality English language stays in Ireland since 1990. Cultural stays, linguistic stays, Erasmus+ programmes and Junior Summer Schools in Derry, Northern Ireland.">
+  <meta property="og:image" content="https://foyle.eu/images/Derrywalls.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Foyle International — English Language Stays in Ireland">
+  <meta name="twitter:description" content="Quality English language stays in Ireland since 1990. Cultural stays, linguistic stays and Erasmus+ in Derry.">
+  <meta name="twitter:image" content="https://foyle.eu/images/Derrywalls.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -2214,24 +2224,24 @@
             <div class="form-row">
               <div class="form-group">
                 <label for="fname">First name *</label>
-                <input type="text" id="fname" required placeholder="María">
+                <input type="text" id="fname" name="First Name" required placeholder="María">
               </div>
               <div class="form-group">
                 <label for="lname">Last name *</label>
-                <input type="text" id="lname" required placeholder="González">
+                <input type="text" id="lname" name="Last Name" required placeholder="González">
               </div>
             </div>
             <div class="form-group">
               <label for="email">Email *</label>
-              <input type="email" id="email" required placeholder="you@example.com">
+              <input type="email" id="email" name="Email" required placeholder="you@example.com">
             </div>
             <div class="form-group">
               <label for="country">Country</label>
-              <input type="text" id="country" placeholder="Spain">
+              <input type="text" id="country" name="Country" placeholder="Spain">
             </div>
             <div class="form-group">
               <label for="course">Area of interest</label>
-              <select id="course">
+              <select id="course" name="Course Interest">
                 <option value="">Please select...</option>
                 <option>Erasmus+ / Internship</option>
                 <option>Junior Summer School</option>
@@ -2244,9 +2254,9 @@
             </div>
             <div class="form-group">
               <label for="message">Message</label>
-              <textarea id="message" placeholder="Tell us about yourself and what you're looking for..."></textarea>
+              <textarea id="message" name="Message" placeholder="Tell us about yourself and what you're looking for..."></textarea>
             </div>
-            <button type="submit" class="btn-submit">Send enquiry →</button>
+            <button type="submit" class="btn-submit" id="submit-btn">Send enquiry →</button>
           </form>
 
           <div class="form-success" id="form-success">
@@ -2460,9 +2470,40 @@
     function handleSubmit(e) {
       e.preventDefault();
       const email = document.getElementById('email').value;
-      document.getElementById('confirm-email').textContent = email;
-      document.getElementById('enquiry-form').style.display = 'none';
-      document.getElementById('form-success').style.display = 'block';
+      const btn = document.getElementById('submit-btn');
+      btn.textContent = 'Sending…';
+      btn.disabled = true;
+
+      fetch('https://formsubmit.co/ajax/emmett.murray01@gmail.com', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          'First Name': document.getElementById('fname').value,
+          'Last Name': document.getElementById('lname').value,
+          'Email': email,
+          'Country': document.getElementById('country').value,
+          'Course Interest': document.getElementById('course').value,
+          'Message': document.getElementById('message').value,
+          '_subject': 'New Enquiry — Foyle International'
+        })
+      })
+      .then(r => r.json())
+      .then(data => {
+        if (data.success === 'true' || data.success === true) {
+          document.getElementById('confirm-email').textContent = email;
+          document.getElementById('enquiry-form').style.display = 'none';
+          document.getElementById('form-success').style.display = 'block';
+        } else {
+          btn.textContent = 'Send enquiry →';
+          btn.disabled = false;
+          alert('Something went wrong. Please email us directly at info@foyle.eu');
+        }
+      })
+      .catch(() => {
+        btn.textContent = 'Send enquiry →';
+        btn.disabled = false;
+        alert('Something went wrong. Please email us directly at info@foyle.eu');
+      });
     }
   </script>
 </body>

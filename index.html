@@ -549,6 +549,12 @@
       gap: 2rem;
     }
 
+    .stat {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
     .stat-num {
       font-family: 'Fraunces', serif;
       font-size: 2.8rem;
@@ -1113,6 +1119,15 @@
       opacity: 0.3;
     }
 
+    .test-question {
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--foyle-green-dark);
+      margin-bottom: 0.85rem;
+    }
+
     .test-card blockquote {
       font-family: 'Newsreader', serif;
       font-size: 1.05rem;
@@ -1639,6 +1654,11 @@
         gap: 2rem;
       }
 
+      .stat {
+        text-align: center;
+        align-items: center;
+      }
+
       .section-header {
         grid-template-columns: 1fr;
         gap: 1.5rem;
@@ -2102,7 +2122,7 @@
     <div class="test-hero">
       <div class="test-hero-inner reveal">
         <div class="section-num">04 — Student voices</div>
-        <h2 class="section-title">From <em>Italy, Spain,</em><br>Poland and beyond.</h2>
+        <h2 class="section-title">From <em>France, Germany,</em><br>Italy and beyond.</h2>
         <p class="section-lead">A small selection of feedback from students who've studied with us over the years.</p>
       </div>
       <div class="test-polaroids reveal">
@@ -2128,36 +2148,39 @@
       <div class="test-grid reveal">
         <div class="test-card">
           <span class="test-quote-mark">"</span>
-          <blockquote>[Student testimonial one placeholder]</blockquote>
+          <div class="test-question">On growing in confidence</div>
+          <blockquote>This experience made me realise that I'm capable of more than I thought.</blockquote>
           <div class="test-author">
-            <div class="test-avatar">M</div>
+            <div class="test-avatar">C</div>
             <div>
-              <div class="test-name">María González</div>
-              <div class="test-origin">Spain · General English</div>
+              <div class="test-name">Cassandra S.</div>
+              <div class="test-origin">France · Erasmus+ Programme</div>
             </div>
           </div>
         </div>
 
         <div class="test-card">
           <span class="test-quote-mark">"</span>
-          <blockquote>[Student testimonial two placeholder]</blockquote>
+          <div class="test-question">On Derry in one sentence</div>
+          <blockquote>Derry and its people are welcoming and very accepting and create a cosy and pleasant atmosphere.</blockquote>
           <div class="test-author">
-            <div class="test-avatar">L</div>
+            <div class="test-avatar">D</div>
             <div>
-              <div class="test-name">Luca Ferretti</div>
-              <div class="test-origin">Italy · Erasmus+ Internship</div>
+              <div class="test-name">Dennis S.</div>
+              <div class="test-origin">Germany · Short Course English</div>
             </div>
           </div>
         </div>
 
         <div class="test-card">
           <span class="test-quote-mark">"</span>
-          <blockquote>[Student testimonial three placeholder]</blockquote>
+          <div class="test-question">On advice for future students</div>
+          <blockquote>I'm speaking English better and I'm proud of my achievements. Take it one day at a time — and give it everything you have.</blockquote>
           <div class="test-author">
-            <div class="test-avatar">A</div>
+            <div class="test-avatar">C</div>
             <div>
-              <div class="test-name">Ana Kowalski</div>
-              <div class="test-origin">Poland · Parent · Junior Summer School</div>
+              <div class="test-name">Chiara</div>
+              <div class="test-origin">Italy · Erasmus+ Programme</div>
             </div>
           </div>
         </div>

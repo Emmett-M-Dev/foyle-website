@@ -4,6 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="images/foyle-logo.png" type="image/png">
+  <link rel="apple-touch-icon" href="images/foyle-logo.png">
   <title>Discover Derry — Foyle International English Language School</title>
   <meta name="description"
     content="Discover Derry/Londonderry — Ireland's only fully intact walled city. One of the best destinations in the world for English language stays, cultural stays and linguistic stays.">
@@ -852,6 +855,40 @@
         gap: 2rem;
       }
     }
+
+    .cookie-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 200;
+      background: #0a0a0a;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.65);
+      flex-wrap: wrap;
+    }
+    .cookie-bar a { color: #3FA535; text-decoration: none; }
+    .cookie-bar a:hover { text-decoration: underline; }
+    .cookie-btn {
+      background: #3FA535;
+      color: #0a0a0a;
+      border: none;
+      padding: 0.5rem 1.4rem;
+      border-radius: 100px;
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
   </style>
 </head>
 
@@ -941,6 +978,7 @@
       </div>
 
       <p class="large-quote reveal">"Derry has a way of staying with you."</p>
+      <p class="reveal" style="text-align:center;font-family:'Instrument Sans',sans-serif;font-size:0.78rem;font-weight:500;text-transform:uppercase;letter-spacing:0.14em;color:var(--ink-soft);margin-top:1rem;">— Paul Murray, Director</p>
     </div>
   </section>
 
@@ -1073,7 +1111,7 @@
         <div class="footer-logo">
           <img src="images/foyle-logo.png" alt="Foyle International">
           <p class="footer-brand-text">Northern Ireland's longest-established English language school. Quality courses,
-            warm Irish hospitality, and an unforgettable experience — since 1990.</p>
+            warm Irish hospitality, and an unforgettable experience since 1990.</p>
         </div>
         <div class="footer-col">
           <h5>Courses</h5>
@@ -1130,7 +1168,7 @@
 
     // Initialize Map when elements are visible
     setTimeout(() => {
-      const map = L.map('derry-map', { zoomControl: false }).setView([54.997, -7.320], 15);
+      const map = L.map('derry-map', { zoomControl: false }).setView([54.999, -7.320], 14);
 
       // Light mode tiles (Standard OpenStreetMap)
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -1225,7 +1263,22 @@
 
       observer.observe(studentSection);
     })();
+
+    (function () {
+      if (!localStorage.getItem('foyle-cookies-ok')) {
+        document.getElementById('cookie-bar').style.display = 'flex';
+      }
+    })();
+    function acceptCookies() {
+      localStorage.setItem('foyle-cookies-ok', '1');
+      document.getElementById('cookie-bar').style.display = 'none';
+    }
   </script>
+
+  <div class="cookie-bar" id="cookie-bar" style="display:none">
+    <span>This site uses Google Fonts to deliver its design. No tracking cookies are used. <a href="terms.html">Privacy policy</a></span>
+    <button class="cookie-btn" onclick="acceptCookies()">Got it</button>
+  </div>
 
 </body>
 

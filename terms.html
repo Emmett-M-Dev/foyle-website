@@ -4,6 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="images/foyle-logo.png" type="image/png">
+  <link rel="apple-touch-icon" href="images/foyle-logo.png">
   <title>Terms & Conditions — Foyle International</title>
   <meta name="description" content="Terms and conditions for all Foyle International programmes — language stays, mobility programmes, and self-catering accommodation.">
   <link rel="canonical" href="https://foyle.eu/terms.html">
@@ -393,6 +396,40 @@
       .terms-body { padding: 1rem 0; }
       .terms-panel { display: block !important; }
       .terms-panel:not(.active) { display: none !important; }
+    }
+
+    .cookie-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 200;
+      background: #0a0a0a;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.65);
+      flex-wrap: wrap;
+    }
+    .cookie-bar a { color: #3FA535; text-decoration: none; }
+    .cookie-bar a:hover { text-decoration: underline; }
+    .cookie-btn {
+      background: #3FA535;
+      color: #0a0a0a;
+      border: none;
+      padding: 0.5rem 1.4rem;
+      border-radius: 100px;
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      flex-shrink: 0;
     }
   </style>
 </head>
@@ -935,7 +972,22 @@
       switchTab(panelId, document.querySelector('[data-panel="' + panelId + '"]'));
       setTimeout(() => window.print(), 200);
     }
+
+    (function () {
+      if (!localStorage.getItem('foyle-cookies-ok')) {
+        document.getElementById('cookie-bar').style.display = 'flex';
+      }
+    })();
+    function acceptCookies() {
+      localStorage.setItem('foyle-cookies-ok', '1');
+      document.getElementById('cookie-bar').style.display = 'none';
+    }
   </script>
+
+  <div class="cookie-bar" id="cookie-bar" style="display:none">
+    <span>This site uses Google Fonts to deliver its design. No tracking cookies are used. <a href="terms.html">Privacy policy</a></span>
+    <button class="cookie-btn" onclick="acceptCookies()">Got it</button>
+  </div>
 
 </body>
 </html>

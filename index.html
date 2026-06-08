@@ -4,6 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="images/foyle-logo.png" type="image/png">
+  <link rel="apple-touch-icon" href="images/foyle-logo.png">
   <title>Foyle International — Learn English in Derry, Northern Ireland</title>
   <meta name="description"
     content="Quality English language stays in Ireland since 1990. Foyle International offers cultural stays, linguistic stays, Erasmus+ programmes and Junior Summer Schools in Derry, Northern Ireland.">
@@ -11,11 +14,13 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://foyle.eu/">
   <meta property="og:title" content="Foyle International — English Language Stays in Ireland">
-  <meta property="og:description" content="Quality English language stays in Ireland since 1990. Cultural stays, linguistic stays, Erasmus+ programmes and Junior Summer Schools in Derry, Northern Ireland.">
+  <meta property="og:description"
+    content="Quality English language stays in Ireland since 1990. Cultural stays, linguistic stays, Erasmus+ programmes and Junior Summer Schools in Derry, Northern Ireland.">
   <meta property="og:image" content="https://foyle.eu/images/Derrywalls.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Foyle International — English Language Stays in Ireland">
-  <meta name="twitter:description" content="Quality English language stays in Ireland since 1990. Cultural stays, linguistic stays and Erasmus+ in Derry.">
+  <meta name="twitter:description"
+    content="Quality English language stays in Ireland since 1990. Cultural stays, linguistic stays and Erasmus+ in Derry.">
   <meta name="twitter:image" content="https://foyle.eu/images/Derrywalls.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1561,6 +1566,52 @@
       gap: 1rem;
     }
 
+    .cookie-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 200;
+      background: var(--black);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.65);
+      flex-wrap: wrap;
+    }
+
+    .cookie-bar a {
+      color: var(--foyle-green);
+      text-decoration: none;
+    }
+
+    .cookie-bar a:hover {
+      text-decoration: underline;
+    }
+
+    .cookie-btn {
+      background: var(--foyle-green);
+      color: #0a0a0a;
+      border: none;
+      padding: 0.5rem 1.4rem;
+      border-radius: 100px;
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .cookie-btn:hover {
+      background: var(--foyle-green-dark);
+    }
+
     .reveal {
       opacity: 0;
       transform: translateY(40px);
@@ -1706,9 +1757,14 @@
 
       .test-polaroids {
         margin-bottom: -5rem;
-        overflow-x: auto;
-        justify-content: flex-start;
-        padding: 0 1.5rem;
+        overflow: visible;
+        justify-content: center;
+        padding: 0 1rem;
+      }
+
+      .polaroid-4,
+      .polaroid-6 {
+        display: none;
       }
 
       .test-cards-zone {
@@ -1896,8 +1952,8 @@
             Learn English. <span class="huge"><em id="hero-typing-wrap"><span id="hero-typed"></span><span
                   class="typing-cursor"></span></em></span>
           </h1>
-          <p class="hero-tagline">Northern Ireland's longest-established English language school — quality courses,
-            a unique location, an experience you'll never forget!.</p>
+          <p class="hero-tagline">Northern Ireland's longest-established English language school. Quality courses,
+            a unique location, an experience you'll never forget!</p>
         </div>
       </div>
 
@@ -2059,6 +2115,7 @@
         <div class="derry-quote">
           "Students come to Foyle for <strong>one unforgettable experience</strong> and leave with the language skills,
           the memories, and the friendships to prove it."
+          <cite style="display:block;font-family:'Instrument Sans',sans-serif;font-size:0.78rem;font-weight:500;text-transform:uppercase;letter-spacing:0.14em;color:var(--ink-soft);margin-top:1.5rem;font-style:normal;">Aine Murray, Programmes Manager</cite>
         </div>
 
         <div class="derry-carousel" aria-label="Derry photo gallery">
@@ -2162,7 +2219,8 @@
         <div class="test-card">
           <span class="test-quote-mark">"</span>
           <div class="test-question">On Derry in one sentence</div>
-          <blockquote>Derry and its people are welcoming and very accepting and create a cosy and pleasant atmosphere.</blockquote>
+          <blockquote>Derry and its people are welcoming and very accepting and create a cosy and pleasant atmosphere.
+          </blockquote>
           <div class="test-author">
             <div class="test-avatar">D</div>
             <div>
@@ -2175,7 +2233,8 @@
         <div class="test-card">
           <span class="test-quote-mark">"</span>
           <div class="test-question">On advice for future students</div>
-          <blockquote>I'm speaking English better and I'm proud of my achievements. Take it one day at a time — and give it everything you have.</blockquote>
+          <blockquote>I'm speaking English better and I'm proud of my achievements. Take it one day at a time — and give
+            it everything you have.</blockquote>
           <div class="test-author">
             <div class="test-avatar">C</div>
             <div>
@@ -2273,11 +2332,13 @@
                 <option>Homestay / Accommodation</option>
                 <option>Become a Host</option>
                 <option>Business Partner / Agent</option>
+                <option>Other</option>
               </select>
             </div>
             <div class="form-group">
               <label for="message">Message</label>
-              <textarea id="message" name="Message" placeholder="Tell us about yourself and what you're looking for..."></textarea>
+              <textarea id="message" name="Message"
+                placeholder="Tell us about yourself and what you're looking for..."></textarea>
             </div>
             <button type="submit" class="btn-submit" id="submit-btn">Send enquiry →</button>
           </form>
@@ -2292,13 +2353,19 @@
     </div>
   </section>
 
+  <div class="cookie-bar" id="cookie-bar" style="display:none">
+    <span>This site uses Google Fonts to deliver its design. No tracking cookies are used. <a href="terms.html">Privacy
+        policy</a></span>
+    <button class="cookie-btn" onclick="acceptCookies()">Got it</button>
+  </div>
+
   <footer>
     <div class="footer-inner">
       <div class="footer-top">
         <div class="footer-logo">
           <img src="images/foyle-logo.png" alt="Foyle International">
           <p class="footer-brand-text">Northern Ireland's longest-established English language school. Quality courses,
-            warm Irish hospitality, and an unforgettable experience — since 1990.</p>
+            warm Irish hospitality, and an unforgettable experience since 1990.</p>
         </div>
         <div class="footer-col">
           <h5>Courses</h5>
@@ -2335,6 +2402,16 @@
   </footer>
 
   <script>
+    (function () {
+      if (!localStorage.getItem('foyle-cookies-ok')) {
+        document.getElementById('cookie-bar').style.display = 'flex';
+      }
+    })();
+    function acceptCookies() {
+      localStorage.setItem('foyle-cookies-ok', '1');
+      document.getElementById('cookie-bar').style.display = 'none';
+    }
+
     const hamburger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobile-menu');
     hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
@@ -2510,23 +2587,23 @@
           '_subject': 'New Enquiry — Foyle International'
         })
       })
-      .then(r => r.json())
-      .then(data => {
-        if (data.success === 'true' || data.success === true) {
-          document.getElementById('confirm-email').textContent = email;
-          document.getElementById('enquiry-form').style.display = 'none';
-          document.getElementById('form-success').style.display = 'block';
-        } else {
+        .then(r => r.json())
+        .then(data => {
+          if (data.success === 'true' || data.success === true) {
+            document.getElementById('confirm-email').textContent = email;
+            document.getElementById('enquiry-form').style.display = 'none';
+            document.getElementById('form-success').style.display = 'block';
+          } else {
+            btn.textContent = 'Send enquiry →';
+            btn.disabled = false;
+            alert('Something went wrong. Please email us directly at info@foyle.eu');
+          }
+        })
+        .catch(() => {
           btn.textContent = 'Send enquiry →';
           btn.disabled = false;
           alert('Something went wrong. Please email us directly at info@foyle.eu');
-        }
-      })
-      .catch(() => {
-        btn.textContent = 'Send enquiry →';
-        btn.disabled = false;
-        alert('Something went wrong. Please email us directly at info@foyle.eu');
-      });
+        });
     }
   </script>
 </body>

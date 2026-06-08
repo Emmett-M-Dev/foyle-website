@@ -2300,7 +2300,7 @@
 
         <div class="contact-form-wrap">
           <h3>Send us an enquiry</h3>
-          <p class="sub">We'll reply within one working day.</p>
+          <p class="sub">We'll reply as soon as possible.</p>
 
           <form id="enquiry-form" onsubmit="handleSubmit(event)">
             <div class="form-row">
@@ -2346,7 +2346,7 @@
           <div class="form-success" id="form-success">
             <div class="check">✓</div>
             <h4>Thank you!</h4>
-            <p>We'll reply to <strong id="confirm-email"></strong> within one working day.</p>
+            <p>We'll reply to <strong id="confirm-email"></strong> as soon as possible.</p>
           </div>
         </div>
       </div>
@@ -2574,17 +2574,16 @@
       btn.textContent = 'Sending…';
       btn.disabled = true;
 
-      fetch('https://formsubmit.co/ajax/emmett.murray01@gmail.com', {
+      fetch('https://script.google.com/macros/s/AKfycbwEm3CKXa4UpeQvvlEFpLq3yEdZUw6lzwc8csiH74IArykzzHBB6-6g354crgrGrXCE7Q/exec', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        headers: { 'Content-Type': 'text/plain' },
         body: JSON.stringify({
           'First Name': document.getElementById('fname').value,
           'Last Name': document.getElementById('lname').value,
           'Email': email,
           'Country': document.getElementById('country').value,
           'Course Interest': document.getElementById('course').value,
-          'Message': document.getElementById('message').value,
-          '_subject': 'New Enquiry — Foyle International'
+          'Message': document.getElementById('message').value
         })
       })
         .then(r => r.json())

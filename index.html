@@ -164,6 +164,8 @@
       gap: 5px;
       cursor: pointer;
       padding: 6px;
+      background: none;
+      border: none;
     }
 
     .hamburger span {
@@ -573,7 +575,7 @@
       font-size: 0.78rem;
       text-transform: uppercase;
       letter-spacing: 0.12em;
-      color: rgba(0, 0, 0, 0.65);
+      color: rgba(0, 0, 0, 0.85);
     }
 
     section {
@@ -1032,7 +1034,7 @@
       display: block;
     }
 
-    .feature h4 {
+    .feature h3 {
       font-family: 'Fraunces', serif;
       font-size: 1.15rem;
       font-weight: 500;
@@ -1533,7 +1535,7 @@
       max-width: 320px;
     }
 
-    .footer-col h5 {
+    .footer-col h4 {
       font-family: 'Instrument Sans', sans-serif;
       font-size: 0.72rem;
       font-weight: 600;
@@ -1570,7 +1572,7 @@
       padding-top: 2rem;
       font-family: 'Instrument Sans', sans-serif;
       font-size: 0.8rem;
-      color: rgba(255, 255, 255, 0.4);
+      color: rgba(255, 255, 255, 0.6);
       flex-wrap: wrap;
       gap: 1rem;
     }
@@ -1929,9 +1931,9 @@
         <a href="host.html">Host a Student</a>
         <a href="#contact" class="nav-cta">Enquire →</a>
       </div>
-      <div class="hamburger" id="hamburger" aria-label="Menu">
+      <button class="hamburger" id="hamburger" type="button" aria-label="Menu" aria-controls="mobile-menu" aria-expanded="false">
         <span></span><span></span><span></span>
-      </div>
+      </button>
     </div>
   </nav>
 
@@ -1943,9 +1945,13 @@
     <a href="#contact" onclick="closeMenu()">Enquire</a>
   </div>
 
+  <main>
   <section class="hero" id="home">
     <div class="hero-bg-track" id="hero-bg-track">
-      <img class="hero-bg-img" src="images/Foylestudentslooksatcause2.png" alt="" loading="eager" aria-hidden="true">
+      <picture>
+        <source srcset="images/Foylestudentslooksatcause2.webp" type="image/webp">
+        <img class="hero-bg-img" src="images/Foylestudentslooksatcause2.jpg" alt="" width="1600" height="900" fetchpriority="high" decoding="async" loading="eager" aria-hidden="true">
+      </picture>
     </div>
     <div class="hero-bg-overlay"></div>
 
@@ -2160,22 +2166,22 @@
         <div class="derry-features">
           <div class="feature">
             <span class="feature-icon"></span>
-            <h4>Historic walls</h4>
+            <h3>Historic walls</h3>
             <p>Walk the last fully intact city walls in Europe, right in your front garden.</p>
           </div>
           <div class="feature">
             <span class="feature-icon"></span>
-            <h4>Culture & music</h4>
+            <h3>Culture & music</h3>
             <p>A city of festivals, arts and traditional Irish music woven into everyday life.</p>
           </div>
           <div class="feature">
             <span class="feature-icon"></span>
-            <h4>Safe & small</h4>
+            <h3>Safe & small</h3>
             <p>A close-knit community famous for its warmth — everything a short walk away.</p>
           </div>
           <div class="feature">
             <span class="feature-icon"></span>
-            <h4>Easy to reach</h4>
+            <h3>Easy to reach</h3>
             <p>Direct flights to City of Derry Airport and easy connections via Belfast & Dublin.</p>
           </div>
         </div>
@@ -2365,6 +2371,7 @@
       </div>
     </div>
   </section>
+  </main>
 
   <div class="cookie-bar" id="cookie-bar" style="display:none">
     <span>This site uses Google Fonts, which loads font files from Google's servers. No tracking or advertising cookies are used. See our <a href="privacy.html">Privacy &amp; Accessibility</a> page for details.</span>
@@ -2380,7 +2387,7 @@
             warm Irish hospitality, and an unforgettable experience since 1990.</p>
         </div>
         <div class="footer-col">
-          <h5>Courses</h5>
+          <h4>Courses</h4>
           <ul>
             <li><a href="#courses">Erasmus+</a></li>
             <li><a href="#courses">Junior Summer School</a></li>
@@ -2389,7 +2396,7 @@
           </ul>
         </div>
         <div class="footer-col">
-          <h5>Company</h5>
+          <h4>Company</h4>
           <ul>
             <li><a href="#about">About</a></li>
             <li><a href="derry.html">About Derry</a></li>
@@ -2399,7 +2406,7 @@
           </ul>
         </div>
         <div class="footer-col">
-          <h5>Contact</h5>
+          <h4>Contact</h4>
           <ul>
             <li><a href="mailto:info@foyle.eu">info@foyle.eu</a></li>
             <li><a href="tel:+442871371535">+44 28 71 371 535</a></li>
@@ -2427,19 +2434,33 @@
 
     const hamburger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobile-menu');
-    hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
-    function closeMenu() { mobileMenu.classList.remove('open'); }
+    hamburger.addEventListener('click', () => {
+      const open = mobileMenu.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    function closeMenu() {
+      mobileMenu.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+    }
 
     (function () {
       var nav = document.querySelector('nav.site-nav');
+      var scrolled = false;
+      var ticking = false;
       function updateNav() {
-        if (window.scrollY > 80) {
-          nav.classList.add('nav-scrolled');
-        } else {
-          nav.classList.remove('nav-scrolled');
+        var shouldScroll = window.scrollY > 80;
+        if (shouldScroll !== scrolled) {
+          nav.classList.toggle('nav-scrolled', shouldScroll);
+          scrolled = shouldScroll;
         }
+        ticking = false;
       }
-      window.addEventListener('scroll', updateNav, { passive: true });
+      window.addEventListener('scroll', () => {
+        if (!ticking) {
+          requestAnimationFrame(updateNav);
+          ticking = true;
+        }
+      }, { passive: true });
       updateNav();
     })();
 

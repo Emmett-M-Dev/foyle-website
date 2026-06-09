@@ -1,0 +1,21 @@
+# Security headers — applied to every response
+# Format: works on Netlify and Cloudflare Pages out of the box.
+# For Apache use .htaccess, for Nginx use add_header directives (translations below).
+
+/*
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Resource-Policy: same-origin
+  X-XSS-Protection: 0
+
+# Long cache on hashed assets — images don't change often
+/images/*
+  Cache-Control: public, max-age=2592000, immutable
+
+# Short cache on HTML so updates propagate
+/*.html
+  Cache-Control: public, max-age=600, must-revalidate

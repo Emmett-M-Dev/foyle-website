@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="images/foyle-logo.png" type="image/png">
+  <link rel="apple-touch-icon" href="images/foyle-logo.png">
+  <title>Privacy &amp; Accessibility — Foyle International</title>
+  <meta name="description" content="Privacy policy and accessibility statement for Foyle International — how we handle your data and how we make our website usable by everyone.">
+  <link rel="canonical" href="https://foyle.eu/privacy.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://foyle.eu/privacy.html">
+  <meta property="og:title" content="Privacy &amp; Accessibility — Foyle International">
+  <meta property="og:description" content="Privacy policy and accessibility statement for Foyle International — how we handle your data and how we make our website usable by everyone.">
+  <meta property="og:image" content="https://foyle.eu/images/Derrywalls.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Inter+Tight:wght@400;500;600&family=Instrument+Sans:wght@400;500;600&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --foyle-green: #3FA535;
+      --foyle-green-dark: #2d7a25;
+      --foyle-green-deep: #1a4f18;
+      --foyle-green-pale: #f0f9ee;
+      --foyle-green-mid: #d9eed4;
+      --black: #0a0a0a;
+      --cream: #faf8f3;
+      --paper: #f5f2ea;
+      --ink: #1a1a18;
+      --ink-soft: #545450;
+      --rule: #e2ddd0;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter Tight', system-ui, sans-serif;
+      color: var(--ink);
+      background: var(--cream);
+      overflow-x: hidden;
+      line-height: 1.5;
+    }
+
+    nav.site-nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 50;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--rule);
+    }
+    .nav-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+    .nav-logo img { height: 60px; width: auto; display: block; }
+    .nav-links { display: flex; align-items: center; gap: 0.2rem; }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--ink);
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 0.87rem;
+      font-weight: 500;
+      padding: 0.5rem 0.9rem;
+      border-radius: 4px;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--foyle-green-dark); }
+    .nav-cta {
+      margin-left: 0.75rem;
+      background: var(--foyle-green) !important;
+      color: black !important;
+      padding: 0.55rem 1.2rem !important;
+      border-radius: 100px !important;
+      font-weight: 600 !important;
+    }
+    .nav-cta:hover { background: var(--black) !important; color: white !important; }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 6px;
+      background: none;
+      border: none;
+    }
+    .hamburger span {
+      width: 22px; height: 2px;
+      background: var(--ink);
+      border-radius: 2px;
+    }
+
+    .mobile-menu {
+      position: fixed;
+      top: 72px; left: 0; right: 0;
+      background: var(--black);
+      padding: 2rem;
+      transform: translateY(-110%);
+      transition: transform 0.35s ease;
+      z-index: 49;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    .mobile-menu.open { transform: translateY(0); }
+    .mobile-menu a {
+      color: white;
+      text-decoration: none;
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 1.05rem;
+    }
+
+    .page-header {
+      padding: 10rem 2rem 5rem;
+      background: var(--black);
+      color: white;
+    }
+    .page-header-inner { max-width: 1400px; margin: 0 auto; }
+    .page-header .label {
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--foyle-green);
+      display: block;
+      margin-bottom: 1.5rem;
+    }
+    .page-header h1 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(2.2rem, 4vw, 3.6rem);
+      font-weight: 400;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      color: white;
+      margin-bottom: 1.5rem;
+    }
+    .page-header h1 em { font-style: italic; color: var(--foyle-green); font-weight: 500; }
+    .page-header p {
+      font-family: 'Newsreader', serif;
+      font-size: 1.1rem;
+      line-height: 1.65;
+      color: rgba(255,255,255,0.65);
+      max-width: 640px;
+    }
+
+    .doc-body { padding: 5rem 2rem 8rem; }
+    .doc-inner { max-width: 820px; margin: 0 auto; }
+
+    .doc-inner .effective-date {
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--ink-soft);
+      margin-bottom: 2.5rem;
+      display: block;
+    }
+    .doc-inner h2 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.7rem;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+      margin-bottom: 0.5rem;
+      padding-top: 3rem;
+      border-top: 1px solid var(--rule);
+      margin-top: 3rem;
+    }
+    .doc-inner h2:first-of-type { margin-top: 0; border-top: none; padding-top: 0; }
+    .doc-inner h3 {
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--foyle-green-dark);
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+    }
+    .doc-inner p {
+      font-family: 'Newsreader', serif;
+      font-size: 1.05rem;
+      line-height: 1.72;
+      color: var(--ink-soft);
+      margin-bottom: 1.1rem;
+    }
+    .doc-inner ul, .doc-inner ol {
+      font-family: 'Newsreader', serif;
+      font-size: 1.05rem;
+      line-height: 1.72;
+      color: var(--ink-soft);
+      margin-bottom: 1.1rem;
+      padding-left: 1.5rem;
+    }
+    .doc-inner li { margin-bottom: 0.4rem; }
+    .doc-inner strong { color: var(--ink); font-weight: 600; }
+    .doc-inner a { color: var(--foyle-green-dark); }
+    .doc-inner .highlight-box {
+      background: var(--paper);
+      border-left: 3px solid var(--foyle-green);
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .doc-inner .highlight-box p { margin-bottom: 0; color: var(--ink); }
+
+    footer {
+      background: var(--black);
+      color: white;
+      padding: 5rem 2rem 2rem;
+    }
+    .footer-inner { max-width: 1400px; margin: 0 auto; }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem;
+      padding-bottom: 4rem;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .footer-logo img { height: 56px; width: auto; margin-bottom: 1.5rem; }
+    .footer-brand-text {
+      font-family: 'Newsreader', serif;
+      font-size: 0.95rem;
+      line-height: 1.65;
+      color: rgba(255,255,255,0.55);
+      max-width: 320px;
+    }
+    .footer-col h5 {
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--foyle-green);
+      margin-bottom: 1.5rem;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 0.75rem; }
+    .footer-col a {
+      color: rgba(255,255,255,0.65);
+      text-decoration: none;
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 0.92rem;
+      transition: color 0.2s;
+    }
+    .footer-col a:hover { color: white; }
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 2rem;
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.4);
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    @media (max-width: 960px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    }
+    @media (max-width: 600px) {
+      .footer-top { grid-template-columns: 1fr; }
+    }
+
+    .cookie-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 200;
+      background: #0a0a0a;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.65);
+      flex-wrap: wrap;
+    }
+    .cookie-bar a { color: #3FA535; text-decoration: none; }
+    .cookie-bar a:hover { text-decoration: underline; }
+    .cookie-btn {
+      background: #3FA535;
+      color: #0a0a0a;
+      border: none;
+      padding: 0.5rem 1.4rem;
+      border-radius: 100px;
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid var(--foyle-green);
+      outline-offset: 3px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="Foyle International — home">
+        <img src="images/foyle-logo.png" alt="Foyle International">
+      </a>
+      <div class="nav-links">
+        <a href="index.html#about">About</a>
+        <a href="index.html#courses">Courses</a>
+        <a href="derry.html">Derry</a>
+        <a href="host.html">Host a Student</a>
+        <a href="index.html#contact" class="nav-cta">Enquire →</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="index.html#about" onclick="closeMenu()">About</a>
+    <a href="index.html#courses" onclick="closeMenu()">Courses</a>
+    <a href="derry.html" onclick="closeMenu()">Derry</a>
+    <a href="host.html" onclick="closeMenu()">Host a Student</a>
+    <a href="index.html#contact" onclick="closeMenu()">Enquire</a>
+  </div>
+
+  <main>
+    <div class="page-header">
+      <div class="page-header-inner">
+        <span class="label">Legal</span>
+        <h1>Privacy <em>&amp;</em> Accessibility</h1>
+        <p>How we handle your information, and how we work to make this website usable by everyone.</p>
+      </div>
+    </div>
+
+    <div class="doc-body">
+      <div class="doc-inner">
+
+        <span class="effective-date">Effective 9 June 2026</span>
+
+        <h2>Privacy Policy</h2>
+        <p>Foyle International ("we", "us", "our") is the data controller for personal information collected through this website. We are committed to handling your data in line with the UK GDPR and the EU GDPR.</p>
+
+        <h3>Who we are</h3>
+        <p>Foyle International, 72 Great James Street, Derry, BT48 7DE, Northern Ireland. Email: <a href="mailto:info@foyle.eu">info@foyle.eu</a>. Telephone: <a href="tel:+442871371535">+44 28 71 371 535</a>.</p>
+
+        <h3>What we collect</h3>
+        <p>When you submit our enquiry form we collect the information you choose to provide:</p>
+        <ul>
+          <li>First name and last name</li>
+          <li>Email address</li>
+          <li>Country</li>
+          <li>Area of interest (course type)</li>
+          <li>Any message you write</li>
+        </ul>
+        <p>We do not run advertising trackers, profiling cookies, or third-party analytics on this site.</p>
+
+        <h3>Why we collect it</h3>
+        <ul>
+          <li>To respond to your enquiry and provide information about our programmes</li>
+          <li>To process a booking if you decide to proceed</li>
+          <li>To keep records required for accreditation, financial, and safeguarding obligations</li>
+        </ul>
+
+        <h3>Lawful basis</h3>
+        <p>We rely on your <strong>consent</strong> (submitting the enquiry form) and, where you become a student, the <strong>performance of a contract</strong> with you or your sending organisation.</p>
+
+        <h3>How long we keep it</h3>
+        <p>Enquiries are retained on our systems until you ask us to delete them — you can do this at any time by emailing <a href="mailto:info@foyle.eu">info@foyle.eu</a> (see <em>Your rights</em> below). Records related to confirmed bookings are retained for as long as required by accreditation bodies (British Council), Erasmus+ programme rules, and UK/Irish tax and safeguarding law — typically 6–7 years after the end of the programme.</p>
+
+        <h3>Who we share it with</h3>
+        <ul>
+          <li><strong>Google LLC</strong> — the enquiry form is submitted via a Google Apps Script endpoint, and our fonts are served from Google Fonts. When you load a page or submit the form, your IP address and browser information are visible to Google's servers.</li>
+          <li><strong>Our website hosting provider</strong> — standard server logs (including IP address) are processed by the company that hosts this website for security and abuse prevention.</li>
+          <li><strong>Accommodation providers, accreditation bodies, and sending organisations</strong> — only when relevant to your booking, and only the information needed.</li>
+        </ul>
+        <p>We do not sell your data and we do not pass it to advertisers.</p>
+
+        <h3>International transfers</h3>
+        <p>Google is a US-based company. Where your data is transferred outside the UK or EEA, that transfer is covered by the relevant Standard Contractual Clauses and the EU–US Data Privacy Framework.</p>
+
+        <h3>Cookies</h3>
+        <p>This website does not set tracking, advertising, or analytics cookies. We use a single <code>localStorage</code> entry (<code>foyle-cookies-ok</code>) to remember that you have dismissed the notice bar at the bottom of the page — nothing else is stored in your browser by us.</p>
+        <p>Google Fonts may set its own cookies when loading font files from <code>fonts.googleapis.com</code>. You can block these in your browser settings without affecting the site's functionality (only the typography will fall back to a system font).</p>
+
+        <h3>Your rights</h3>
+        <p>Under UK and EU GDPR you have the right to:</p>
+        <ul>
+          <li>Request a copy of the personal data we hold about you</li>
+          <li>Ask us to correct inaccurate information</li>
+          <li>Ask us to delete your data (subject to legal retention obligations)</li>
+          <li>Object to or restrict how we use your data</li>
+          <li>Withdraw consent at any time</li>
+          <li>Lodge a complaint with the Information Commissioner's Office (UK) at <a href="https://ico.org.uk" target="_blank" rel="noopener">ico.org.uk</a> or your national supervisory authority in the EU</li>
+        </ul>
+        <p>To exercise any of these rights, email <a href="mailto:info@foyle.eu">info@foyle.eu</a>. We will respond within 30 days.</p>
+
+        <h3>Changes to this policy</h3>
+        <p>We may update this page when our practices change. The effective date at the top will be revised. Significant changes will be highlighted on the website.</p>
+
+        <h2>Accessibility Statement</h2>
+        <p>Foyle International is committed to making this website accessible to as many people as possible, including users with disabilities, in line with the Web Content Accessibility Guidelines (WCAG) 2.1 Level AA and the European Accessibility Act (Directive 2019/882).</p>
+
+        <h3>What we have done</h3>
+        <ul>
+          <li>Semantic HTML structure with a single <code>&lt;h1&gt;</code> per page and a logical heading order</li>
+          <li>Descriptive <code>alt</code> text on meaningful images; decorative images are marked accordingly</li>
+          <li>Form fields paired with visible <code>&lt;label&gt;</code> elements</li>
+          <li>Keyboard-accessible navigation and visible focus indicators</li>
+          <li>Colour contrast that meets WCAG AA targets for body text</li>
+          <li>Responsive layout that works from 320px up to large desktop displays</li>
+          <li>No content that flashes more than three times per second</li>
+          <li>Text can be resized to 200% without loss of content or function</li>
+        </ul>
+
+        <h3>Known limitations</h3>
+        <p>We are aware of the following gaps and are working to address them:</p>
+        <ul>
+          <li>Embedded YouTube videos on the Derry page may not have full closed captions for every language</li>
+          <li>A handful of decorative animations rely on CSS only and respect the <code>prefers-reduced-motion</code> setting, but not every interactive element has been independently audited</li>
+          <li>PDF downloads generated from the Terms page rely on the browser's print engine and may not be fully tagged for screen readers</li>
+        </ul>
+
+        <h3>If something is not accessible to you</h3>
+        <p>If you encounter a barrier or have feedback on the accessibility of this site, please contact us — we treat accessibility issues as a priority.</p>
+        <div class="highlight-box">
+          <p>Email <a href="mailto:info@foyle.eu">info@foyle.eu</a> with the subject line <strong>"Accessibility"</strong>, or telephone <a href="tel:+442871371535">+44 28 71 371 535</a>. We aim to respond within 5 working days.</p>
+        </div>
+
+        <h3>Enforcement</h3>
+        <p>If you are not satisfied with our response, you can contact the Equality Commission for Northern Ireland (<a href="https://www.equalityni.org" target="_blank" rel="noopener">equalityni.org</a>) or the relevant accessibility supervisory body in your country.</p>
+
+        <h3>Preparation of this statement</h3>
+        <p>This statement was prepared on 9 June 2026 based on a self-assessment of the website against WCAG 2.1 AA. We review it at least once a year and after any significant change to the site.</p>
+
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-logo">
+          <img src="images/foyle-logo.png" alt="Foyle International">
+          <p class="footer-brand-text">Northern Ireland's longest-established English language school. Quality courses, warm Irish hospitality, and an unforgettable experience — since 1990.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Courses</h5>
+          <ul>
+            <li><a href="index.html#courses">Erasmus+</a></li>
+            <li><a href="index.html#courses">Junior Summer School</a></li>
+            <li><a href="index.html#courses">Vocational Training</a></li>
+            <li><a href="index.html#courses">General English</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="derry.html">About Derry</a></li>
+            <li><a href="host.html">Become a Host</a></li>
+            <li><a href="terms.html">Terms &amp; Conditions</a></li>
+            <li><a href="privacy.html">Privacy &amp; Accessibility</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <ul>
+            <li><a href="mailto:info@foyle.eu">info@foyle.eu</a></li>
+            <li><a href="tel:+442871371535">+44 28 71 371 535</a></li>
+            <li>72 Great James Street,<br>Derry BT48 7DE</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Foyle International · All rights reserved</span>
+        <span>Made with care in Derry, Northern Ireland</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    hamburger.addEventListener('click', () => {
+      const open = mobileMenu.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    function closeMenu() {
+      mobileMenu.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+    }
+
+    (function () {
+      if (!localStorage.getItem('foyle-cookies-ok')) {
+        document.getElementById('cookie-bar').style.display = 'flex';
+      }
+    })();
+    function acceptCookies() {
+      localStorage.setItem('foyle-cookies-ok', '1');
+      document.getElementById('cookie-bar').style.display = 'none';
+    }
+  </script>
+
+  <div class="cookie-bar" id="cookie-bar" style="display:none">
+    <span>This site uses Google Fonts, which loads font files from Google's servers. No tracking or advertising cookies are used. See our <a href="privacy.html">Privacy &amp; Accessibility</a> page for details.</span>
+    <button class="cookie-btn" onclick="acceptCookies()">Got it</button>
+  </div>
+
+</body>
+
+</html>

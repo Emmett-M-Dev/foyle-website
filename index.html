@@ -24,9 +24,13 @@
   <meta name="twitter:image" content="https://foyle.eu/images/Derrywalls.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Inter+Tight:wght@400;500;600&family=Instrument+Sans:wght@400;500;600&family=Caveat:wght@500;600&display=swap"
-    rel="stylesheet">
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Inter+Tight:wght@400&family=Instrument+Sans:wght@400;500;600&family=Caveat:wght@600&display=swap"
+    onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Inter+Tight:wght@400&family=Instrument+Sans:wght@400;500;600&family=Caveat:wght@600&display=swap">
+  </noscript>
   <style>
     :root {
       --foyle-green: #3FA535;
@@ -2445,23 +2449,13 @@
 
     (function () {
       var nav = document.querySelector('nav.site-nav');
-      var scrolled = false;
-      var ticking = false;
-      function updateNav() {
-        var shouldScroll = window.scrollY > 80;
-        if (shouldScroll !== scrolled) {
-          nav.classList.toggle('nav-scrolled', shouldScroll);
-          scrolled = shouldScroll;
-        }
-        ticking = false;
-      }
-      window.addEventListener('scroll', () => {
-        if (!ticking) {
-          requestAnimationFrame(updateNav);
-          ticking = true;
-        }
-      }, { passive: true });
-      updateNav();
+      var sentinel = document.createElement('div');
+      sentinel.style.cssText = 'position:absolute;top:0;left:0;width:1px;height:80px;pointer-events:none;';
+      document.body.prepend(sentinel);
+      var io = new IntersectionObserver(function (entries) {
+        nav.classList.toggle('nav-scrolled', !entries[0].isIntersecting);
+      }, { rootMargin: '0px', threshold: 0 });
+      io.observe(sentinel);
     })();
 
     const reveals = document.querySelectorAll('.reveal');

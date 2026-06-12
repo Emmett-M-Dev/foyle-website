@@ -1,0 +1,1628 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' https://script.google.com; connect-src 'self' https://script.google.com https://script.googleusercontent.com; form-action 'self' https://script.google.com; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), interest-cohort=()">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="images/foyle-logo.png" type="image/png">
+  <link rel="apple-touch-icon" href="images/foyle-logo.png">
+  <title>Junior Summer School — Foyle International, Derry</title>
+  <meta name="description"
+    content="Foyle International's Junior Summer School in Derry for students aged 13–17. English classes at NWRC, full-board homestay, excursions and a fully supervised, safe programme. British Council accredited.">
+  <link rel="canonical" href="https://foyle.eu/summer-school.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://foyle.eu/summer-school.html">
+  <meta property="og:title" content="Junior Summer School — Foyle International, Derry">
+  <meta property="og:description" content="English summer courses for students aged 13–17 in Derry. Classes at NWRC, full-board homestay, excursions and a safe, fully supervised programme.">
+  <meta property="og:image" content="https://foyle.eu/images/Eurolingua students in Derry.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Junior Summer School — Foyle International, Derry">
+  <meta name="twitter:description" content="English summer courses for ages 13–17 in Derry. Classes at NWRC, full-board homestay, excursions and a fully supervised programme.">
+  <meta name="twitter:image" content="https://foyle.eu/images/Eurolingua students in Derry.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Inter+Tight:wght@400&family=Instrument+Sans:wght@400;500;600&family=Caveat:wght@600&display=swap"
+    onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Inter+Tight:wght@400&family=Instrument+Sans:wght@400;500;600&family=Caveat:wght@600&display=swap">
+  </noscript>
+  <style>
+    :root {
+      --foyle-green: #3FA535;
+      --foyle-green-dark: #2d7a25;
+      --foyle-green-deep: #1a4f18;
+      --foyle-green-pale: #f0f9ee;
+      --foyle-green-mid: #d9eed4;
+      --black: #0a0a0a;
+      --cream: #faf8f3;
+      --paper: #f5f2ea;
+      --ink: #1a1a18;
+      --ink-soft: #545450;
+      --rule: #e2ddd0;
+      --accent: #c89a3e;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter Tight', system-ui, sans-serif;
+      color: var(--ink);
+      background: var(--cream);
+      overflow-x: hidden;
+      line-height: 1.5;
+    }
+
+    .label {
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--ink-soft);
+    }
+
+    /* ── Nav ── */
+
+    nav.site-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .nav-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+
+    .nav-logo img {
+      height: 60px;
+      width: auto;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0.2rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--ink);
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 0.87rem;
+      font-weight: 500;
+      padding: 0.5rem 0.9rem;
+      border-radius: 4px;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--foyle-green-dark);
+    }
+
+    .nav-links a.active {
+      color: var(--foyle-green-dark);
+    }
+
+    .nav-cta {
+      margin-left: 0.75rem;
+      background: var(--foyle-green) !important;
+      color: black !important;
+      padding: 0.55rem 1.2rem !important;
+      border-radius: 100px !important;
+      font-weight: 600 !important;
+    }
+
+    .nav-cta:hover {
+      background: var(--black) !important;
+      color: white !important;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 6px;
+      background: none;
+      border: none;
+    }
+
+    .hamburger span {
+      width: 22px;
+      height: 2px;
+      background: var(--ink);
+      border-radius: 2px;
+    }
+
+    /* ── Mobile menu ── */
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 49;
+      background: var(--black);
+      flex-direction: column;
+      padding: 6rem 2rem 2rem;
+      gap: 0.5rem;
+    }
+
+    .mobile-menu.open {
+      display: flex;
+    }
+
+    .mobile-menu a {
+      color: white;
+      text-decoration: none;
+      font-family: 'Fraunces', serif;
+      font-size: 1.8rem;
+      font-weight: 400;
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    /* ── Buttons ── */
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 500;
+      padding: 0.9rem 1.8rem;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--black);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--foyle-green);
+      color: black;
+    }
+
+    .btn-green {
+      background: var(--foyle-green);
+      color: black;
+    }
+
+    .btn-green:hover {
+      background: var(--foyle-green-dark);
+      color: white;
+    }
+
+    .btn-white {
+      background: white;
+      color: var(--foyle-green-dark);
+      font-weight: 600;
+    }
+
+    .btn-white:hover {
+      background: var(--foyle-green-pale);
+      color: var(--foyle-green-deep);
+    }
+
+    /* ── Shared section ── */
+
+    section {
+      padding: 7rem 2rem;
+      position: relative;
+    }
+
+    .section-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .section-eyebrow {
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--foyle-green-dark);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 1.25rem;
+    }
+
+    h2.block-title {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 400;
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      margin-bottom: 1.5rem;
+      max-width: 760px;
+    }
+
+    h2.block-title em {
+      font-style: italic;
+      color: var(--foyle-green-dark);
+      font-weight: 500;
+    }
+
+    .block-lead {
+      font-family: 'Newsreader', serif;
+      font-size: 1.15rem;
+      line-height: 1.7;
+      color: var(--ink-soft);
+      max-width: 700px;
+    }
+
+    /* ── Hero band ── */
+
+    .hero {
+      position: relative;
+      padding: 0;
+      overflow: hidden;
+      background: var(--black);
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 60%;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(to bottom, rgba(8, 8, 6, 0.62) 0%, rgba(8, 8, 6, 0.48) 55%, rgba(8, 8, 6, 0.66) 100%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+      padding: 10rem 2rem 5rem;
+    }
+
+    .hero-breadcrumb {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 3.5rem;
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.65);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .hero-breadcrumb a {
+      color: rgba(255, 255, 255, 0.65);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .hero-breadcrumb a:hover {
+      color: white;
+    }
+
+    h1.hero-title {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(2.6rem, 6.5vw, 5.5rem);
+      font-weight: 400;
+      line-height: 1.0;
+      letter-spacing: -0.03em;
+      color: white;
+      max-width: 820px;
+      margin-bottom: 1.75rem;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeUp 1s ease 0.1s forwards;
+    }
+
+    h1.hero-title em {
+      font-style: italic;
+      color: #8de085;
+      font-weight: 500;
+    }
+
+    .hero-sub {
+      font-family: 'Newsreader', serif;
+      font-size: 1.2rem;
+      line-height: 1.65;
+      color: rgba(255, 255, 255, 0.82);
+      max-width: 580px;
+      margin-bottom: 2.25rem;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeUp 1s ease 0.3s forwards;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeUp 1s ease 0.5s forwards;
+    }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ── Quick facts strip ── */
+
+    .facts-strip {
+      background: var(--foyle-green);
+      color: black;
+      padding: 2.5rem 2rem;
+    }
+
+    .facts-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+    }
+
+    .fact {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+
+    .fact-value {
+      font-family: 'Fraunces', serif;
+      font-size: 1.9rem;
+      font-weight: 500;
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+    }
+
+    .fact-label {
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 0.74rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: rgba(0, 0, 0, 0.8);
+    }
+
+    /* ── Two-column course block ── */
+
+    .course {
+      background: var(--cream);
+    }
+
+    .course-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .course-text p {
+      font-family: 'Newsreader', serif;
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: var(--ink);
+      margin-bottom: 1.5rem;
+    }
+
+    /* ── Detail list ── */
+
+    .detail-list {
+      list-style: none;
+    }
+
+    .detail-list li {
+      display: flex;
+      justify-content: space-between;
+      gap: 1.5rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--rule);
+      font-family: 'Newsreader', serif;
+      font-size: 1.05rem;
+    }
+
+    .detail-list li:first-child {
+      border-top: 1px solid var(--rule);
+    }
+
+    .detail-list .detail-key {
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--ink-soft);
+      flex-shrink: 0;
+      padding-top: 0.15rem;
+    }
+
+    .detail-list .detail-val {
+      text-align: right;
+      color: var(--ink);
+    }
+
+    /* ── Checklist ── */
+
+    .checklist-wrap {
+      margin-top: 2.5rem;
+    }
+
+    .checklist-title {
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--ink-soft);
+      margin-bottom: 1.25rem;
+    }
+
+    .checklist {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem 3rem;
+      list-style: none;
+    }
+
+    .checklist.single {
+      grid-template-columns: 1fr;
+    }
+
+    .checklist li {
+      font-family: 'Newsreader', serif;
+      font-size: 1rem;
+      color: var(--ink);
+      display: flex;
+      align-items: flex-start;
+      gap: 0.65rem;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .checklist li::before {
+      content: '✓';
+      color: var(--foyle-green);
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      flex-shrink: 0;
+      padding-top: 0.2rem;
+    }
+
+    /* ── Excursions / cards ── */
+
+    .activities {
+      background: var(--black);
+      color: white;
+    }
+
+    .activities .section-eyebrow {
+      color: var(--foyle-green);
+    }
+
+    .activities h2.block-title {
+      color: white;
+    }
+
+    .activities h2.block-title em {
+      color: var(--foyle-green);
+    }
+
+    .activities .block-lead {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3.5rem;
+    }
+
+    .excursion-card {
+      position: relative;
+      aspect-ratio: 4 / 3;
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    .excursion-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .excursion-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .excursion-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(8, 8, 6, 0.78) 0%, transparent 60%);
+    }
+
+    .excursion-card .card-caption {
+      position: absolute;
+      bottom: 1.1rem;
+      left: 1.2rem;
+      right: 1.2rem;
+      z-index: 1;
+    }
+
+    .excursion-card .card-caption h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: white;
+      line-height: 1.15;
+    }
+
+    .excursion-card .card-caption p {
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 0.78rem;
+      color: rgba(255, 255, 255, 0.75);
+      margin-top: 0.25rem;
+    }
+
+    .activity-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 3rem;
+    }
+
+    .activity-pill {
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 500;
+      padding: 0.5rem 1.1rem;
+      border-radius: 100px;
+      background: rgba(255, 255, 255, 0.08);
+      color: rgba(255, 255, 255, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    /* ── NWRC / location ── */
+
+    .nwrc {
+      background: var(--paper);
+    }
+
+    .nwrc-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .nwrc-text p {
+      font-family: 'Newsreader', serif;
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: var(--ink);
+      margin-bottom: 1.5rem;
+    }
+
+    .nwrc-photo {
+      aspect-ratio: 4 / 3;
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    .nwrc-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ── Care for minors ── */
+
+    .care {
+      background: var(--cream);
+    }
+
+    .care-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3.5rem;
+    }
+
+    .care-card {
+      background: white;
+      border: 1px solid var(--rule);
+      border-radius: 14px;
+      padding: 2rem;
+    }
+
+    .care-card .care-icon {
+      font-size: 1.5rem;
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .care-card h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.25rem;
+      font-weight: 500;
+      margin-bottom: 0.6rem;
+      line-height: 1.2;
+    }
+
+    .care-card p {
+      font-family: 'Newsreader', serif;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--ink-soft);
+    }
+
+    .care-note {
+      margin-top: 2.5rem;
+      font-family: 'Newsreader', serif;
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--ink-soft);
+      max-width: 760px;
+    }
+
+    .care-note a {
+      color: var(--foyle-green-dark);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* ── Brochure / prices ── */
+
+    .brochure {
+      background: var(--black);
+      color: white;
+    }
+
+    .brochure-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .brochure .section-eyebrow {
+      color: var(--foyle-green);
+    }
+
+    .brochure h2 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(2rem, 3.6vw, 3rem);
+      font-weight: 400;
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      color: white;
+      margin-bottom: 1.25rem;
+    }
+
+    .brochure h2 em {
+      font-style: italic;
+      color: var(--foyle-green);
+    }
+
+    .brochure p.brochure-lead {
+      font-family: 'Newsreader', serif;
+      font-size: 1.12rem;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+    .brochure-card {
+      background: white;
+      color: var(--ink);
+      border-radius: 16px;
+      padding: 2.5rem;
+    }
+
+    .brochure-card h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.4rem;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+
+    .brochure-card .sub {
+      font-family: 'Newsreader', serif;
+      color: var(--ink-soft);
+      font-size: 0.98rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .brochure-form .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .brochure-form label {
+      display: block;
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.5rem;
+      color: var(--ink);
+    }
+
+    .brochure-form input {
+      width: 100%;
+      padding: 0.85rem 0;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--rule);
+      font-family: 'Newsreader', serif;
+      font-size: 1.05rem;
+      color: var(--ink);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .brochure-form input:focus {
+      border-bottom-color: var(--foyle-green);
+    }
+
+    .brochure-form input::placeholder {
+      color: #aaa;
+      font-style: italic;
+    }
+
+    .hp-field {
+      position: absolute;
+      left: -10000px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+
+    .consent-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      margin: 1.25rem 0 1.5rem;
+    }
+
+    .consent-row input {
+      width: auto;
+      margin-top: 0.2rem;
+      flex-shrink: 0;
+      accent-color: var(--foyle-green);
+    }
+
+    .consent-row label {
+      font-family: 'Newsreader', serif;
+      font-size: 0.88rem;
+      font-weight: 400;
+      text-transform: none;
+      letter-spacing: 0;
+      color: var(--ink-soft);
+      line-height: 1.5;
+    }
+
+    .consent-row a {
+      color: var(--foyle-green-dark);
+      text-decoration: underline;
+    }
+
+    .btn-submit {
+      background: var(--black);
+      color: white;
+      padding: 1rem 2.2rem;
+      border-radius: 100px;
+      border: none;
+      cursor: pointer;
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      transition: background 0.2s;
+      width: 100%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+    }
+
+    .btn-submit:hover {
+      background: var(--foyle-green-dark);
+    }
+
+    .brochure-fallback {
+      margin-top: 1.5rem;
+      font-family: 'Newsreader', serif;
+      font-size: 0.92rem;
+      color: var(--ink-soft);
+      text-align: center;
+    }
+
+    .brochure-fallback a {
+      color: var(--foyle-green-dark);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .brochure-success {
+      display: none;
+      text-align: center;
+      padding: 1rem 0;
+    }
+
+    .brochure-success .check {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--foyle-green);
+      color: black;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .brochure-success h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.5rem;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+
+    .brochure-success p {
+      font-family: 'Newsreader', serif;
+      color: var(--ink-soft);
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* ── CTA band ── */
+
+    .cta-band {
+      background: var(--foyle-green);
+      color: black;
+      text-align: center;
+    }
+
+    .cta-inner {
+      max-width: 660px;
+      margin: 0 auto;
+    }
+
+    .cta-band h2 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 400;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.25rem;
+    }
+
+    .cta-band h2 em {
+      font-style: italic;
+      font-weight: 500;
+    }
+
+    .cta-band p {
+      font-family: 'Newsreader', serif;
+      font-size: 1.12rem;
+      line-height: 1.65;
+      color: rgba(0, 0, 0, 0.78);
+      margin-bottom: 2.25rem;
+    }
+
+    .cta-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ── Footer ── */
+
+    footer {
+      background: var(--black);
+      color: white;
+      padding: 5rem 2rem 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .footer-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem;
+      padding-bottom: 4rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .footer-logo img {
+      height: 56px;
+      width: auto;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-brand-text {
+      font-family: 'Newsreader', serif;
+      font-size: 0.95rem;
+      line-height: 1.65;
+      color: rgba(255, 255, 255, 0.55);
+      max-width: 320px;
+    }
+
+    .footer-col h4 {
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--foyle-green);
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col li {
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-col a {
+      color: rgba(255, 255, 255, 0.65);
+      text-decoration: none;
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 0.92rem;
+      transition: color 0.2s;
+    }
+
+    .footer-col a:hover {
+      color: white;
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 2rem;
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.4);
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    /* ── Reveal animation ── */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── Cookie bar ── */
+
+    .cookie-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 200;
+      background: #0a0a0a;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.65);
+      flex-wrap: wrap;
+    }
+
+    .cookie-bar a {
+      color: #3FA535;
+      text-decoration: none;
+    }
+
+    .cookie-bar a:hover {
+      text-decoration: underline;
+    }
+
+    .cookie-btn {
+      background: #3FA535;
+      color: #0a0a0a;
+      border: none;
+      padding: 0.5rem 1.4rem;
+      border-radius: 100px;
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .cookie-btn:hover {
+      background: var(--foyle-green-dark);
+    }
+
+    /* ── Responsive ── */
+
+    @media (max-width: 960px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      section {
+        padding: 5rem 2rem;
+      }
+
+      .hero-inner {
+        padding: 8rem 2rem 4rem;
+      }
+
+      .hero-breadcrumb {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: flex-start;
+        margin-bottom: 2.5rem;
+      }
+
+      .facts-inner {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.75rem;
+      }
+
+      .course-grid,
+      .nwrc-grid,
+      .brochure-inner {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .card-grid,
+      .care-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .checklist {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .facts-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr;
+      }
+
+      .detail-list li {
+        flex-direction: column;
+        gap: 0.25rem;
+      }
+
+      .detail-list .detail-val {
+        text-align: left;
+      }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "Junior Summer School",
+    "description": "English language summer courses in Derry for students aged 13–17. 15 hours of English lessons per week at NWRC, full-board homestay accommodation, afternoon and evening activities and a full-day weekend excursion. A fully supervised, British Council accredited programme.",
+    "provider": {
+      "@type": "LanguageSchool",
+      "name": "Foyle International",
+      "url": "https://foyle.eu"
+    },
+    "audience": {
+      "@type": "EducationalAudience",
+      "educationalRole": "student"
+    },
+    "typicalAgeRange": "13-17",
+    "inLanguage": "en"
+  }
+  </script>
+</head>
+
+<body>
+
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="images/foyle-logo.png" alt="Foyle International">
+      </a>
+      <div class="nav-links">
+        <a href="index.html#about">About</a>
+        <a href="index.html#courses" class="active">Courses</a>
+        <a href="derry.html">Derry</a>
+        <a href="host.html">Host a Student</a>
+        <a href="index.html#contact" class="nav-cta">Enquire →</a>
+      </div>
+      <button class="hamburger" id="hamburger" type="button" aria-label="Menu" aria-controls="mobile-menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="index.html#about" onclick="closeMenu()">About</a>
+    <a href="index.html#courses" onclick="closeMenu()">Courses</a>
+    <a href="derry.html" onclick="closeMenu()">Derry</a>
+    <a href="host.html" onclick="closeMenu()">Host a Student</a>
+    <a href="index.html#contact" onclick="closeMenu()">Enquire</a>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-bg">
+      <img src="images/Eurolingua students in Derry.jpg" alt="" width="1600" height="900" fetchpriority="high" decoding="async" aria-hidden="true">
+    </div>
+    <div class="hero-overlay"></div>
+
+    <div class="hero-inner">
+      <div class="hero-breadcrumb">
+        <a href="index.html">← Foyle International</a>
+        <span>Junior Summer School</span>
+      </div>
+
+      <h1 class="hero-title">A summer of English <em>in Ireland.</em></h1>
+      <p class="hero-sub">Our Junior Summer School welcomes students aged 13–17 from across Europe for English
+        classes, real friendships and an unforgettable Irish summer — all in a safe, fully supervised environment.</p>
+      <div class="hero-actions">
+        <a href="#brochure" class="btn btn-green">Get prices &amp; brochure ⤓</a>
+        <a href="index.html#contact" class="btn btn-white">Make an enquiry →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick facts -->
+  <div class="facts-strip">
+    <div class="facts-inner">
+      <div class="fact">
+        <span class="fact-value">13–17</span>
+        <span class="fact-label">Age range</span>
+      </div>
+      <div class="fact">
+        <span class="fact-value">A2–C1</span>
+        <span class="fact-label">All levels</span>
+      </div>
+      <div class="fact">
+        <span class="fact-value">15 hrs</span>
+        <span class="fact-label">English per week</span>
+      </div>
+      <div class="fact">
+        <span class="fact-value">Full board</span>
+        <span class="fact-label">Homestay included</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- The course -->
+  <section class="course">
+    <div class="section-inner">
+      <div class="course-grid">
+        <div class="course-text reveal">
+          <span class="section-eyebrow">The programme</span>
+          <h2 class="block-title">Learn English, <em>live the culture.</em></h2>
+          <p>Each morning students attend English lessons in small classes — a maximum of 15 students per group —
+            taught by our experienced teachers. Lessons run from 9:30am to 1:00pm, with 15 lessons every week.</p>
+          <p>Classes are built around the themes of <strong>Global Citizenship and Wellbeing</strong>, and welcome
+            students from beginner (A2) right through to advanced (C1) level. After class, the real learning continues
+            through afternoon and evening activities, excursions and daily life with a local host family.</p>
+          <p>Students can join for <strong>two or three weeks</strong>, as individuals or as part of a group.</p>
+        </div>
+
+        <div class="course-detail reveal">
+          <ul class="detail-list">
+            <li><span class="detail-key">Ages</span><span class="detail-val">13–17 years</span></li>
+            <li><span class="detail-key">Levels</span><span class="detail-val">A2 – C1 (all levels)</span></li>
+            <li><span class="detail-key">Lessons</span><span class="detail-val">15 per week · 9:30am–1:00pm</span></li>
+            <li><span class="detail-key">Class size</span><span class="detail-val">Maximum 15 students</span></li>
+            <li><span class="detail-key">Duration</span><span class="detail-val">2 or 3 weeks</span></li>
+            <li><span class="detail-key">Location</span><span class="detail-val">NWRC, Strand Road, Derry</span></li>
+            <li><span class="detail-key">Arrivals</span><span class="detail-val">Sundays</span></li>
+          </ul>
+
+          <div class="checklist-wrap">
+            <p class="checklist-title">2026 summer sessions</p>
+            <ul class="checklist single">
+              <li>28 June – 19 July 2026</li>
+              <li>19 July – 2 August 2026</li>
+              <li>2 August – 16 August 2026</li>
+            </ul>
+          </div>
+
+          <div class="checklist-wrap">
+            <p class="checklist-title">What's included</p>
+            <ul class="checklist">
+              <li>15 hours of English classes weekly</li>
+              <li>5 afternoon activities each week</li>
+              <li>2 evening activities each week</li>
+              <li>1 full-day weekend excursion</li>
+              <li>Full-board homestay accommodation</li>
+              <li>Full supervision throughout</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Activities & excursions -->
+  <section class="activities">
+    <div class="section-inner">
+      <span class="section-eyebrow reveal">Activities &amp; excursions</span>
+      <h2 class="block-title reveal">Ireland is the <em>classroom.</em></h2>
+      <p class="block-lead reveal">Every week includes five afternoon activities, two evening activities and a
+        full-day weekend excursion — so students practise their English while discovering the very best of the north
+        west of Ireland.</p>
+
+      <div class="card-grid reveal">
+        <div class="excursion-card">
+          <img src="images/Studenttrip1.JPG" alt="Students at the Giant's Causeway" loading="lazy">
+          <div class="card-caption">
+            <h3>Giant's Causeway</h3>
+            <p>The Causeway Coast, Co. Antrim</p>
+          </div>
+        </div>
+        <div class="excursion-card">
+          <img src="images/belfast city excursion g1.jpg" alt="Belfast city" loading="lazy">
+          <div class="card-caption">
+            <h3>Belfast City</h3>
+            <p>A full day in the capital</p>
+          </div>
+        </div>
+        <div class="excursion-card">
+          <img src="images/Czechs enjoying the view of north coast.jpg" alt="Inishowen Peninsula, Co. Donegal" loading="lazy">
+          <div class="card-caption">
+            <h3>Inishowen Peninsula</h3>
+            <p>Co. Donegal, Republic of Ireland</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="activity-pills reveal">
+        <span class="activity-pill">City walks</span>
+        <span class="activity-pill">Sports</span>
+        <span class="activity-pill">The Derry Walls</span>
+        <span class="activity-pill">Museums &amp; culture</span>
+        <span class="activity-pill">Evening socials</span>
+        <span class="activity-pill">Local events</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- NWRC / location -->
+  <section class="nwrc">
+    <div class="section-inner">
+      <div class="nwrc-grid">
+        <div class="nwrc-text reveal">
+          <span class="section-eyebrow">Where classes are held</span>
+          <h2 class="block-title">Classes at <em>NWRC.</em></h2>
+          <p>Summer school lessons take place at the <strong>North West Regional College (NWRC)</strong>, in the Tower
+            Building on Strand Road, right in the heart of Derry city centre.</p>
+          <p>NWRC is one of Northern Ireland's largest further and higher education colleges, with modern, well-equipped
+            classrooms and facilities. Its central location means students are only a short walk from the city centre,
+            the River Foyle and Derry's historic walls — and easy to reach from homestay accommodation by foot or a
+            short bus journey.</p>
+        </div>
+        <div class="nwrc-photo reveal">
+          <img src="images/Students last day.jpg" alt="Foyle International students in Derry" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Care for minors / safeguarding -->
+  <section class="care">
+    <div class="section-inner">
+      <span class="section-eyebrow reveal">Care for under-18s</span>
+      <h2 class="block-title reveal">Safe, supervised, <em>looked after.</em></h2>
+      <p class="block-lead reveal">The wellbeing of every young student is our first priority. Our Junior Summer
+        School is fully supervised, and parents and group leaders can rely on clear routines and the warm care of our
+        staff and host families.</p>
+
+      <div class="care-grid">
+        <div class="care-card reveal">
+          <span class="care-icon">🕘</span>
+          <h3>Supervision</h3>
+          <p>Students are supervised during lunch and throughout all afternoon and evening activities. Our staff make
+            sure every student takes the correct bus home after activities.</p>
+        </div>
+        <div class="care-card reveal">
+          <span class="care-icon">🌙</span>
+          <h3>Curfew</h3>
+          <p>Evening activities finish by 9:00pm, and all students have a curfew of 9:30pm each night, agreed with
+            their host family.</p>
+        </div>
+        <div class="care-card reveal">
+          <span class="care-icon">🏡</span>
+          <h3>Homestay &amp; distance</h3>
+          <p>Students stay in vetted homestays within Derry. Most are within walking distance of the school, or a
+            short 25–35 minute bus journey. Students aged 13+ travel independently by foot or bus.</p>
+        </div>
+      </div>
+
+      <p class="care-note reveal">All host families are vetted and approved by Foyle International, and our team
+        provides support throughout each student's stay. You can read more about our accommodation on the
+        <a href="host.html">accommodation page</a>, and our full policies on the
+        <a href="terms.html">Terms &amp; Conditions</a> and
+        <a href="privacy.html">Privacy &amp; Accessibility</a> pages.</p>
+    </div>
+  </section>
+
+  <!-- Brochure / prices (email gate) -->
+  <section class="brochure" id="brochure">
+    <div class="brochure-inner">
+      <div class="reveal">
+        <span class="section-eyebrow">Prices &amp; full course details</span>
+        <h2>Download the <em>brochure.</em></h2>
+        <p class="brochure-lead">Our Junior Summer School brochure has the full course details, sample timetable,
+          activity programme and current prices. Pop in your email and we'll send you straight to the download — and
+          we'll be in touch if you'd like to talk it through.</p>
+      </div>
+
+      <div class="brochure-card reveal">
+        <div id="brochure-form-wrap">
+          <h3>Get the brochure &amp; prices</h3>
+          <p class="sub">Enter your details and the download will appear instantly.</p>
+
+          <form class="brochure-form" id="brochure-form" onsubmit="handleBrochure(event)">
+            <div class="form-group">
+              <label for="bname">Your name *</label>
+              <input type="text" id="bname" name="Name" required placeholder="María González">
+            </div>
+            <div class="form-group">
+              <label for="bemail">Email *</label>
+              <input type="email" id="bemail" name="Email" required placeholder="you@example.com">
+            </div>
+            <div class="form-group">
+              <label for="bcountry">Country</label>
+              <input type="text" id="bcountry" name="Country" placeholder="Spain">
+            </div>
+            <div class="hp-field" aria-hidden="true">
+              <label for="bwebsite">Website (leave blank)</label>
+              <input type="text" id="bwebsite" name="website" tabindex="-1" autocomplete="off">
+            </div>
+            <div class="consent-row">
+              <input type="checkbox" id="bconsent" required>
+              <label for="bconsent">I'm happy for Foyle International to email me about the Junior Summer School. See
+                our <a href="privacy.html">Privacy</a> page.</label>
+            </div>
+            <button type="submit" class="btn-submit" id="brochure-btn">Download brochure ⤓</button>
+          </form>
+
+          <p class="brochure-fallback">Prefer to ask directly? Email
+            <a href="mailto:info@foyle.eu?subject=Junior%20Summer%20School%20prices%20%26%20brochure">info@foyle.eu</a>
+            or <a href="mailto:aine@foyle.eu?subject=Junior%20Summer%20School%20prices%20%26%20brochure">aine@foyle.eu</a>.</p>
+        </div>
+
+        <div class="brochure-success" id="brochure-success">
+          <div class="check">✓</div>
+          <h3>Thank you!</h3>
+          <p>Your brochure is ready. We've noted your details and may be in touch soon.</p>
+          <a href="brochure/foyle-junior-summer-school-2026.pdf" class="btn btn-green" id="brochure-download"
+            target="_blank" rel="noopener" download>Download brochure ⤓</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-band">
+    <div class="cta-inner">
+      <h2>Ready for an <em>Irish summer?</em></h2>
+      <p>Places fill quickly each summer. Tell us about your student or your group, and we'll help you plan the perfect
+        stay in Derry.</p>
+      <div class="cta-actions">
+        <a href="index.html#contact" class="btn btn-primary">Make an enquiry →</a>
+        <a href="#brochure" class="btn btn-white">Get prices &amp; brochure ⤓</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-logo">
+          <img src="images/foyle-logo.png" alt="Foyle International">
+          <p class="footer-brand-text">Northern Ireland's longest-established English language school. Quality courses,
+            warm Irish hospitality, and an unforgettable experience since 1990.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Courses</h4>
+          <ul>
+            <li><a href="index.html#courses">Erasmus+</a></li>
+            <li><a href="summer-school.html">Junior Summer School</a></li>
+            <li><a href="index.html#courses">Vocational Training</a></li>
+            <li><a href="index.html#courses">General English</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="derry.html">About Derry</a></li>
+            <li><a href="host.html">Become a Host</a></li>
+            <li><a href="terms.html">Terms &amp; Conditions</a></li>
+            <li><a href="privacy.html">Privacy &amp; Accessibility</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:info@foyle.eu">info@foyle.eu</a></li>
+            <li><a href="tel:+442871371535">+44 28 71 371 535</a></li>
+            <li>72 Great James Street,<br>Derry BT48 7DE</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Foyle International · All rights reserved</span>
+        <span>Made with care in Derry, Northern Ireland</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="cookie-bar" id="cookie-bar" style="display:none">
+    <span>This site uses Google Fonts, which loads font files from Google's servers. No tracking or advertising cookies are used. See our <a href="privacy.html">Privacy &amp; Accessibility</a> page for details.</span>
+    <button class="cookie-btn" onclick="acceptCookies()">Got it</button>
+  </div>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    hamburger.addEventListener('click', () => {
+      const open = mobileMenu.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    function closeMenu() {
+      mobileMenu.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+    }
+
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 60);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+
+    (function () {
+      if (!localStorage.getItem('foyle-cookies-ok')) {
+        document.getElementById('cookie-bar').style.display = 'flex';
+      }
+    })();
+    function acceptCookies() {
+      localStorage.setItem('foyle-cookies-ok', '1');
+      document.getElementById('cookie-bar').style.display = 'none';
+    }
+
+    // Brochure email-gate. Captures the lead to the Google Sheet, then reveals
+    // the download. The download is shown even if the network call fails so a
+    // student is never blocked from the brochure.
+    const brochureLoadTime = Date.now();
+    function showBrochure() {
+      document.getElementById('brochure-form-wrap').style.display = 'none';
+      document.getElementById('brochure-success').style.display = 'block';
+    }
+    function handleBrochure(e) {
+      e.preventDefault();
+      const btn = document.getElementById('brochure-btn');
+      const honeypot = document.getElementById('bwebsite').value;
+      const elapsed = Date.now() - brochureLoadTime;
+
+      // Bot caught by honeypot or instant submit: silently reveal, skip the network.
+      if (honeypot !== '' || elapsed < 1500) {
+        showBrochure();
+        return;
+      }
+
+      btn.textContent = 'Sending…';
+      btn.disabled = true;
+
+      fetch('https://script.google.com/macros/s/AKfycbwEm3CKXa4UpeQvvlEFpLq3yEdZUw6lzwc8csiH74IArykzzHBB6-6g354crgrGrXCE7Q/exec', {
+        method: 'POST',
+        headers: { 'Content-Type': 'text/plain' },
+        body: JSON.stringify({
+          'First Name': document.getElementById('bname').value,
+          'Last Name': '',
+          'Email': document.getElementById('bemail').value,
+          'Country': document.getElementById('bcountry').value,
+          'Course Interest': 'Junior Summer School — Brochure request',
+          'Message': 'Requested the Junior Summer School brochure / prices.'
+        })
+      })
+        .then(() => showBrochure())
+        .catch(() => showBrochure());
+    }
+  </script>
+
+</body>
+
+</html>

@@ -829,6 +829,27 @@
       background: rgba(63, 165, 53, 0.04);
     }
 
+    .course-group-label {
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--foyle-green);
+      padding: 2.25rem 0 0.5rem;
+    }
+
+    .course-group-label:first-child {
+      padding-top: 0;
+    }
+
+    /* Rows with a dedicated page keep the green arrow at rest */
+    .course-row.linked .course-arrow {
+      background: var(--foyle-green);
+      color: black;
+      border-color: var(--foyle-green);
+    }
+
     .course-num {
       font-family: 'Instrument Sans', sans-serif;
       font-size: 0.85rem;
@@ -2066,7 +2087,8 @@
       </div>
 
       <div class="courses-list reveal">
-        <div class="course-row">
+        <div class="course-group-label">Explore our programmes</div>
+        <div class="course-row linked">
           <span class="course-num">01 —</span>
           <h3>Erasmus+<br>Programmes</h3>
           <p>We facilitate Staff Mobilities (Job Shadowing) and Student Mobilities (Internships) in Derry, Dublin and
@@ -2080,7 +2102,7 @@
           <a href="EUCourses.html" class="course-arrow" aria-label="Erasmus+ programmes details">→</a>
         </div>
 
-        <div class="course-row">
+        <div class="course-row linked">
           <span class="course-num">02 —</span>
           <h3>Junior Summer<br>Schools</h3>
           <p>English courses for groups and individuals aged 13–17. A full programme of language learning, excursions,
@@ -2093,6 +2115,7 @@
           <a href="summer-school.html" class="course-arrow" aria-label="Junior Summer School details">→</a>
         </div>
 
+        <div class="course-group-label">Also offered</div>
         <div class="course-row">
           <span class="course-num">03 —</span>
           <h3>Vocational &<br>Educational Training</h3>
